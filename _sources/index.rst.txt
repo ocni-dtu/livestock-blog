@@ -16,7 +16,7 @@ Welcome to Livestock Package's Documentation!
    misc
    ssh
 
-:ref:`intersphinx cross-reference <livestock_gh:top>`
+:ref:`Livestock Grasshopper Documentation <livestock_gh:top>`
 
 Indices and tables
 ==================
