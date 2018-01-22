@@ -49,7 +49,7 @@ Documentation for the PyPI Package:
 Documentation for the Grasshopper Components:
 =============================================
 
-:ref:`Livestock Grasshopper Documentation <livestock_gh:top>`
+:ref:`Livestock Grasshopper Documentation <livestock_gh:livestock_gh>`
 
 :ref:`Components <livestock_gh:components>`
 
