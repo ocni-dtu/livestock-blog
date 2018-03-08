@@ -28,5 +28,5 @@ All you need to do is to download this [zip](https://github.com/ocni-dtu/livesto
 ### Go Back
 - [Main Page](/index.md)
 
-Last Modified: {{ page.last_modified_at }} \
+Last Modified: {{ install.last_modified_at }} \
 Authors: Christian Kongsgaard
