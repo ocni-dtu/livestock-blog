@@ -24,7 +24,10 @@ All you need to do is to download this [zip](https://github.com/ocni-dtu/livesto
 In the zip there is a folder called grasshopper and in there is another folder called components. 
 Take the files in components and drag them onto the Grasshopper Canvas. (The files will then be put in the right folder.)
 
-Open explorer. Go to the location: *%appdata%\McNeel\Rhinoceros\5.0\scripts* and create a folder called livestock.
+Open explorer. Go to the location: 
+> %appdata%\McNeel\Rhinoceros\5.0\scripts
+
+and create a folder called livestock.
 Put all the files from the subfolder in the zip called python into the livestock folder.
 
 Go to the C-drive and create a folder called livestock as well.
@@ -50,6 +53,23 @@ Conda then will the install the environment called "livestock_env". Afterwards t
 And the CPython package for Livestock can be pip installed:
 
 > pip install livestock
+
+
+### Livestock Ubuntu
+
+To enable high speed computation, Livestock have been made so it can run its computations on remote machines.
+If you have a Ubuntu setup somewhere you can use that to direct your SSH connection at.
+If not you need to install Bash for Windows. It is pretty easy just follow this [guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+ 
+**Install Miniconda**
+
+To install Miniconda on your Ubuntu distribution, Bash or real, do the following:
+Open Bash or your Ubuntu terminal.
+> wget -c http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh 
+
+> chmod +x Miniconda3-latest-Linux-x86_64.sh
+
+> ./Miniconda3-latest-Linux-x86_64.sh
 
 ### Go Back
 - [Main Page](/index.md)
