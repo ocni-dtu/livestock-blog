@@ -71,6 +71,10 @@ Open Bash or your Ubuntu terminal.
 
 > ./Miniconda3-latest-Linux-x86_64.sh
 
+Follow the steps above to install the conda environment. The only thing that needs to be changed is the second command.
+On Ubuntu Conda environments are activeted with "source activate", so do:
+> source activate livestock_env
+
 ### Go Back
 - [Main Page](/index.md)
 
