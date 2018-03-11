@@ -24,8 +24,10 @@ All you need to do is to download this [zip](https://github.com/ocni-dtu/livesto
 In the zip there is a folder called grasshopper and in there is another folder called components. 
 Take the files in components and drag them onto the Grasshopper Canvas. (The files will then be put in the right folder.)
 
-Open explorer. Go to the location: %appdata%\McNeel\Rhinoceros\5.0\scripts and create a folder called livestock.
+Open explorer. Go to the location: *%appdata%\McNeel\Rhinoceros\5.0\scripts* and create a folder called livestock.
 Put all the files from the subfolder in the zip called python into the livestock folder.
+
+Go to the C-drive and create a folder called livestock as well.
 
 ### Anaconda Install
 Now when all th files for Grasshopper is in place it is time to complete the installation by installing CPython.
