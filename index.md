@@ -11,7 +11,8 @@ which is a CPython library to create and compute hydrological models.
 * With CMF and Livestock it is possible to make hydrological models directly in Grasshopper and therefore study 
 surface run-off, soil infiltration etc. Which can be used in Storm Water Management.  
 
-Livestock consists of a series of Grasshopper Python Script components and a underlying collection of Python scripts and a PyPI package.
+Livestock consists of a series of Grasshopper Python Script components and a underlying collection of Python scripts
+ and a PyPI package.
 
 ### Getting Started with Livestock:
 * [Background](/background.md)
@@ -19,7 +20,6 @@ Livestock consists of a series of Grasshopper Python Script components and a und
 * [Tutorials](/tutorials.md)
 
 ### Documentation for the PyPI Package:
-
 
 * [Livestock PyPI Documentation](https://ocni-dtu.github.io/livestock)
     * [Livestock Air](https://ocni-dtu.github.io/livestock/air.html)
