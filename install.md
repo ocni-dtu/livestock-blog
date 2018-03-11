@@ -60,12 +60,22 @@ And the CPython package for Livestock can be pip installed:
 To enable high speed computation, Livestock have been made so it can run its computations on remote machines.
 If you have a Ubuntu setup somewhere you can use that to direct your SSH connection at.
 If not you need to install Bash for Windows. It is pretty easy just follow this [guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+Make sure to open Bash after the installation and update it. You can do that by:
+> sudo apt-get update
 
-TO SET UP SSH INTO YOUR LINUX SUBSYSTEM (for multiple user connections):
+> sudo apt-get upgrade
 
-sudo apt-get remove openssh-server
-sudo apt-get install openssh-server
-sudo nano /etc/ssh/sshd_config and set:
+**Configure SSH**
+When Bash is installed, you need to configure the SSH connection to it. Open Bash and do the following:
+
+> sudo apt-get remove openssh-server
+
+> sudo apt-get install openssh-server
+
+> sudo nano /etc/ssh/sshd_config 
+
+Set the following in sshd_config:
+
 - PermitRootLogin no
 - Then add a line beneath it that says: AllowUsers big (or whatever your username is for the linux subsystem)
 - PasswordAuthentication yes
