@@ -2,7 +2,13 @@
 
 Welcome to the Livestock package documentation!
 
-Livestock is the name of the library of components that has been developed for the thesis of Christian Kongsgaard. 
+Livestock is the name of the library of components that has been developed for the thesis of Christian Kongsgaard.
+
+**What can Livestock do?**
+* Livestock enables the user to calculate outdoor thermal comfort where the evapotranspiration of vegetation is taken into account.
+* Livestock includes a wrapper around the [Catchment Modelling Framework (CMF)](http://fb09-pasig.umwelt.uni-giessen.de/cmf/), 
+which is a CPython library to create and compute hydrological models.  
+
 Livestock consists of a series of Grasshopper Python Script components and a underlying collection of Python scripts and a PyPI package.
 
 ### Getting Started with Livestock:
