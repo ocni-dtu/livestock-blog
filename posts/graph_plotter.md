@@ -47,7 +47,7 @@ if run:
 We are done coding the component now. The only thing missing is to change the x input to a list and add an output. 
 By default all inputs to the Grasshopper Python Scripts Component is set to "item". We do not want that, in this case. 
 You change it by right-clicking the x and a menu will appear. In the bottom you can see "List Access". Click on that.
-![alt text](images/graph_plotter_1.png)
+![alt text](/images/graph_plotter_1.png)
 
 We also need the location of the plot, so create and extra output and call it: "results_file". Then the variable with the same 
 name will be outputted there.
@@ -185,8 +185,8 @@ def plot_graph():
 
 Now we can head back to Grasshopper. Remember to restart Rhino before proceeding.
 Now we just needs some numbers to put into the component. You can generate in whatever way you want. In the image below,
-I have used a series component and an expression component to generate a polynominal. Connect the numbers to your component.
+I have used a series component and an expression component to generate a polynomial. Connect the numbers to your component.
 Drag Ladybug Tools' Image Viewer onto the canvas and connect "result_file" from the graph component to "imagePath".
 Connect a boolean toggle to run and let the magic happen!
 
-![alt text](images/graph_plotter_2.png)
+![alt text](/images/graph_plotter_2.png)

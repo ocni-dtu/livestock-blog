@@ -6,7 +6,7 @@ loaded the newest versions of the scripts from
 > %appdata%\McNeel\Rhinoceros\5.0\scripts\livestock3d
 
 When you open "1 - My First Component.gh" it should look something like this:
-![alt text](images/first_component_5.png)
+![alt text](/images/first_component_5.png)
 
 You should be missing the panel with "Hallo World!", the slider and the boolean toggle. Add those three things as in the image.
 You can see that our component is red and has an error message. Connect a panel to "out" to see the message.
