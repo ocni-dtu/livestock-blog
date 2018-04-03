@@ -15,9 +15,9 @@ Livestock consists of a series of Grasshopper Python Script components and a und
  and a PyPI package.
 
 ### Getting Started with Livestock:
-* [Background](/background.md)
-* [Install Livestock](/install.md)
-* [Tutorials](/tutorials.md)
+* [Background](posts/background.md)
+* [Install Livestock](posts/install.md)
+* [Tutorials](posts/tutorials.md)
 
 ### Documentation for the PyPI Package:
 
