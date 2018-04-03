@@ -81,7 +81,7 @@ The function is not yet created, but we will do that in the next paragraph.
 ## Livestock3D in CPython
 
 We have now written both the code for the component and the template. The only piece missing is the CPython part.
-The CPython code is what does the actual functionality that we want. In this case to dublicate a text string.
+The CPython code is what does the actual functionality that we want. In this case to duplicate a text string.
 We will write the code in the C:\livestock3d\livestock3d.py file.
 
 ```python
@@ -112,4 +112,4 @@ After opening data_file.txt, the code turns the file into a list called my_lines
 we write "line_to_write" "repeat" number of times. Thereafter, the file is closed and we are done.
 
 Now we should test our Grasshopper component! We will do that in the next post.
-[First Component Run](/posts/first_component_run.md)
+[First Component Run](first_component_run.md)
