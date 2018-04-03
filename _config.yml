@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
 title: Christian Kongsgaard
-description: Welcome to my website!
+description: Welcome to my website! What to see [Tutorial](https://ocni-dtu.github.io/posts/tutorials.html)
 
 gems:
   - jekyll-last-modified-at
