@@ -2,11 +2,15 @@
 
 ## Create Grasshopper Components
 
-Create Grasshopper components using the Livestock Template Method
+Create Grasshopper components using the [Livestock Template Method](how_is_it_working.md)
 
-* [How is it working](how_is_it_working.md)
-* [My First Component](first_component.md)
-* [My First Template](first_template.md)
-* [My First Component Run](first_component_run.md)
-* [Graph Plotter Component](graph_plotter.md)
-* [SSH Graph Plotter Component](ssh.md)
+* [0 - Installation](install_livestock3d.md)
+* [1a - My First Component](first_component.md)
+* [1b - My First Template](first_template.md)
+* [1c - My First Component Run](first_component_run.md)
+* [2a - Graph Plotter Component](graph_plotter.md)
+* [3 - SSH Graph Plotter Component](ssh.md)
+
+## Use Livestock
+
+* Comming soon!

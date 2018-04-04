@@ -1,5 +1,12 @@
 # How is it Working?
 
+Livestock3D is an opensource lightweight CPython package, linking IronPython in Rhino3d+Grasshopper3d and Revit+Dynamo to CPython.
+Originally created by Christian Kongsgaard and Kristoffer Negendahl. Livestock3D is allowing people *"to extend the
+scripting/coding capabilities beyond IronPython by tunneling into the CPython ecosystem with the ambition to make faster
+and more open building/site performance analysis tools for Civil and Environmental Engineering disciplines."*
+
+Livestock is a project in continuous development by Civil engineering researchers and students from the Section of
+Building Design at [DTU](http://www.bygningsdesign.byg.dtu.dk/english).
 
 ## Why Use CPython?
 
