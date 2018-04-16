@@ -173,4 +173,4 @@ if run:
 ```                          
 
 Now it is time to take a closer look at the template. We will do that in the next post.
-[My First Template](first_template.md)
+[My First Template](first_template.html)

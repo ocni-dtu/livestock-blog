@@ -102,7 +102,7 @@ On Ubuntu Conda environments are activeted with "source activate", so do:
 > source activate livestock_env
 
 ### Go Back
-- [Main Page](/index.md)
+- [Main Page](/index.html)
 
 
 Authors: Christian Kongsgaard
