@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title> - Christian Kongsgaard</title>
+<title>Install Livestock for Component Tutorials - Christian Kongsgaard</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
@@ -24,23 +24,23 @@
     <meta name="HandheldFriendly" content="True" />
 
     <meta name="author" content="Christian Kongsgaard" />
-    <meta name="description" content="" /> 
-    <meta name="keywords" content=""> 
+    <meta name="description" content="Guide to install the Livestock Package for the component tutorials." /> 
+    <meta name="keywords" content="python, livestock, install, grasshopper, first component, tutorial"> 
 
     <!-- Facebook OpenGraph -->
     <meta property="og:site_name" content="Christian Kongsgaard">
-    <meta property="og:title" content=" - Christian Kongsgaard" />
-    <meta property="og:description" content="" />
+    <meta property="og:title" content="Install Livestock for Component Tutorials - Christian Kongsgaard" />
+    <meta property="og:description" content="Guide to install the Livestock Package for the component tutorials." />
     <meta property="og:image" content=".">
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="./.html" />
+    <meta property="og:url" content="./install-livestock-for-component-tutorials.html" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:locale:alternate" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content=" - Christian Kongsgaard">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:title" content="Install Livestock for Component Tutorials - Christian Kongsgaard">
+    <meta name="twitter:description" content="Guide to install the Livestock Package for the component tutorials.">
     <meta name="twitter:image" content=".">
 </head>
 <body>
@@ -62,11 +62,37 @@
 <br>
 <article>
   <header class="w3-container col-main">
-    <h1></h1>
+    <h1>Install Livestock for Component Tutorials</h1>
     <div class="post-info">
       <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
         <span>  Posted on ma 30 april 2018 in <a href="./category/posts.html" style="font-style: italic">posts</a>
 
+        </span>
+      </div>
+      <div id="article-tags">
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/python.html" title="  All posts about Python
+">#python</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/livestock.html" title="  All posts about Livestock
+">#livestock</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/install.html" title="  All posts about Install
+">#install</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/grasshopper.html" title="  All posts about Grasshopper
+">#grasshopper</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/first-component.html" title="  All posts about First Component
+">#first component</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/tutorial.html" title="  All posts about Tutorial
+">#tutorial</a>
         </span>
       </div>
     </div>
@@ -74,7 +100,39 @@
   <br>
   <div class="col-main w3-container">
     <main id="article-content">
-      
+      <p>If you already followed the instructions on the <a href="./install-livestock.html">Install</a> page. You can skip the top part of this page and go
+directly to Download and Install Livestock3D in the bottom. Following these tutorials should not conflict with the
+original installation of Livestock.</p>
+<h2>Grasshopper Install</h2>
+<p>Livestock DOES NOT work without a valid installation of Grasshopper and Rhino.</p>
+<h2>Anaconda Install</h2>
+<p>We recommend to download and install Anaconda as your Python package manager
+<a href="https://www.anaconda.com/download/">get it here</a></p>
+<p>Follow the instructions on their <a href="https://docs.anaconda.com/anaconda/install/windows">page</a>.</p>
+<p>Remember to check the box with: "Add Anaconda to my PATH environment variable"</p>
+<h2>Conda Environment</h2>
+<p>When Anaconda is install you are ready to create a conda environment. 
+Open the command or Anaconda promt. Type in:</p>
+<blockquote>
+<p>conda create -n livestock_env python=3.6 numpy matplotlib</p>
+</blockquote>
+<p>Conda will then install the environment called “livestock_env”, with Python 3.6 and NumPy. 
+Afterwards the environment can be activated:</p>
+<blockquote>
+<p>activate livestock_env</p>
+</blockquote>
+<h2>Download and Install Livestock3D</h2>
+<ul>
+<li>Download the Livestock Grasshopper zip <a href="https://github.com/livestock3d/livestock_grasshopper/archive/master.zip">here</a></li>
+<li>Create a folder at %appdata%\McNeel\Rhinoceros\5.0\scripts called livestock3d</li>
+<li>Put the files from the folder "grasshopper" in there. </li>
+<li>Create a folder called C:\livestock3d</li>
+<li>Put the files from the folder livestock3d there.</li>
+<li>Move the folder "Grasshopper Script" to a location of your choosing. </li>
+<li>Put the files from "UserObjects" to the Grasshopper UserObjects folder.</li>
+</ul>
+<h2>Create your first component!</h2>
+<p><a href="./my-first-component.html">My First Component</a></p>
     </main>
     <br>
     <footer>

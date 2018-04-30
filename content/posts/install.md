@@ -1,4 +1,10 @@
-# Install Livestock
+Date: 30-04-2018
+Modified: 30-04-2018
+Status: published
+Authors: Christian Kongsgaard
+Tags: python, livestock, install, grasshopper
+Title: Install Livestock
+Summary: Guide to install the Livestock Package.
 
 Livestock is a plugin to [Grasshopper](http://www.grasshopper3d.com/) for [Rhino](https://www.rhino3d.com/). 
 It is therefore an requirement that those two programs are installed for it to work. If they are install it 
@@ -100,9 +106,3 @@ Open Bash or your Ubuntu terminal.
 Follow the steps above to install the conda environment. The only thing that needs to be changed is the second command.
 On Ubuntu Conda environments are activeted with "source activate", so do:
 > source activate livestock_env
-
-### Go Back
-- [Main Page](/index.html)
-
-
-Authors: Christian Kongsgaard

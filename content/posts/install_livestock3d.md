@@ -1,6 +1,12 @@
-# Install Livestock3D
+Date: 30-04-2018
+Modified: 30-04-2018
+Status: published
+Authors: Christian Kongsgaard
+Tags: python, livestock, install, grasshopper, first component, tutorial
+Title: Install Livestock for Component Tutorials
+Summary: Guide to install the Livestock Package for the component tutorials.
 
-If you already followed the instructions on the [Install](install.md) page. You can skip the top part of this page and go
+If you already followed the instructions on the [Install]({filename}/posts/install.md) page. You can skip the top part of this page and go
 directly to Download and Install Livestock3D in the bottom. Following these tutorials should not conflict with the
 original installation of Livestock.
 
@@ -38,4 +44,4 @@ Afterwards the environment can be activated:
 * Put the files from "UserObjects" to the Grasshopper UserObjects folder.
 
 ## Create your first component!
-[My First Component](first_component.md)
+[My First Component]({filename}/posts/first_component.md)
