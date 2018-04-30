@@ -1,3 +1,13 @@
+Title: First Post
+Date: 2017-10-13 12:40
+Modified: 2017-10-13 12:40
+Status: published
+Category: This site
+Tags: python, markdown, blog
+Slug: first-post
+Authors: Christian Kongsgaard
+Summary: This is the summary of the first post
+
 # LIVESTOCK
 
 Welcome to the Livestock package documentation!

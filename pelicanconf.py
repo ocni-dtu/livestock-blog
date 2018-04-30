@@ -1,10 +1,7 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*- #
-from __future__ import unicode_literals
 
 AUTHOR = 'Christian Kongsgaard'
 SITENAME = 'Christian Kongsgaard'
-SITEURL = 'https://ocni-dtu.github.io'
+SITEURL = 'http://localhost:8000'
 
 PATH = 'content'
 
@@ -19,6 +16,10 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# Paths
+STATIC_PATHS = ['/content/images', '/content/authors', '/content/posts', '/content/pages']
+THEME = "themes/minimalX"
+
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
@@ -30,6 +31,11 @@ SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
+SUMMARY_MAX_LENGTH = 70
+TAG_CLOUD = False
 
+# Plugins
+PLUGIN_PATHS = ["plugins"]
+PLUGINS = ["tag_cloud"]
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
