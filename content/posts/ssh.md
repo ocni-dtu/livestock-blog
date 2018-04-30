@@ -1,11 +1,18 @@
-# SSH Graph Plotter Component
+Date: 30-04-2018
+Modified: 30-04-2018
+Status: published
+Authors: Christian Kongsgaard
+Tags: livestock, tutorial, python, grasshopper, ssh
+Title: SSH Graph Plotter Component
+HeaderImage: /images/ssh_1.png
+Summary: A tutorial on how to use the Livestock Template Method to create a Grasshopper component that will execute remotely over a SSH connection.
 
 Welcome to the third tutorial! This tutorial will demonstrate how to create a SSH connection to a remote calculation machine.
 The reason behind this, is that if you have very heavy computations, then you should be able to send them to a remote machine,
 such as a high-end desktop, server or cloud service. Currently the Livestock SSH Method only support remote machines with 
 Linux/Ubuntu as OS. If you do not have remote machine, then do not worry, you can still follow, this tutorial will work with
 [Bash for Windows](https://docs.microsoft.com/en-us/windows/wsl/about). We will modify the second 
-[tutorial](/posts/graph_plotter.md) so it does it processing on the remote machine instead of the local one.
+[tutorial]({filename}/posts/graph_plotter.md) so it does it processing on the remote machine instead of the local one.
 
 ## Installation
 First you need to install Bash, follow this [guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
