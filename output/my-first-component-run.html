@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Background for Livestock - Christian Kongsgaard</title>
+<title>My First Component Run - Christian Kongsgaard</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
@@ -24,24 +24,24 @@
     <meta name="HandheldFriendly" content="True" />
 
     <meta name="author" content="Christian Kongsgaard" />
-    <meta name="description" content="Short introduction to the Livestock package and why it was created." /> 
-    <meta name="keywords" content="livestock python grasshopper"> 
+    <meta name="description" content="Third part of three tutorials on how to create a simple Grasshopper component using the Livestock Template Method. This final part will guide you through running the component in Grasshopper." /> 
+    <meta name="keywords" content="livestock, tutorial, python, grasshopper, first component"> 
 
     <!-- Facebook OpenGraph -->
     <meta property="og:site_name" content="Christian Kongsgaard">
-    <meta property="og:title" content="Background for Livestock - Christian Kongsgaard" />
-    <meta property="og:description" content="Short introduction to the Livestock package and why it was created." />
-    <meta property="og:image" content=".">
+    <meta property="og:title" content="My First Component Run - Christian Kongsgaard" />
+    <meta property="og:description" content="Third part of three tutorials on how to create a simple Grasshopper component using the Livestock Template Method. This final part will guide you through running the component in Grasshopper." />
+    <meta property="og:image" content="./images/first_component_6.png">
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="./background-for-livestock.html" />
+    <meta property="og:url" content="./my-first-component-run.html" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:locale:alternate" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Background for Livestock - Christian Kongsgaard">
-    <meta name="twitter:description" content="Short introduction to the Livestock package and why it was created.">
-    <meta name="twitter:image" content=".">
+    <meta name="twitter:title" content="My First Component Run - Christian Kongsgaard">
+    <meta name="twitter:description" content="Third part of three tutorials on how to create a simple Grasshopper component using the Livestock Template Method. This final part will guide you through running the component in Grasshopper.">
+    <meta name="twitter:image" content="./images/first_component_6.png">
 </head>
 <body>
   <div class="w3-row w3-card w3-white">
@@ -62,7 +62,7 @@
 <br>
 <article>
   <header class="w3-container col-main">
-    <h1>Background for Livestock</h1>
+    <h1>My First Component Run</h1>
     <div class="post-info">
       <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
         <span>  Posted on ma 30 april 2018 in <a href="./category/posts.html" style="font-style: italic">posts</a>
@@ -71,36 +71,81 @@
       </div>
       <div id="article-tags">
         <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="./tag/livestock-python-grasshopper.html" title="  All posts about Livestock Python Grasshopper
-">#livestock python grasshopper</a>
+          <a href="./tag/livestock.html" title="  All posts about Livestock
+">#livestock</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/tutorial.html" title="  All posts about Tutorial
+">#tutorial</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/python.html" title="  All posts about Python
+">#python</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/grasshopper.html" title="  All posts about Grasshopper
+">#grasshopper</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/first-component.html" title="  All posts about First Component
+">#first component</a>
         </span>
       </div>
     </div>
   </header>
   <br>
+  <div class="headerimage-article">
+    <img src="/images/first_component_6.png" style="width: 100%;">
+  </div>
   <div class="col-main w3-container">
     <main id="article-content">
-      <p>Each component is modelled as a placeholder with the Grasshopper Python Script for a Python class implementation of the component. 
-This makes it possible to create and edit the components without having Grasshopper open, 
-thus making it possible to use better Python editors than the build-in Grasshopper one – 
-in this case PyCharm was used. Besides easing the workflow of this author, 
-it also solves the problem of updating the components in the future. Some Grasshopper plug-ins such as 
-Ladybug Tools (Sadeghipour Roudsari and Pak 2013), have written most of the source code directly in the 
-Grasshopper Pythons Script components and every time an update is made or a bug is fixed the component 
-has to be replaced with a newer version, which is troublesome. By having the Grasshopper component as a 
-placeholder, this can be avoided. The only time a Livestock component should be replaced is when new 
-inputs or outputs are added to the component, which is far less often, than when bug fixes are made.</p>
-<p>As stated above Livestock also have a PyPI package – called livestock. At first this might sound a bit 
-strange or as a duplicate of the Python scripts imported into Grasshopper – but it is not. 
-The Grasshopper Python Script component runs IronPython, 
-which is an implementation of Python for the .NET framework. IronPython comes as Python 2 and has long 
-been undermaintained and developed. Standard Python or CPython is well maintained currently on version 
-3.6. It goes without saying that CPython has undergone a lot development that IronPython has not 
-and includes a whole bunch of new features. Furthermore, are the packages on PyPI mainly targeting 
-CPython and many cannot be used in IronPython. This drastically decreases the usability the usability 
-of the IronPython in the opinion of this author and very specific CMF cannot be ran from IronPython, 
-therefore a CPython package and scripts are made. The CPython Livestock package – 
-from now on mentioned as the Livestock package – is used when ever larger computations or CMF are needed.</p>
+      <p>You have to save and restart Grasshopper before we start testing the our component. We do that to make sure that Rhino has
+loaded the newest versions of the scripts from</p>
+<blockquote>
+<p>%appdata%\McNeel\Rhinoceros\5.0\scripts\livestock3d</p>
+</blockquote>
+<p>When you open "1 - My First Component.gh" it should look something like this:
+<img alt="alt text" src="./images/first_component_5.png"></p>
+<p>You should be missing the panel with "Hallo World!", the slider and the boolean toggle. Add those three things as in the image.
+You can see that our component is red and has an error message. Connect a panel to "out" to see the message.
+The component complains that it can not find PythonExe. PythonExe is the path to python.exe. We specify that path in the 
+component Python Executor. Let us do that now. python.exe should be located in the Anaconda folder. You can usually find it
+in C:\Users\your_username\Anaconda3. Navigate to the "envs" folder and then the livestock_env folder. Here you will find python.exe.
+Copy the path to python.exe into the panel left of the Python Executor component hand connect the panel.
+The panel should contain something like this:</p>
+<blockquote>
+<p>C:\Users\Christian\Anaconda3\envs\livestock_env\python.exe</p>
+</blockquote>
+<p>If Python Executor is yellow, it means that you have put in a non-valid path.
+Our component is still red, though. Disable it and enable it again to make that go away.
+Everything should be fine now, and it is time to set the boolean toggle to True.
+A window should open and close real fast. That means that the CPython function has been ran. In the panel connected to "out"
+you should be able to see the results.
+<img alt="alt text" src="./images/first_component_6.png"></p>
+<p>Congratulations! You have now created your very first Grasshopper component, that uses the Livestock Template Method!
+Being able to run native CPython code is a great advantage and increases the possibilities of what you can do. Just head over 
+to <a href="https://pypi.org/">PyPI</a> or <a href="https://github.com/">Github</a> to find a cool library you would like to use! </p>
+<p>Before we completely wrap up. Let us take a look on what happened, when the component ran:</p>
+<ol>
+<li>The Grasshopper component writes the data_file.txt</li>
+<li>Then the template file: my_first_template.py</li>
+<li>It then spawns a subprocess, calling python.exe to execute my_first_template.py</li>
+<li>When executed my_first_template.py calls my_function() from the livestock3d.py file</li>
+<li>my_function() reads the data_file.txt and creates the result.txt</li>
+<li>The Grasshopper component reads result.txt and prints out the lines</li>
+</ol>
+<p>We can go to:</p>
+<blockquote>
+<p>C:\livestock3d\data</p>
+</blockquote>
+<p>and see that all the files are still there:</p>
+<ul>
+<li>data_file.txt</li>
+<li>my_first_template.py</li>
+<li>results.txt</li>
+</ul>
+<p>If you want to know more take a look at the post <a href="{filename}how_is_it_working.md">How is it working?</a>, continue with
+ a our second <a href="{filename}graph_plotter.md">tutorial</a> or even better: Make your own component.</p>
     </main>
     <br>
     <footer>
