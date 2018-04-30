@@ -1,7 +1,0 @@
-theme: jekyll-theme-minimal
-title: Christian Kongsgaard
-description: Welcome to my website!
-google_analytics: UA-116950340-1
-
-gems:
-  - jekyll-last-modified-at
