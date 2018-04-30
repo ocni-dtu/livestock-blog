@@ -1,6 +1,12 @@
-# My First Template
+Date: 30-04-2018
+Modified: 30-04-2018
+Status: published
+Authors: Christian Kongsgaard
+Tags: livestock, tutorial, python, grasshopper, first component
+Title: My First Template
+HeaderImage: /images/first_component_7.png
+Summary: Second part of three tutorials on how to create a simple Grasshopper component using the Livestock Template Method. This part will guide you to set up the template. 
 
-## Template
 Now when the Grasshopper component is written, it is time to write the template and the CPython script.
 Navigate to where you put the templates.py and open it.
 It can easily be found by in explorer typing:
@@ -112,4 +118,4 @@ After opening data_file.txt, the code turns the file into a list called my_lines
 we write "line_to_write" "repeat" number of times. Thereafter, the file is closed and we are done.
 
 Now we should test our Grasshopper component! We will do that in the next post.
-[First Component Run](first_component_run.md)
+[First Component Run]({filename}/first_component_run.md)

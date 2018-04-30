@@ -2,7 +2,7 @@ Date: 30-04-2018
 Modified: 30-04-2018
 Status: published
 Authors: Christian Kongsgaard
-Tags: livestock, tutorial, python, grasshopper
+Tags: livestock, tutorial, python, grasshopper, first component
 Title: My First Component
 HeaderImage: /images/first_component_3.png
 Summary: First part of three tutorials on how to create a simple Grasshopper component using the Livestock Template Method. This part will guide you to set up the component in Grasshopper. 
