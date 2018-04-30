@@ -1,3 +1,12 @@
+Date: 30-04-2018
+Modified: 30-04-2018
+Status: draft
+Authors: Christian Kongsgaard
+Tags: livestock, python, grasshopper, 
+Title: UTCI Speed Test
+HeaderImage: /images/GH+Py.png
+Summary: .
+
 In this post I will compare the time it takes to compute the Universal Thermal Climate Index (UTCI).
 First I will look at different ways of computing the UTCI in CPython. This post are written as a Jupyter Notebook, meaning
 that you can try out the code yourself and check how long it takes to make the computations on your own machine.

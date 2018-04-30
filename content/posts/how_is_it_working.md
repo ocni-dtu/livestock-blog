@@ -7,7 +7,7 @@ Title: How is it Working
 HeaderImage: /images/GH+Py.png
 Summary: A short post on how the Livestock Template Method is working.
 
-Livestock is an opensource lightweight CPython package, linking IronPython in Rhino3d+Grasshopper3d and Revit+Dynamo to CPython.
+Livestock is an Open Source lightweight CPython package, linking IronPython in Rhino3d+Grasshopper3d and Revit+Dynamo to CPython.
 Originally created by Christian Kongsgaard and Kristoffer Negendahl. Livestock3D is allowing people *"to extend the
 scripting/coding capabilities beyond IronPython by tunneling into the CPython ecosystem with the ambition to make faster
 and more open building/site performance analysis tools for Civil and Environmental Engineering disciplines."*
