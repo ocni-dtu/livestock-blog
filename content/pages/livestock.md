@@ -1,14 +1,10 @@
-Title: First Post
-Date: 2017-10-13 12:40
-Modified: 2017-10-13 12:40
+Title: LIVESTOCK
+Date: 2018-04-30
+Modified: 2018-04-30
 Status: published
-Category: This site
-Tags: python, markdown, blog
-Slug: first-post
+Slug: LIVESTOCK
 Authors: Christian Kongsgaard
-Summary: This is the summary of the first post
 
-# LIVESTOCK
 
 Welcome to the Livestock package documentation!
 
@@ -25,9 +21,9 @@ Livestock consists of a series of Grasshopper Python Script components and a und
  and a PyPI package.
 
 ### Getting Started with Livestock:
-* [Background](posts/background.md)
-* [Install Livestock](posts/install.md)
-* [Tutorials](posts/tutorials.md)
+* [Background](/content/posts/background.md)
+* [Install Livestock](/content/posts/install.md)
+* [Tutorials](/content/posts/tutorials.md)
 
 ### Documentation for the PyPI Package:
 

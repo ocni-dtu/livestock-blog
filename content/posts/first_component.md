@@ -1,16 +1,24 @@
-# My First Component
+Date: 30-04-2018
+Modified: 30-04-2018
+Status: published
+Authors: Christian Kongsgaard
+Tags: livestock, tutorial, python, grasshopper
+Title: My First Component
+HeaderImage: /images/first_component_3.png
+Summary: First part of three tutorials on how to create a simple Grasshopper component using the Livestock Template Method. This part will guide you to set up the component in Grasshopper. 
+ 
 
 When you successfully installed the requirements for Livestock, then it is time to create your first component.
 Firstly you should open the Grasshopper script called "1 - My First Component.gh"
 
-![alt text](/images/first_component_1.png)
+![alt text]({filename}/images/first_component_1.png)
 
 The script should contain two panels and a component called "Python Executor".
 We start by double clicking on the Grasshopper Canvas and type in "python" until the Python Script Component appears. 
 Place it on the canvas.
 
 Double click the component. A new window will appear.
-![alt text](/images/first_component_3.png)
+![alt text]({filename}/images/first_component_3.png)
 This component should be able to take in a text string and a number, send that to CPython using the Livestock Template Method,
 and return a text file, where the original text string is repeated the number of time we specified.
 We start by typing in some imports:
@@ -50,7 +58,7 @@ def write_template(template, path):
 The function calls a function in the livestock3d library, which you placed in:
 > %appdata%\McNeel\Rhinoceros\5.0\scripts\livestock3d
 
-We will take a look on that file in the next [post](first_template.md), but let us finish with the component first.
+We will take a look on that file in the next [post]({filename}/posts/first_template.md), but let us finish with the component first.
 
 The next function we need is a function that can run our template.
 ```python
@@ -105,7 +113,7 @@ The functions are put within a if statement, so they are only called if run is T
 an input for run. We have to close the Python editor and and a new input to our component.
 You do that by zooming close to the component and you will see a small + signs at the bottom to the left.
 Just click that and change the name to "run".
-![alt text](/images/first_component_4.png)
+![alt text]({filename}/images/first_component_4.png)
 
 The complete component should look like this:
 
@@ -173,4 +181,4 @@ if run:
 ```                          
 
 Now it is time to take a closer look at the template. We will do that in the next post.
-[My First Template](first_template.html)
+[My First Template]({filename}/posts/first_template.md)

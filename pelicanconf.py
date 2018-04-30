@@ -17,7 +17,10 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Paths
-STATIC_PATHS = ['/content/images', '/content/authors', '/content/posts', '/content/pages']
+STATIC_PATHS = ['images', 'authors']
+PLUGIN_PATHS = ["plugins"]
+PAGE_PATHS = ['pages']
+ARTICLE_PATHS = ['posts']
 THEME = "themes/minimalX"
 
 # Blogroll
@@ -35,7 +38,7 @@ SUMMARY_MAX_LENGTH = 70
 TAG_CLOUD = False
 
 # Plugins
-PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["tag_cloud"]
+
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True

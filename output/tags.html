@@ -6,16 +6,16 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/css/w3.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/css/style.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/css/jqcloud.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/css/shariff.min.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost:8000/theme/css/pygments-highlight-github.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/w3.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/jqcloud.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/shariff.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/pygments-highlight-github.css">
 
     <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="http://localhost:8000/theme/js/jqcloud.min.js"></script>
+    <script src="./theme/js/jqcloud.min.js"></script>
 
      <!-- Meta -->
     <meta charset="utf-8" />
@@ -27,10 +27,13 @@
   <div class="w3-row w3-card w3-white">
     <header id=banner>
        <!-- AUTHOR INITIALS-->
-      <a href="http://localhost:8000" id=logo title="Home">CK</a>
+      <a href="." id=logo title="Home">CK</a>
       <nav id="menu">
         <ul>
-          <li ><a href="http://localhost:8000/category/this-site.html">This site</a></li>
+          <li><a href="./pages/about.html">ABOUT</a></li>
+          <li><a href="./pages/LIVESTOCK.html">LIVESTOCK</a></li>
+          <li><a href="./pages/portfolio.html">PORTFOLIO</a></li>
+          <li ><a href="./category/posts.html">posts</a></li>
         </ul>
       </nav>
     </header>
@@ -42,7 +45,7 @@
                 <h6>  Categories
 </h6>
                 <ul>
-                    <li class=""><a href="http://localhost:8000/category/this-site.html">This site<a></li>
+                    <li class=""><a href="./category/posts.html">posts<a></li>
                     <li class="empty"></li>
                     <li class="empty"></li>
                     <li class="empty"></li>
@@ -54,21 +57,21 @@
         <h6>Top Tags</h6>
         <ul>
           <!-- Print the four most popular tags, sorted automatically with the setting TAG_CLOUD_SORTING = 'size' in pelicanconf.py -->
-          <li class=""><a href="http://localhost:8000/tag/markdown.html"> #markdown ()</a></li>
-          <li class=""><a href="http://localhost:8000/tag/python.html"> #python ()</a></li>
-          <li class=""><a href="http://localhost:8000/tag/blog.html"> #blog ()</a></li>
-          <li class="empty"></li>
+          <li class=""><a href="./tag/tutorial.html"> #tutorial ()</a></li>
+          <li class=""><a href="./tag/livestock-python-grasshopper.html"> #livestock python grasshopper ()</a></li>
+          <li class=""><a href="./tag/livestock.html"> #livestock ()</a></li>
+          <li class=""><a href="./tag/python.html"> #python ()</a></li>
         </ul>
       </div>
     </div>
     <div class="blogroll-block w3-col l3 m3 s6">
       <div>
-          <h6><a href="http://localhost:8000/authors.html">  Authors
+          <h6><a href="./authors.html">  Authors
 </a></h6>
           <ul>
               <!--  -->
-              <li class=""><a href="http://localhost:8000/authors.html">Christian Kongsgaard</a></li>
-              <!-- <li class=""><a href="http://localhost:8000/authors.html#christian-kongsgaard">Christian Kongsgaard</a></li> -->
+              <li class=""><a href="./authors.html">Christian Kongsgaard</a></li>
+              <!-- <li class=""><a href="./authors.html#christian-kongsgaard">Christian Kongsgaard</a></li> -->
                <li class="empty"></li>
               <li class="empty"></li>
               <li class="empty"></li>
@@ -89,7 +92,7 @@
     </div>
     <div id="contact">
         <ul>
-            <li><a href="http://localhost:8000/legal.html">  About | Privacy
+            <li><a href="./legal.html">  About | Privacy
 </a></li>
         </ul>
     </div>
@@ -97,6 +100,6 @@
         <span>Made with ❤️ by FK | Powered by <a href="http://getpelican.com" target="_blank"><u>Pelican</u></a> and <a href="https://github.com/art1fa/minimalX" target="_blank"><u>minimalX</u></a>        </span>
     </div>
   </footer>
-<script src="http://localhost:8000/theme/js/shariff.min.js"></script>
+<script src="./theme/js/shariff.min.js"></script>
 </body>
 </html>

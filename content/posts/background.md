@@ -1,4 +1,10 @@
-# Background for Livestock
+Date: 30-04-2018
+Modified: 30-04-2018
+Status: published
+Authors: Christian Kongsgaard
+Tags: livestock python grasshopper
+Title: Background for Livestock
+Summary: Short introduction to the Livestock package and why it was created.
 
 Each component is modelled as a placeholder with the Grasshopper Python Script for a Python class implementation of the component. 
 This makes it possible to create and edit the components without having Grasshopper open, 
@@ -22,7 +28,3 @@ CPython and many cannot be used in IronPython. This drastically decreases the us
 of the IronPython in the opinion of this author and very specific CMF cannot be ran from IronPython, 
 therefore a CPython package and scripts are made. The CPython Livestock package – 
 from now on mentioned as the Livestock package – is used when ever larger computations or CMF are needed.
-
-
-### Go Back
-- [Main Page](/index.html)
