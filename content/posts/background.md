@@ -2,7 +2,7 @@ Date: 30-04-2018
 Modified: 30-04-2018
 Status: published
 Authors: Christian Kongsgaard
-Tags: livestock python grasshopper
+Tags: livestock, python, grasshopper
 Title: Background for Livestock
 Summary: Short introduction to the Livestock package and why it was created.
 

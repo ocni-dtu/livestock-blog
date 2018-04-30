@@ -2,6 +2,7 @@
 AUTHOR = 'Christian Kongsgaard'
 SITENAME = 'Christian Kongsgaard'
 SITEURL = 'http://localhost:8000'
+SITEDESCRIPTION = "Hi, I'm Christian and welcome to my website!"
 
 PATH = 'content'
 
@@ -23,15 +24,11 @@ PAGE_PATHS = ['pages']
 ARTICLE_PATHS = ['posts']
 THEME = "themes/minimalX"
 
-# Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
-
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('linkedin', 'https://www.linkedin.com/in/christian-kongsgaard-33825b78/'),
+          ('github', 'https://github.com/ocni-dtu'),)
+
+SHARE_BUTTONS = ('facebook', 'linkedin', 'mail')
 
 DEFAULT_PAGINATION = 10
 SUMMARY_MAX_LENGTH = 70
@@ -42,3 +39,13 @@ PLUGINS = ["tag_cloud"]
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
+
+# Author Information
+AUTHOR_INFO_SHORT_FABIAN_KEITEL = "I'm an architectural engineer focused on sustainable parametric design and building performance simulations. I use Python and Grasshopper to simulate outdoor thermal comfort, building energy, and daylight."
+AUTHOR_INFO_FABIAN_KEITEL = "I'm am an architectural engineer focused on sustainable parametric design and " \
+                                   "building performance simulations. I have an Master in Architectural Engineering " \
+                                   "from the Technical University of Denmark, where I graduted in 2018.\nI am interested" \
+                                   "in how to use Python and Grasshopper in combination to create work flows for " \
+                                   "sustainable parametric designs.\n All my projects are open source and are available " \
+                                   "on Github (Follow the icon below). For a full resumé go to my LinkedIn profile (Also " \
+                                   "through the icon below)"
