@@ -1,6 +1,13 @@
-# How is it Working?
+Date: 30-04-2018
+Modified: 30-04-2018
+Status: published
+Authors: Christian Kongsgaard
+Tags: livestock, python, grasshopper
+Title: How is it Working
+HeaderImage: /images/GH+Py.png
+Summary: A short post on how the Livestock Template Method is working.
 
-Livestock3D is an opensource lightweight CPython package, linking IronPython in Rhino3d+Grasshopper3d and Revit+Dynamo to CPython.
+Livestock is an opensource lightweight CPython package, linking IronPython in Rhino3d+Grasshopper3d and Revit+Dynamo to CPython.
 Originally created by Christian Kongsgaard and Kristoffer Negendahl. Livestock3D is allowing people *"to extend the
 scripting/coding capabilities beyond IronPython by tunneling into the CPython ecosystem with the ambition to make faster
 and more open building/site performance analysis tools for Civil and Environmental Engineering disciplines."*
@@ -33,7 +40,7 @@ process the data. Two things will happen:
 thereafter Grasshopper will read them.
 2)	The instructions in the Python file is to send the files to another computer for processing. 
 
-![alt text](/images/GH+Py+SSH.png)
+![alt text]({filename}/images/GH+Py+SSH.png)
 
 In that case two Python files are send from Grasshopper: one that tells Python to send on the files and one with 
 instructions on how to process the files as in case 1. Python will establish a SSH connection (Secure Shell) to the 
@@ -51,7 +58,7 @@ Grasshopper spawns a subprocess, which makes CPython execute the template. The t
 imports the CPython library of Livestock and calls a function from it. The function call is then executed in pure CPython,
 enabling the user to take full advantage of it.
 
-![alt text](/images/Livestock-Template-Method.png)
+![alt text]({filename}/images/Livestock-Template-Method.png)
 
 ## SSH Tunnel
 The SSH functionality works like the template method. Livestock CMF Solver is the only component that is currently 
