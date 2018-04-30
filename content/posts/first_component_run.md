@@ -1,12 +1,19 @@
-# My First Component Run
+Date: 30-04-2018
+Modified: 30-04-2018
+Status: published
+Authors: Christian Kongsgaard
+Tags: livestock, tutorial, python, grasshopper, first component
+Title: My First Component Run
+HeaderImage: /images/first_component_6.png
+Summary: Third part of three tutorials on how to create a simple Grasshopper component using the Livestock Template Method. This final part will guide you through running the component in Grasshopper.
 
-## Run Component
+
 You have to save and restart Grasshopper before we start testing the our component. We do that to make sure that Rhino has
 loaded the newest versions of the scripts from
 > %appdata%\McNeel\Rhinoceros\5.0\scripts\livestock3d
 
 When you open "1 - My First Component.gh" it should look something like this:
-![alt text](/images/first_component_5.png)
+![alt text]({filename}/images/first_component_5.png)
 
 You should be missing the panel with "Hallo World!", the slider and the boolean toggle. Add those three things as in the image.
 You can see that our component is red and has an error message. Connect a panel to "out" to see the message.
@@ -22,7 +29,7 @@ Our component is still red, though. Disable it and enable it again to make that 
 Everything should be fine now, and it is time to set the boolean toggle to True.
 A window should open and close real fast. That means that the CPython function has been ran. In the panel connected to "out"
 you should be able to see the results.
-![alt text](/images/first_component_6.png)
+![alt text]({filename}/images/first_component_6.png)
 
 Congratulations! You have now created your very first Grasshopper component, that uses the Livestock Template Method!
 Being able to run native CPython code is a great advantage and increases the possibilities of what you can do. Just head over 
@@ -46,5 +53,5 @@ and see that all the files are still there:
 - my_first_template.py
 - results.txt
 
- If you want to know more take a look at the post [How is it working?](how_is_it_working.md), continue with
- a our second [tutorial](graph_plotter.md) or even better: Make your own component.
+ If you want to know more take a look at the post [How is it working?]({filename}how_is_it_working.md), continue with
+ a our second [tutorial]({filename}graph_plotter.md) or even better: Make your own component.

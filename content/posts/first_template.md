@@ -118,4 +118,4 @@ After opening data_file.txt, the code turns the file into a list called my_lines
 we write "line_to_write" "repeat" number of times. Thereafter, the file is closed and we are done.
 
 Now we should test our Grasshopper component! We will do that in the next post.
-[First Component Run]({filename}/first_component_run.md)
+[First Component Run]({filename}first_component_run.md)
