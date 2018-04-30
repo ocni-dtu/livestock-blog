@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>My First Component - Christian Kongsgaard</title>
+<title>Graph Plotter Component - Christian Kongsgaard</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
@@ -24,24 +24,24 @@
     <meta name="HandheldFriendly" content="True" />
 
     <meta name="author" content="Christian Kongsgaard" />
-    <meta name="description" content="First part of three tutorials on how to create a simple Grasshopper component using the Livestock Template Method. This part will guide you to set up the component in Grasshopper." /> 
-    <meta name="keywords" content="livestock, tutorial, python, grasshopper, first component"> 
+    <meta name="description" content="A tutorial on how to use the Livestock Template Method to create a Grasshopper component that can plot graphs using Matplotlib." /> 
+    <meta name="keywords" content="livestock, tutorial, python, grasshopper"> 
 
     <!-- Facebook OpenGraph -->
     <meta property="og:site_name" content="Christian Kongsgaard">
-    <meta property="og:title" content="My First Component - Christian Kongsgaard" />
-    <meta property="og:description" content="First part of three tutorials on how to create a simple Grasshopper component using the Livestock Template Method. This part will guide you to set up the component in Grasshopper." />
-    <meta property="og:image" content="./images/first_component_3.png">
+    <meta property="og:title" content="Graph Plotter Component - Christian Kongsgaard" />
+    <meta property="og:description" content="A tutorial on how to use the Livestock Template Method to create a Grasshopper component that can plot graphs using Matplotlib." />
+    <meta property="og:image" content="./images/graph_plotter_2.png">
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="./my-first-component.html" />
+    <meta property="og:url" content="./graph-plotter-component.html" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:locale:alternate" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="My First Component - Christian Kongsgaard">
-    <meta name="twitter:description" content="First part of three tutorials on how to create a simple Grasshopper component using the Livestock Template Method. This part will guide you to set up the component in Grasshopper.">
-    <meta name="twitter:image" content="./images/first_component_3.png">
+    <meta name="twitter:title" content="Graph Plotter Component - Christian Kongsgaard">
+    <meta name="twitter:description" content="A tutorial on how to use the Livestock Template Method to create a Grasshopper component that can plot graphs using Matplotlib.">
+    <meta name="twitter:image" content="./images/graph_plotter_2.png">
 </head>
 <body>
   <div class="w3-row w3-card w3-white">
@@ -62,7 +62,7 @@
 <br>
 <article>
   <header class="w3-container col-main">
-    <h1>My First Component</h1>
+    <h1>Graph Plotter Component</h1>
     <div class="post-info">
       <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
         <span>  Posted on ma 30 april 2018 in <a href="./category/posts.html" style="font-style: italic">posts</a>
@@ -86,119 +86,61 @@
           <a href="./tag/grasshopper.html" title="  All posts about Grasshopper
 ">#grasshopper</a>
         </span>
-        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="./tag/first-component.html" title="  All posts about First Component
-">#first component</a>
-        </span>
       </div>
     </div>
   </header>
   <br>
   <div class="headerimage-article">
-    <img src="/images/first_component_3.png" style="width: 100%;">
+    <img src="/images/graph_plotter_2.png" style="width: 100%;">
   </div>
   <div class="col-main w3-container">
     <main id="article-content">
-      <p>When you successfully installed the requirements for Livestock, then it is time to create your first component.
-Firstly you should open the Grasshopper script called "1 - My First Component.gh"</p>
-<p><img alt="alt text" src="./images/first_component_1.png"></p>
-<p>The script should contain two panels and a component called "Python Executor".
-We start by double clicking on the Grasshopper Canvas and type in "python" until the Python Script Component appears. 
-Place it on the canvas.</p>
-<p>Double click the component. A new window will appear.
-<img alt="alt text" src="./images/first_component_3.png">
-This component should be able to take in a text string and a number, send that to CPython using the Livestock Template Method,
-and return a text file, where the original text string is repeated the number of time we specified.
-We start by typing in some imports:</p>
-<div class="highlight"><pre><span></span><span class="c1"># Imports</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">scriptcontext</span> <span class="kn">as</span> <span class="nn">sc</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">livestock3d</span>
-</pre></div>
-
-
-<p>Now we will write the functions we will use. For this component we will need five.
-The first function will write a data file. It looks like this:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">write_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">number_of_repeats</span><span class="p">):</span>
+      <p>Welcome to the second tutorial! In this tutorial we will create a component that can plot a graph with 
+<a href="https://matplotlib.org/">Matplotlib</a> and <a href="http://www.numpy.org/">NumPy</a>.
+If you heard of Python, you have probably heard of NumPy as well. NumPy is a library that can handle numerical operations in Python.
+NumPy is super fast and is relying heavily on C code, which makes it very hard (if not impossible) to use in IronPython.
+Matplotlib is a plotting library, which works very well together with NumPy. The syntax of Matplotlib resemble Matlab's, 
+which makes it easy to use. </p>
+<p>We will use the image viewer from Ladybug Tools to view the plot when finished, so make sure to download it first. 
+Ladybug Tools can be found <a href="http://www.food4rhino.com/app/ladybug-tools">here</a>. Important is to not download the [+] version, be get the legacy plugins.
+If you are not going to use Ladybug Tools again, you can also just download the viewer <a href="https://github.com/mostaphaRoudsari/ladybug/raw/master/userObjects/Ladybug_ImageViewer.gha">here</a></p>
+<h2>Grasshopper Component</h2>
+<p>We will make the Graph Plotter component, by modifying the component from the first tutorial.
+We just need to modify the component a little bit. You can start by opening the "1 - My First Component.gh" and save it as:
+"Graph Plotter.gh". There we can start changing the component. We do not need the y input on the component, so you can start removing that.
+Thereafter, double click the component and change the write_file function to:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">write_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
     <span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
-    <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">number_of_repeats</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+        <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
     <span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 
 
-<p>The function is simple:</p>
-<ul>
-<li>A file is created</li>
-<li>The text string is written to the first line of the file</li>
-<li>The number of copies are written to the second line of the file</li>
-</ul>
-<p>The second function will write the template:</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">write_template</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-    <span class="n">livestock3d</span><span class="o">.</span><span class="n">pick_template</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
-</pre></div>
-
-
-<p>The function calls a function in the livestock3d library, which you placed in:</p>
-<blockquote>
-<p>%appdata%\McNeel\Rhinoceros\5.0\scripts\livestock3d</p>
-</blockquote>
-<p>We will take a look on that file in the next <a href="./my-first-template.html">post</a>, but let us finish with the component first.</p>
-<p>The next function we need is a function that can run our template.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_template</span><span class="p">(</span><span class="n">py_exe</span><span class="p">,</span> <span class="n">template_to_run</span><span class="p">):</span>
-    <span class="n">thread</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="n">py_exe</span><span class="p">,</span> <span class="n">template_to_run</span><span class="p">])</span>
-    <span class="n">thread</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
-    <span class="n">thread</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
-</pre></div>
-
-
-<p>This function will call python.exe (which we specified in the Python Executor component) on the template file.</p>
-<p>The last two functions is to load the result file and print them out.</p>
-<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_file</span><span class="p">(</span><span class="nb">file</span><span class="p">):</span>
-    <span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="nb">file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="nb">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-    <span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-    <span class="k">return</span> <span class="n">lines</span>
-
-<span class="k">def</span> <span class="nf">print_lines</span><span class="p">(</span><span class="n">lines</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-</pre></div>
-
-
-<p>When we have created all the functions it is time to use them. However it requires that we specify a couple of paths first
-and we need to "catch" the python.exe path from the other component.        </p>
-<div class="highlight"><pre><span></span><span class="c1"># Get CPython path from the other component</span>
-<span class="n">py</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">sticky</span><span class="p">[</span><span class="s2">&quot;PythonExe&quot;</span><span class="p">])</span>
-
-<span class="c1"># Make folder</span>
-<span class="n">folder</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;C:/livestock3d/data&#39;</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">folder</span><span class="p">):</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span>
-
-<span class="c1"># Specify paths </span>
+<p>Here we loop over the input and saves each value on a new line in the data file.
+We should change the file locations and the stuff inside the if statement:</p>
+<div class="highlight"><pre><span></span><span class="c1"># Specify paths </span>
 <span class="n">txt_file</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;/data_file.txt&#39;</span>
-<span class="n">template_file</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;/my_first_template.py&#39;</span>
-<span class="n">result_file</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;/result.txt&#39;</span>
+<span class="n">template_file</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;/plot_graph_template.py&#39;</span>
+<span class="n">result_file</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;/plot.png&#39;</span>
 
 <span class="c1"># Run functions</span>
 <span class="k">if</span> <span class="n">run</span><span class="p">:</span>
-    <span class="n">write_file</span><span class="p">(</span><span class="n">txt_file</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="n">write_template</span><span class="p">(</span><span class="s1">&#39;my_first_template&#39;</span><span class="p">,</span> <span class="n">folder</span><span class="p">)</span>
+    <span class="n">write_file</span><span class="p">(</span><span class="n">txt_file</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">write_template</span><span class="p">(</span><span class="s1">&#39;plot_graph&#39;</span><span class="p">,</span> <span class="n">folder</span><span class="p">)</span>
     <span class="n">run_template</span><span class="p">(</span><span class="n">py</span><span class="p">,</span> <span class="n">template_file</span><span class="p">)</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">load_file</span><span class="p">(</span><span class="n">result_file</span><span class="p">)</span>
-    <span class="n">print_lines</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  
 </pre></div>
 
 
-<p>The functions are put within a if statement, so they are only called if run is True. That means we have to create
-an input for run. We have to close the Python editor and and a new input to our component.
-You do that by zooming close to the component and you will see a small + signs at the bottom to the left.
-Just click that and change the name to "run".
-<img alt="alt text" src="./images/first_component_4.png"></p>
-<p>The complete component should look like this:</p>
+<p>We are done coding the component now. The only thing missing is to change the x input to a list and add an output. 
+By default all inputs to the Grasshopper Python Scripts Component is set to "item". We do not want that, in this case. 
+You change it by right-clicking the x and a menu will appear. In the bottom you can see "List Access". Click on that.
+<img alt="alt text" src="./images/graph_plotter_1.png"></p>
+<p>We also need the location of the plot, so create and extra output and call it: "results_file". Then the variable with the same 
+name will be outputted there.</p>
+<p>The full script in the component, looks like this:</p>
 <div class="highlight"><pre><span></span><span class="c1">#------------------------------------------------------------------------------#</span>
 <span class="c1"># Imports</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -209,10 +151,12 @@ Just click that and change the name to "run".
 <span class="c1">#------------------------------------------------------------------------------#</span>
 <span class="c1"># Functions</span>
 
-<span class="k">def</span> <span class="nf">write_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="n">number_of_repeats</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">write_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
     <span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
-    <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-    <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">number_of_repeats</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+        <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
     <span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">write_template</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
@@ -248,21 +192,84 @@ Just click that and change the name to "run".
 
 <span class="c1"># Specify paths </span>
 <span class="n">txt_file</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;/data_file.txt&#39;</span>
-<span class="n">template_file</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;/my_first_template.py&#39;</span>
-<span class="n">result_file</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;/result.txt&#39;</span>
+<span class="n">template_file</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;/plot_graph_template.py&#39;</span>
+<span class="n">result_file</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;/plot.png&#39;</span>
 
 <span class="c1"># Run functions</span>
 <span class="k">if</span> <span class="n">run</span><span class="p">:</span>
-    <span class="n">write_file</span><span class="p">(</span><span class="n">txt_file</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="n">write_template</span><span class="p">(</span><span class="s1">&#39;my_first_template&#39;</span><span class="p">,</span> <span class="n">folder</span><span class="p">)</span>
+    <span class="n">write_file</span><span class="p">(</span><span class="n">txt_file</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">write_template</span><span class="p">(</span><span class="s1">&#39;plot_graph&#39;</span><span class="p">,</span> <span class="n">folder</span><span class="p">)</span>
     <span class="n">run_template</span><span class="p">(</span><span class="n">py</span><span class="p">,</span> <span class="n">template_file</span><span class="p">)</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">load_file</span><span class="p">(</span><span class="n">result_file</span><span class="p">)</span>
-    <span class="n">print_lines</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 
 
-<p>Now it is time to take a closer look at the template. We will do that in the next post.
-<a href="./my-first-template.html">My First Template</a></p>
+<h2>Template</h2>
+<p>The template can also be easily copied from my_first_template()
+We just need to change the function we call from: "my_function()" to "plot_graph()"</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_graph</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Writes a template.</span>
+
+<span class="sd">    :param path: Path to write it to.</span>
+<span class="sd">    :type path: str</span>
+<span class="sd">    :return: The file name</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">file_name</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;/plot_graph_template.py&#39;</span>
+    <span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="n">file_name</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+    <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;# Imports</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;import sys</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;sys.path.insert(0, r&#39;C:\livestock3d&#39;)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;import livestock3d as ls</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;# Run function</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;ls.plot_graph()</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;# Announce that template finished and create out file</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;print(&#39;Finished with template&#39;)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">file_name</span>
+</pre></div>
+
+
+<h2>CPython</h2>
+<p>Let us open livestock3d.py at</p>
+<blockquote>
+<p>C:\livestock3d</p>
+</blockquote>
+<p>First we need to import Numpy and Matplotlib. We do that with:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+</pre></div>
+
+
+<p>We create a new function at the bottom of the file called: "plot_graph()"
+It takes a folder path as input. We can uses NumPy's loadtxt() to load our data. loadtxt() is a easy way to read a file, 
+containing data, even larger amounts. We store the data from the file in the variable called "y_values".
+Besides y_values, we also need a series of x_values. We create a series from 0 to the length of y_values with NumPy's linspace.</p>
+<p>In the end we use Matplotlib to plot out a graph and save it with the name "plot.png"</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_graph</span><span class="p">():</span>
+    <span class="n">y_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;data_file.txt&#39;</span><span class="p">)</span>
+    <span class="n">x_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_values</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_values</span><span class="p">))</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y_values</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot.png&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="bp">None</span>
+</pre></div>
+
+
+<h2>Run Component</h2>
+<p>Now we can head back to Grasshopper. Remember to restart Rhino before proceeding.
+Now we just needs some numbers to put into the component. You can generate in whatever way you want. In the image below,
+I have used a series component and an expression component to generate a polynomial. Connect the numbers to your component.
+Drag Ladybug Tools' Image Viewer onto the canvas and connect "result_file" from the graph component to "imagePath".
+Connect a boolean toggle to run and let the magic happen!</p>
+<p><img alt="alt text" src="./images/graph_plotter_2.png"></p>
     </main>
     <br>
     <footer>

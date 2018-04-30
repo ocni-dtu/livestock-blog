@@ -1,4 +1,12 @@
-# Graph Plotter Component
+Date: 30-04-2018
+Modified: 30-04-2018
+Status: published
+Authors: Christian Kongsgaard
+Tags: livestock, tutorial, python, grasshopper
+Title: Graph Plotter Component
+HeaderImage: /images/graph_plotter_2.png
+Summary: A tutorial on how to use the Livestock Template Method to create a Grasshopper component that can plot graphs using Matplotlib.
+
 
 Welcome to the second tutorial! In this tutorial we will create a component that can plot a graph with 
 [Matplotlib](https://matplotlib.org/) and [NumPy](http://www.numpy.org/).
@@ -47,7 +55,7 @@ if run:
 We are done coding the component now. The only thing missing is to change the x input to a list and add an output. 
 By default all inputs to the Grasshopper Python Scripts Component is set to "item". We do not want that, in this case. 
 You change it by right-clicking the x and a menu will appear. In the bottom you can see "List Access". Click on that.
-![alt text](/images/graph_plotter_1.png)
+![alt text]({filename}/images/graph_plotter_1.png)
 
 We also need the location of the plot, so create and extra output and call it: "results_file". Then the variable with the same 
 name will be outputted there.
@@ -189,4 +197,4 @@ I have used a series component and an expression component to generate a polynom
 Drag Ladybug Tools' Image Viewer onto the canvas and connect "result_file" from the graph component to "imagePath".
 Connect a boolean toggle to run and let the magic happen!
 
-![alt text](/images/graph_plotter_2.png)
+![alt text]({filename}/images/graph_plotter_2.png)
