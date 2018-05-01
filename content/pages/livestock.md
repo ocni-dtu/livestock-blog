@@ -1,6 +1,6 @@
 Title: LIVESTOCK
 Date: 2018-04-30
-Modified: 2018-04-30
+Modified: 01-05-2018
 Status: published
 Slug: LIVESTOCK
 Authors: Christian Kongsgaard
@@ -21,9 +21,9 @@ Livestock consists of a series of Grasshopper Python Script components and a und
  and a PyPI package.
 
 ### Getting Started with Livestock:
-* [Background](/content/posts/background.md)
-* [Install Livestock](/content/posts/install.md)
-* [Tutorials](/content/posts/tutorials.md)
+* [Background]({filename}/posts/background.md)
+* [Install Livestock]({filename}/posts/install.md)
+* [Tutorials]({filename}/pages/tutorials.md)
 
 ### Documentation for the PyPI Package:
 
