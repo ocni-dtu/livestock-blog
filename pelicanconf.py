@@ -30,7 +30,7 @@ SOCIAL = (('linkedin', 'https://www.linkedin.com/in/christian-kongsgaard-33825b7
 
 SHARE_BUTTONS = ('facebook', 'linkedin', 'mail')
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 8
 SUMMARY_MAX_LENGTH = 70
 TAG_CLOUD = False
 

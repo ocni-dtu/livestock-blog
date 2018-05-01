@@ -1,6 +1,6 @@
 Title: LIVESTOCK
 Date: 2018-04-30
-Modified: 01-05-2018
+Modified: 2018-05-01
 Status: published
 Slug: LIVESTOCK
 Authors: Christian Kongsgaard
