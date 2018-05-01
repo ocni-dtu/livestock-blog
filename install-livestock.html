@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Install Livestock - Christian Kongsgaard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
+    <link rel="stylesheet" type="text/css" href="./theme/css/w3.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/jqcloud.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/shariff.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/pygments-highlight-github.css">
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="./theme/js/jqcloud.min.js"></script>
+
+     <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True" />
+
+    <meta name="author" content="Christian Kongsgaard" />
+    <meta name="description" content="Guide to install the Livestock Package." /> 
+    <meta name="keywords" content="python, livestock, install, grasshopper"> 
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:site_name" content="Christian Kongsgaard">
+    <meta property="og:title" content="Install Livestock - Christian Kongsgaard" />
+    <meta property="og:description" content="Guide to install the Livestock Package." />
+    <meta property="og:image" content=".">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="./install-livestock.html" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Install Livestock - Christian Kongsgaard">
+    <meta name="twitter:description" content="Guide to install the Livestock Package.">
+    <meta name="twitter:image" content=".">
+</head>
+<body>
+  <div class="w3-row w3-card w3-white">
+    <header id=banner>
+       <!-- AUTHOR INITIALS-->
+      <a href="." id=logo title="Home">CK</a>
+      <nav id="menu">
+        <ul>
+          <li><a href="./pages/LIVESTOCK.html">LIVESTOCK</a></li>
+          <li><a href="./pages/portfolio.html">PORTFOLIO</a></li>
+          <li><a href="./pages/tutorials.html">TUTORIALS</a></li>
+          <li style="font-weight: bold;"><a href="./category/posts.html">posts</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+<br>
+<article>
+  <header class="w3-container col-main">
+    <h1>Install Livestock</h1>
+    <div class="post-info">
+      <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+        <span>  Posted on ma 30 april 2018 in <a href="./category/posts.html" style="font-style: italic">posts</a>
+
+        </span>
+      </div>
+      <div id="article-tags">
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/python.html" title="  All posts about Python
+">#python</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/livestock.html" title="  All posts about Livestock
+">#livestock</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/install.html" title="  All posts about Install
+">#install</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/grasshopper.html" title="  All posts about Grasshopper
+">#grasshopper</a>
+        </span>
+      </div>
+    </div>
+  </header>
+  <br>
+  <div class="col-main w3-container">
+    <main id="article-content">
+      <p>Livestock is a plugin to <a href="http://www.grasshopper3d.com/">Grasshopper</a> for <a href="https://www.rhino3d.com/">Rhino</a>. 
+It is therefore an requirement that those two programs are installed for it to work. If they are install it 
+should be pretty straight forward to install the rest.</p>
+<h3>Grasshopper Dependencies</h3>
+<p>Livestock depends on ghPython, which is what makes it possible to create Python components in Grasshopper.
+ghPython can be downloaded <a href="http://www.food4rhino.com/app/ghpython">here</a></p>
+<p><strong>To Install</strong>:
+<em> In Grasshopper, choose File &gt; Special Folders &gt; Components folder. Save the gha file there.
+</em> Right-click the file &gt; Properties &gt; make sure there is no "blocked" text
+* Restart Rhino and Grasshopper</p>
+<p>Livestock also explicitly depends on <a href="http://www.ladybug.tools/">Ladybug Tools</a>. 
+They can be download from <a href="http://www.food4rhino.com/app/ladybug-tools">here</a>.</p>
+<h3>Download Livestock Grasshopper</h3>
+<p>Now you are ready to get Livestock installed!
+All you need to do is to download this <a href="https://github.com/ocni-dtu/livestock_gh/archive/master.zip">zip</a>
+In the zip there is a folder called grasshopper and in there is another folder called components. 
+Take the files in components and drag them onto the Grasshopper Canvas. (The files will then be put in the right folder.)</p>
+<p>Open explorer. Go to the location: </p>
+<blockquote>
+<p>%appdata%\McNeel\Rhinoceros\5.0\scripts</p>
+</blockquote>
+<p>and create a folder called livestock.
+Put all the files from the subfolder in the zip called python into the livestock folder.</p>
+<p>Go to the C-drive and create a folder called livestock as well.</p>
+<h3>Anaconda Install</h3>
+<p>Now when all th files for Grasshopper is in place it is time to complete the installation by installing CPython.
+Livestock depend on Anaconda environments to run CPython. So it needs to be installed. If you already have Anaconda 
+installed, you can just skip this part and go straight to setting up the Conda environment.  </p>
+<p>Use this <a href="https://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.exe">link</a> to download and install Miniconda.
+Miniconda is the lightweight version of Anaconda. If you already installed Anaconda it is also fine. 
+It will make no difference to the functionality of Livestock. </p>
+<h3>Conda Environment</h3>
+<p>When Miniconda/Anaconda is install you are ready to create a conda environment. Open the command or Anaconda promt.
+Type in:</p>
+<blockquote>
+<p>conda create -n livestock_env python=3.6 numpy scipy shapely paramiko</p>
+</blockquote>
+<p>Conda then will the install the environment called "livestock_env". Afterwards the environment can be activated:</p>
+<blockquote>
+<p>activate livestock_env</p>
+</blockquote>
+<p>And the CPython package for Livestock can be pip installed:</p>
+<blockquote>
+<p>pip install livestock</p>
+</blockquote>
+<h3>Livestock Ubuntu</h3>
+<p>To enable high speed computation, Livestock have been made so it can run its computations on remote machines.
+If you have a Ubuntu setup somewhere you can use that to direct your SSH connection at.
+If not you need to install Bash for Windows. It is pretty easy just follow this <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">guide</a>.
+Make sure to open Bash after the installation and update it. You can do that by:</p>
+<blockquote>
+<p>sudo apt-get update</p>
+<p>sudo apt-get upgrade</p>
+</blockquote>
+<p><strong>Configure SSH</strong>
+When Bash is installed, you need to configure the SSH connection to it. Open Bash and do the following:</p>
+<blockquote>
+<p>sudo apt-get remove openssh-server</p>
+<p>sudo apt-get install openssh-server</p>
+<p>sudo nano /etc/ssh/sshd_config </p>
+</blockquote>
+<p>Set the following in sshd_config:</p>
+<ul>
+<li>PermitRootLogin no</li>
+<li>Then add a line beneath it that says: AllowUsers big (or whatever your username is for the linux subsystem)</li>
+<li>PasswordAuthentication yes</li>
+<li>UsePrivilegeSeparation no</li>
+<li>PubkeyAuthentication no</li>
+<li>RSAAuthentication no
+sudo service ssh --full-restart
+Connect to your Linux subsystem from Windows using a ssh client like PuTTY.</li>
+</ul>
+<p>In some cases you have to modify Windows Firewall settings and add a new Rule for allowing incoming connections on Port 22.</p>
+<p><strong>Install Miniconda</strong></p>
+<p>To install Miniconda on your Ubuntu distribution, Bash or real, do the following:
+Open Bash or your Ubuntu terminal.</p>
+<blockquote>
+<p>wget -c http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh </p>
+<p>chmod +x Miniconda3-latest-Linux-x86_64.sh</p>
+<p>./Miniconda3-latest-Linux-x86_64.sh</p>
+</blockquote>
+<p>Follow the steps above to install the conda environment. The only thing that needs to be changed is the second command.
+On Ubuntu Conda environments are activeted with "source activate", so do:</p>
+<blockquote>
+<p>source activate livestock_env</p>
+</blockquote>
+    </main>
+    <br>
+    <footer>
+      <div class="adjust-width">
+        <div id="author-block" class="w3-light-grey w3-border">
+            <img style="width: 35px; height: 56px; margin-left:50px;" src="theme/images/bookmark-red.png" alt="bookmark"></img>
+            <div id="author-info">
+                <a href="./authors.html#christian-kongsgaard"><img style="width: 60px; height: 60px;" src="/authors/christian-kongsgaard.png" onerror="this.src='/theme/images/avatar.png'"></img>
+                </a>
+                <div style="margin-left: 20px; margin-top: 15px;">
+                    <a href="./authors.html#christian-kongsgaard"><span id="author-name" class="w3-hover-text-dark-grey">Christian Kongsgaard</span></a>
+                    <p id="author-story" style="max-width: 500px;">I'm an architectural engineer focused on sustainable parametric design and building performance simulations. I use Python and Grasshopper to simulate outdoor thermal comfort, building energy, and daylight.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <br>
+      
+      <p style="font-size:10pt; font-style: italic;">  Did you like this article? Share it with your friends!
+</p>
+      <div class="shariff" data-services="[&quot;facebook&quot;,&quot;linkedin&quot;,&quot;mail&quot;]" data-title="Install Livestock - Christian Kongsgaard" data-mail-url="mailto:" data-mail-subject="  Interesting post on Christian Kongsgaard
+" data-mail-body="  Hey, I just read this article and really enjoyed it. I'm sure you also like it ;) ./install-livestock.html
+" >
+      </div>
+      <br>
+    </footer>
+  </div>
+</article>
+<br>
+  <footer id="contentinfo">
+    <div id="blogroll" class="w3-row">
+        <div class="blogroll-block w3-col l3 m3 s6">
+            <div>
+                <h6>  Categories
+</h6>
+                <ul>
+                    <li class=""><a href="./category/posts.html">posts<a></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                </ul>
+            </div>
+        </div>
+    <div class="blogroll-block w3-col l3 m3 s6">
+      <div>
+        <h6>Top Tags</h6>
+        <ul>
+          <!-- Print the four most popular tags, sorted automatically with the setting TAG_CLOUD_SORTING = 'size' in pelicanconf.py -->
+          <li class=""><a href="./tag/install.html"> #install ()</a></li>
+          <li class=""><a href="./tag/first-component.html"> #first component ()</a></li>
+          <li class=""><a href="./tag/ssh.html"> #ssh ()</a></li>
+          <li class=""><a href="./tag/my-first-component.html"> #my first component ()</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="blogroll-block w3-col l3 m3 s6">
+      <div>
+          <h6><a href="./authors.html">  Authors
+</a></h6>
+          <ul>
+              <!--  -->
+              <li class=""><a href="./authors.html">Christian Kongsgaard</a></li>
+              <!-- <li class=""><a href="./authors.html#christian-kongsgaard">Christian Kongsgaard</a></li> -->
+               <li class="empty"></li>
+              <li class="empty"></li>
+              <li class="empty"></li>
+          </ul>
+      </div>
+    </div>
+      <div class="blogroll-block w3-col l3 m3 s6">
+          <div>
+              <h6>Social Media</h6>
+              <ul>
+                  <li><a class="sc-linkedin" href="https://www.linkedin.com/in/christian-kongsgaard-33825b78/" target="_blank"><span style="text-transform: capitalize;">linkedin</span> <i class="fa fa-linkedin"></i></a></li>
+                  <li><a class="sc-github" href="https://github.com/ocni-dtu" target="_blank"><span style="text-transform: capitalize;">github</span> <i class="fa fa-github"></i></a></li>
+                  <li class="empty"></li>
+                  <li class="empty"></li>
+              </ul>
+          </div>
+      </div>
+    </div>
+    <div id="contact">
+        <ul>
+            <li><a href="./legal.html">  About | Privacy
+</a></li>
+        </ul>
+    </div>
+    <div id="copyright" class="w3-center w3-small w3-text-grey w3-padding-48">
+        <span>Made with ❤️ by FK | Powered by <a href="http://getpelican.com" target="_blank"><u>Pelican</u></a> and <a href="https://github.com/art1fa/minimalX" target="_blank"><u>minimalX</u></a>        </span>
+    </div>
+  </footer>
+<script src="./theme/js/shariff.min.js"></script>
+</body>
+</html>
