@@ -44,8 +44,8 @@ RELATIVE_URLS = True
 AUTHOR_INFO_SHORT_FABIAN_KEITEL = "I'm an architectural engineer focused on sustainable parametric design and building performance simulations. I use Python and Grasshopper to simulate outdoor thermal comfort, building energy, and daylight."
 AUTHOR_INFO_FABIAN_KEITEL = "I'm am an architectural engineer focused on sustainable parametric design and " \
                                    "building performance simulations. I have an Master in Architectural Engineering " \
-                                   "from the Technical University of Denmark, where I graduted in 2018.\nI am interested" \
+                                   "from the Technical University of Denmark, where I graduted in 2018.\nI am interested " \
                                    "in how to use Python and Grasshopper in combination to create work flows for " \
                                    "sustainable parametric designs.\n All my projects are open source and are available " \
-                                   "on Github (Follow the icon below). For a full resumé go to my LinkedIn profile (Also " \
-                                   "through the icon below)"
+                                   "on Github (follow the icon below). For a full resumé go to my LinkedIn profile (also " \
+                                   "through the icon below)."
