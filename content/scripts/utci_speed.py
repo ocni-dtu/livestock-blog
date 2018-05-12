@@ -15,7 +15,7 @@ from content.scripts.utci_implementations import *
 # -------------------------------------------------------------------------------------------------------------------- #
 # UTCI Speed Tests
 
-epw_path = r'C:\Users\Christian\Dropbox\Uddannelse\DTU\Diverse\EPW_WeatherData\DNK_Copenhagen.061800_IWEC.epw'
+epw_path = r'C:\Users\ocni\Dropbox\Uddannelse\DTU\Diverse\EPW_WeatherData\DNK_Copenhagen.061800_IWEC.epw'
 epw = EPW()
 epw.read(epw_path)
 
@@ -81,7 +81,7 @@ slow_time = [time_slow_utci(i)
 colors = ['#F44336', '#FFBF1F', '#57DA10', '#12B2FF', '#7D1BDA']
 
 hours = [(h * 8760)
-         for h in range(1, 10)]
+         for h in range(1, 11)]
 
 plt.figure(figsize=(12, 6.75))
 plt.title('UTCI Computation Time Comparison\nCPython')
@@ -90,6 +90,7 @@ plt.plot(hours, slow_time, label='Original', color=colors[1])
 plt.legend()
 plt.ylabel('Time in seconds')
 plt.xlabel('Number of hours computed')
+plt.xlim(0, 90000)
 plt.tight_layout()
 
 ladybug_item_time = [6.7, 9.0, 13.8, 17.5, 21.6, 30, 37.5, 38.3, 39.0, 50.0]
@@ -106,6 +107,7 @@ plt.plot(hours, livestock_time, label='Livestock', color=colors[0])
 plt.legend()
 plt.ylabel('Time in seconds')
 plt.xlabel('Number of hours computed')
+plt.xlim(0, 90000)
 plt.tight_layout()
 
 plt.figure(figsize=(12, 6.75))
@@ -116,6 +118,7 @@ plt.plot(hours, ladybug_tree_time, label='Tree Inputs', color=colors[3])
 plt.legend()
 plt.ylabel('Time in seconds')
 plt.xlabel('Number of hours computed')
+plt.xlim(0, 90000)
 plt.tight_layout()
 
 plt.show()
