@@ -15,7 +15,7 @@ from content.scripts.utci_implementations import *
 # -------------------------------------------------------------------------------------------------------------------- #
 # UTCI Speed Tests
 
-epw_path = r'C:\Users\ocni\Dropbox\Uddannelse\DTU\Diverse\EPW_WeatherData\DNK_Copenhagen.061800_IWEC.epw'
+epw_path = r'C:\Users\Christian\Dropbox\Uddannelse\DTU\Diverse\EPW_WeatherData\DNK_Copenhagen.061800_IWEC.epw'
 epw = EPW()
 epw.read(epw_path)
 
@@ -72,8 +72,8 @@ def time_numpy_utci(years=1):
     return time.time() - t0
 
 
-numpy_time = [time_numpy_utci(1), time_numpy_utci(2), time_numpy_utci(3), time_numpy_utci(4), time_numpy_utci(5),
-              time_numpy_utci(6), time_numpy_utci(7), time_numpy_utci(8), time_numpy_utci(9), time_numpy_utci(10)]
+numpy_time = [time_numpy_utci(i)
+              for i in range(10)]
 
 slow_time = [time_slow_utci(i)
              for i in range(10)]
@@ -81,7 +81,7 @@ slow_time = [time_slow_utci(i)
 colors = ['#F44336', '#FFBF1F', '#57DA10', '#12B2FF', '#7D1BDA']
 
 hours = [(h * 8760)
-         for h in range(10)]
+         for h in range(1, 10)]
 
 plt.figure(figsize=(12, 6.75))
 plt.title('UTCI Computation Time Comparison\nCPython')
@@ -103,6 +103,16 @@ plt.plot(hours, ladybug_item_time, label='Item Inputs', color=colors[1])
 plt.plot(hours, ladybug_list_time, label='List Inputs', color=colors[2])
 plt.plot(hours, ladybug_tree_time, label='Tree Inputs', color=colors[3])
 plt.plot(hours, livestock_time, label='Livestock', color=colors[0])
+plt.legend()
+plt.ylabel('Time in seconds')
+plt.xlabel('Number of hours computed')
+plt.tight_layout()
+
+plt.figure(figsize=(12, 6.75))
+plt.title('UTCI Computation Time Comparison\nGrasshopper Component')
+plt.plot(hours, ladybug_item_time, label='Item Inputs', color=colors[1])
+plt.plot(hours, ladybug_list_time, label='List Inputs', color=colors[2])
+plt.plot(hours, ladybug_tree_time, label='Tree Inputs', color=colors[3])
 plt.legend()
 plt.ylabel('Time in seconds')
 plt.xlabel('Number of hours computed')
