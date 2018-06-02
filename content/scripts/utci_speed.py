@@ -15,9 +15,13 @@ from content.scripts.utci_implementations import *
 # -------------------------------------------------------------------------------------------------------------------- #
 # UTCI Speed Tests
 
-epw_path = r'C:\Users\ocni\Dropbox\Uddannelse\DTU\Diverse\EPW_WeatherData\DNK_Copenhagen.061800_IWEC.epw'
 epw = EPW()
-epw.read(epw_path)
+try:
+    epw_path = r'C:\Users\ocni\Dropbox\Uddannelse\DTU\Diverse\EPW_WeatherData\DNK_Copenhagen.061800_IWEC.epw'
+    epw.read(epw_path)
+except FileNotFoundError:
+    epw_path = r'C:\Users\Christian\Dropbox\Uddannelse\DTU\Diverse\EPW_WeatherData\DNK_Copenhagen.061800_IWEC.epw'
+    epw.read(epw_path)
 
 air_temp = []
 rel_hum = []
@@ -100,7 +104,6 @@ livestock_time = [0.35, 0.535, 0.629, 0.747, 0.891, 1.1, 1.3, 1.3, 1.5, 1.6]
 
 plt.figure(figsize=(12, 6.75))
 plt.title('UTCI Computation Time Comparison\nGrasshopper Component')
-plt.plot(hours, ladybug_item_time, label='Item Inputs', color=colors[1])
 plt.plot(hours, ladybug_list_time, label='List Inputs', color=colors[2])
 plt.plot(hours, ladybug_tree_time, label='Tree Inputs', color=colors[3])
 plt.plot(hours, livestock_time, label='Livestock', color=colors[0])

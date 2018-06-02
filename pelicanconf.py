@@ -35,7 +35,8 @@ SUMMARY_MAX_LENGTH = 70
 TAG_CLOUD = False
 
 # Plugins
-PLUGINS = ["tag_cloud"]
+PLUGINS = ["tag_cloud", ]
+
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
