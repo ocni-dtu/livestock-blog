@@ -24,14 +24,14 @@
     <meta name="HandheldFriendly" content="True" />
 
     <meta name="author" content="Christian Kongsgaard" />
-    <meta name="description" content="." /> 
+    <meta name="description" content="In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface run-off case." /> 
     <meta name="keywords" content="livestock, python, grasshopper, cmf, tutorial"> 
 
     <!-- Facebook OpenGraph -->
     <meta property="og:site_name" content="Christian Kongsgaard">
     <meta property="og:title" content="Run-Off Tutorial - Christian Kongsgaard" />
-    <meta property="og:description" content="." />
-    <meta property="og:image" content="../images/GH+Py.png">
+    <meta property="og:description" content="In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface run-off case." />
+    <meta property="og:image" content="../images/Run-Off-Version-1.gif">
     <meta property="og:type" content="article" />
     <meta property="og:url" content="../drafts/run-off-tutorial.html" />
     <meta property="og:locale" content="de_DE" />
@@ -40,8 +40,8 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Run-Off Tutorial - Christian Kongsgaard">
-    <meta name="twitter:description" content=".">
-    <meta name="twitter:image" content="../images/GH+Py.png">
+    <meta name="twitter:description" content="In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface run-off case.">
+    <meta name="twitter:image" content="../images/Run-Off-Version-1.gif">
 </head>
 <body>
   <div class="w3-row w3-card w3-white">
@@ -64,7 +64,7 @@
     <h1>Run-Off Tutorial</h1>
     <div class="post-info">
       <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
-        <span>  Posted on ma 30 april 2018 in <a href="../category/posts.html" style="font-style: italic">posts</a>
+        <span>  Posted on sø 03 juni 2018 in <a href="../category/posts.html" style="font-style: italic">posts</a>
 
         </span>
       </div>
@@ -94,12 +94,51 @@
   </header>
   <br>
   <div class="headerimage-article">
-    <img src="/images/GH+Py.png" style="width: 100%;">
+    <img src="/images/Run-Off-Version-1.gif" style="width: 100%;">
   </div>
   <div class="col-main w3-container">
     <main id="article-content">
-      <p>In this tutorial we will walk through making a Grasshopper script for simulating a simple
+      <p>In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface
 run-off case.</p>
+<p>We will use CMF and Livestock to compute the run-off, so make sure you have it installed. A description can be found 
+<a href="../install-livestock.html">here</a>. You can find the Grasshopper script for the tutorial <a href="../data/Run-off 3D.gh">here</a></p>
+<p><a href="../images/run-off_3d.png"><img alt="alt text" src="../images/run-off_3d_small.png"></a>) </p>
+<h3>0 - Livestock Setup</h3>
+<p>We will start in the top left corner at the group: "0 - Livestock Setup". Here you have to put in the path for your Python
+interpreter and your SSH connection. Find more details on that <a href="../my-first-component.html">here</a></p>
+<h3>1 - Geometry</h3>
+<p>For this tutorial I just made a surface in Rhino that I have imported and converted to a mesh. It should work with any
+other surface. So try to make your own.</p>
+<h3>2 - Ground</h3>
+<p>There are two ground groups. The top group sets the properties for all mesh faces, besides three corner faces, which the 
+bottom group sets up. Today we will make a glass surface model, so we will try to mimic that:</p>
+<ul>
+<li>We will only use a single very thin soil layer</li>
+<li>We will use the standard CMF retention curve, but set the K<sub>sat</sub> value very low, meaning that the water has a hard time 
+penetrating the soil</li>
+<li>The surface properties will be those of sand</li>
+<li>We don't want any evaporation, so we set the ET-Method to 0</li>
+<li>The surface Run-Off Method needs to be 1, so we can see the dynamics of the run-off better. </li>
+<li>The faces indices should be the all besides the three corners.</li>
+</ul>
+<p>This is currently the way to mimic a glass model in CMF. We will not have any evaporation and very little infiltration 
+this way.</p>
+<p>Group 2b is much like the top one, besides we have different face indices (the three corners) and we will put 
+5 m<sup>3</sup> of water on each of them. </p>
+<h3>3 - Weather</h3>
+<p>At the moment we can't simulate with Livestock without inputting a weather, even though it will not effect the simulation 
+since we don't have any evaporation. </p>
+<p>You can use whatever you like - EPW or otherwise. One of the inputs is GlobalRadiation, which doesn't come from the 
+weather file, so we need to simulate it with Honeybee. The setup can be seen in group 3a - Global Radiation. I will
+not go through it here, as it is a pretty standard setup.</p>
+<h3>4 - Solve</h3>
+<p>Everything is collected in the CMF Solve component. We need to give a path to where the simulation files should be saved, 
+together with information on the outputs and solver settings. For outputs we only want the surface water volume and the flux.
+At the moment it is not possible to simulate less than one hour, so we set 1 as AnalysisLength. But we want to simulate 
+what happens every 1 second, which equals to 0.0027 hours.</p>
+<p>No we just need to press the buttons in the Run Me! group.</p>
+<p>Now all you need is to wait until the simulation finishes and then you can visualize the results and maybe make a nice 
+gif as I did.</p>
     </main>
     <br>
     <footer>
@@ -148,10 +187,10 @@ run-off case.</p>
         <h6>Top Tags</h6>
         <ul>
           <!-- Print the four most popular tags, sorted automatically with the setting TAG_CLOUD_SORTING = 'size' in pelicanconf.py -->
-          <li class=""><a href="../tag/grasshopper.html"> #grasshopper ()</a></li>
-          <li class=""><a href="../tag/tutorial.html"> #tutorial ()</a></li>
-          <li class=""><a href="../tag/my-first-component.html"> #my first component ()</a></li>
-          <li class=""><a href="../tag/ssh.html"> #ssh ()</a></li>
+          <li class=""><a href="../tag/thermal-comfort.html"> #thermal comfort ()</a></li>
+          <li class=""><a href="../tag/indoor-comfort.html"> #indoor comfort ()</a></li>
+          <li class=""><a href="../tag/install.html"> #install ()</a></li>
+          <li class=""><a href="../tag/python.html"> #python ()</a></li>
         </ul>
       </div>
     </div>
