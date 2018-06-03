@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Run-Off Tutorial - Christian Kongsgaard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
+    <link rel="stylesheet" type="text/css" href="./theme/css/w3.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/jqcloud.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/shariff.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/pygments-highlight-github.css">
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="./theme/js/jqcloud.min.js"></script>
+
+     <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True" />
+
+    <meta name="author" content="Christian Kongsgaard" />
+    <meta name="description" content="" /> 
+    <meta name="keywords" content="livestock, python, grasshopper, cmf, tutorial"> 
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:site_name" content="Christian Kongsgaard">
+    <meta property="og:title" content="Run-Off Tutorial - Christian Kongsgaard" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="./images/Run-Off-Version-1.gif">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="./run-off-tutorial.html" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Run-Off Tutorial - Christian Kongsgaard">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="./images/Run-Off-Version-1.gif">
+</head>
+<body>
+  <div class="w3-row w3-card w3-white">
+    <header id=banner>
+       <!-- AUTHOR INITIALS-->
+      <a href="." id=logo title="Home">CK</a>
+      <nav id="menu">
+        <ul>
+          <li><a href="./pages/LIVESTOCK.html">LIVESTOCK</a></li>
+          <li><a href="./pages/portfolio.html">PORTFOLIO</a></li>
+          <li><a href="./pages/tutorials.html">TUTORIALS</a></li>
+          <li style="font-weight: bold;"><a href="./category/posts.html">posts</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+<br>
+<article>
+  <header class="w3-container col-main">
+    <h1>Run-Off Tutorial</h1>
+    <div class="post-info">
+      <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+        <span>  Posted on sø 03 juni 2018 in <a href="./category/posts.html" style="font-style: italic">posts</a>
+
+        </span>
+      </div>
+      <div id="article-tags">
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/livestock.html" title="  All posts about Livestock
+">#livestock</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/python.html" title="  All posts about Python
+">#python</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/grasshopper.html" title="  All posts about Grasshopper
+">#grasshopper</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/cmf.html" title="  All posts about Cmf
+">#cmf</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/tutorial.html" title="  All posts about Tutorial
+">#tutorial</a>
+        </span>
+      </div>
+    </div>
+  </header>
+  <br>
+  <div class="headerimage-article">
+    <img src="/images/Run-Off-Version-1.gif" style="width: 100%;">
+  </div>
+  <div class="col-main w3-container">
+    <main id="article-content">
+      <p>In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface
+run-off case.</p>
+<p>We will use CMF and Livestock to compute the run-off, so make sure you have it installed. A description can be found 
+<a href="./install-livestock.html">here</a>. You can find the Grasshopper script for the tutorial <a href="./data/Run-off 3D.gh">here</a></p>
+<p><a href="./images/run-off_3d.png"><img alt="alt text" src="./images/run-off_3d_small.png"></a>) </p>
+<h3>0 - Livestock Setup</h3>
+<p>We will start in the top left corner at the group: "0 - Livestock Setup". Here you have to put in the path for your Python
+interpreter and your SSH connection. Find more details on that <a href="./my-first-component.html">here</a></p>
+<h3>1 - Geometry</h3>
+<p>For this tutorial I just made a surface in Rhino that I have imported and converted to a mesh. It should work with any
+other surface. So try to make your own.</p>
+<h3>2 - Ground</h3>
+<p>There are two ground groups. The top group sets the properties for all mesh faces, besides three corner faces, which the 
+bottom group sets up. Today we will make a glass surface model, so we will try to mimic that:</p>
+<ul>
+<li>We will only use a single very thin soil layer</li>
+<li>We will use the standard CMF retention curve, but set the K<sub>sat</sub> value very low, meaning that the water has a hard time 
+penetrating the soil</li>
+<li>The surface properties will be those of sand</li>
+<li>We don't want any evaporation, so we set the ET-Method to 0</li>
+<li>The surface Run-Off Method needs to be 1, so we can see the dynamics of the run-off better. </li>
+<li>The faces indices should be the all besides the three corners.</li>
+</ul>
+<p>This is currently the way to mimic a glass model in CMF. We will not have any evaporation and very little infiltration 
+this way.</p>
+<p>Group 2b is much like the top one, besides we have different face indices (the three corners) and we will put 
+5 m<sup>3</sup> of water on each of them. </p>
+<h3>3 - Weather</h3>
+<p>At the moment we can't simulate with Livestock without inputting a weather, even though it will not effect the simulation 
+since we don't have any evaporation. </p>
+<p>You can use whatever you like - EPW or otherwise. One of the inputs is GlobalRadiation, which doesn't come from the 
+weather file, so we need to simulate it with Honeybee. The setup can be seen in group 3a - Global Radiation. I will
+not go through it here, as it is a pretty standard setup.</p>
+<h3>4 - Solve</h3>
+<p>Everything is collected in the CMF Solve component. We need to give a path to where the simulation files should be saved, 
+together with information on the outputs and solver settings. For outputs we only want the surface water volume and the flux.
+At the moment it is not possible to simulate less than one hour, so we set 1 as AnalysisLength. But we want to simulate 
+what happens every 1 second, which equals to 0.0027 hours.</p>
+<p>No we just need to press the buttons in the Run Me! group.</p>
+<p>Now all you need is to wait until the simulation finishes and then you can visualize the results and maybe make a nice 
+gif as I did.</p>
+    </main>
+    <br>
+    <footer>
+      <div class="adjust-width">
+        <div id="author-block" class="w3-light-grey w3-border">
+            <img style="width: 35px; height: 56px; margin-left:50px;" src="theme/images/bookmark-red.png" alt="bookmark"></img>
+            <div id="author-info">
+                <a href="./authors.html#christian-kongsgaard"><img style="width: 60px; height: 60px;" src="/authors/christian-kongsgaard.png" onerror="this.src='/theme/images/avatar.png'"></img>
+                </a>
+                <div style="margin-left: 20px; margin-top: 15px;">
+                    <a href="./authors.html#christian-kongsgaard"><span id="author-name" class="w3-hover-text-dark-grey">Christian Kongsgaard</span></a>
+                    <p id="author-story" style="max-width: 500px;">I'm an architectural engineer focused on sustainable parametric design and building performance simulations. I use Python and Grasshopper to simulate outdoor thermal comfort, building energy, and daylight.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <br>
+      
+      <p style="font-size:10pt; font-style: italic;">  Did you like this article? Share it with your friends!
+</p>
+      <div class="shariff" data-services="[&quot;facebook&quot;,&quot;linkedin&quot;,&quot;mail&quot;]" data-title="Run-Off Tutorial - Christian Kongsgaard" data-mail-url="mailto:" data-mail-subject="  Interesting post on Christian Kongsgaard
+" data-mail-body="  Hey, I just read this article and really enjoyed it. I'm sure you also like it ;) ./run-off-tutorial.html
+" >
+      </div>
+      <br>
+    </footer>
+  </div>
+</article>
+<br>
+  <footer id="contentinfo">
+    <div id="blogroll" class="w3-row">
+        <div class="blogroll-block w3-col l3 m3 s6">
+            <div>
+                <h6>  Categories
+</h6>
+                <ul>
+                    <li class=""><a href="./category/posts.html">posts<a></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                </ul>
+            </div>
+        </div>
+    <div class="blogroll-block w3-col l3 m3 s6">
+      <div>
+        <h6>Top Tags</h6>
+        <ul>
+          <!-- Print the four most popular tags, sorted automatically with the setting TAG_CLOUD_SORTING = 'size' in pelicanconf.py -->
+          <li class=""><a href="./tag/ssh.html"> #ssh ()</a></li>
+          <li class=""><a href="./tag/livestock.html"> #livestock ()</a></li>
+          <li class=""><a href="./tag/install.html"> #install ()</a></li>
+          <li class=""><a href="./tag/video.html"> #video ()</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="blogroll-block w3-col l3 m3 s6">
+      <div>
+          <h6><a href="./authors.html">  Authors
+</a></h6>
+          <ul>
+              <!--  -->
+              <li class=""><a href="./authors.html">Christian Kongsgaard</a></li>
+              <!-- <li class=""><a href="./authors.html#christian-kongsgaard">Christian Kongsgaard</a></li> -->
+               <li class="empty"></li>
+              <li class="empty"></li>
+              <li class="empty"></li>
+          </ul>
+      </div>
+    </div>
+      <div class="blogroll-block w3-col l3 m3 s6">
+          <div>
+              <h6>Social Media</h6>
+              <ul>
+                  <li><a class="sc-linkedin" href="https://www.linkedin.com/in/christian-kongsgaard-33825b78/" target="_blank"><span style="text-transform: capitalize;">linkedin</span> <i class="fa fa-linkedin"></i></a></li>
+                  <li><a class="sc-github" href="https://github.com/ocni-dtu" target="_blank"><span style="text-transform: capitalize;">github</span> <i class="fa fa-github"></i></a></li>
+                  <li class="empty"></li>
+                  <li class="empty"></li>
+              </ul>
+          </div>
+      </div>
+    </div>
+    <div id="contact">
+        <ul>
+            <li><a href="./legal.html">  About | Privacy
+</a></li>
+        </ul>
+    </div>
+    <div id="copyright" class="w3-center w3-small w3-text-grey w3-padding-48">
+        <span>Made with ❤️ by FK | Powered by <a href="http://getpelican.com" target="_blank"><u>Pelican</u></a> and <a href="https://github.com/art1fa/minimalX" target="_blank"><u>minimalX</u></a>        </span>
+    </div>
+  </footer>
+<script src="./theme/js/shariff.min.js"></script>
+</body>
+</html>
