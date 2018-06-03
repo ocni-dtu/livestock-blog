@@ -17,6 +17,8 @@ Grasshopper using Ladybug Tools.
 The GIF in the beginning is an example of how indoor thermal comfort is affected by the building's geometry.
 The script can be downloaded [here]({filename}/data/Indoor Comfort Map.gh) 
 
+[![alt text]({filename}/images/script_indoor_comfort_small.png)]({filename}/images/script_indoor_comfort.png)) 
+
 The script contains a simple energy model setup (group 0 - 5, in the script), followed by the comfort map components.
 The building is a shoebox model, with a variable overhang, that can be adjusted with a slider from 0 to 2 meters. 
 Group 7 - Thermal Comfort Map (in the script), sets up and computes the comfort map. In this script i use PMV as the 

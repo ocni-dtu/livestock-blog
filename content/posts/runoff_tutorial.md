@@ -1,6 +1,6 @@
 Date: 2018-06-03
 Modified: 2018-06-03
-Status: draft
+Status: published
 Authors: Christian Kongsgaard
 Tags: livestock, python, grasshopper, cmf, tutorial
 Title: Run-Off Tutorial
@@ -11,14 +11,14 @@ In this tutorial we will walk through making a Grasshopper script for simulating
 run-off case.
 
 We will use CMF and Livestock to compute the run-off, so make sure you have it installed. A description can be found 
-[here]({filename}/install.md). You can find the Grasshopper script for the tutorial [here]({filename}/data/Run-off 3D.gh)
+[here]({filename}install.md). You can find the Grasshopper script for the tutorial [here]({filename}/data/Run-off 3D.gh)
 
 [![alt text]({filename}/images/run-off_3d_small.png)]({filename}/images/run-off_3d.png)) 
 
 ### 0 - Livestock Setup
 
 We will start in the top left corner at the group: "0 - Livestock Setup". Here you have to put in the path for your Python
-interpreter and your SSH connection. Find more details on that [here]({filename}/first_component.md)
+interpreter and your SSH connection. Find more details on that [here]({filename}first_component.md)
 
 ### 1 - Geometry
 
