@@ -613,6 +613,7 @@ def utci_numpy(temperature_air, temperature_mrt, wind_speed, relative_humidity):
                   (
                       0.00148348065) * np.power(vapour_pressure, 6)
 
+    return utci_approx
 
 def utci_simple(temperature_air, temperature_mrt, wind_speed, relative_humidity):
     return None
