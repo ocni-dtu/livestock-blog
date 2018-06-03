@@ -1,10 +1,10 @@
-Date: 2018-05-19
-Modified: 2018-05-19
-Status: draft
+Date: 2018-06-04
+Modified: 2018-06-04
+Status: published
 Authors: Christian Kongsgaard
 Tags: grasshopper, ladybug tools, indoor comfort, thermal comfort
 Title: Indoor Comfort Map
-Summary:
+Summary: A Grasshopper script demonstrating how to use Ladybug Tools to create indoor thermal comfort maps.
 HeaderImage: /images/Indoor-Comfort.gif
 
 
