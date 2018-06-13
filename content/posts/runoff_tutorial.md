@@ -4,7 +4,7 @@ Status: draft
 Authors: Christian Kongsgaard
 Tags: livestock, python, grasshopper, cmf, tutorial
 Title: Run-Off Tutorial
-HeaderImage: /images/Run-Off-Version-1.gif
+HeaderImage: /images/Run-Off-Version-2.gif
 Summary: In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface run-off case.
 
 In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface
