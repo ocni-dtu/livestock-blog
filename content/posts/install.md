@@ -1,5 +1,5 @@
 Date: 2018-04-30
-Modified: 2018-04-30
+Modified: 2018-06-26
 Status: published
 Authors: Christian Kongsgaard
 Tags: python, livestock, install, grasshopper
@@ -88,6 +88,7 @@ Set the following in sshd_config:
 - UsePrivilegeSeparation no
 - PubkeyAuthentication no
 - RSAAuthentication no
+
 sudo service ssh --full-restart
 Connect to your Linux subsystem from Windows using a ssh client like PuTTY.
 
