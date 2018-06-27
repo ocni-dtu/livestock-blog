@@ -89,7 +89,8 @@ Set the following in sshd_config:
 - PubkeyAuthentication no
 - RSAAuthentication no
 
-sudo service ssh --full-restart
+> sudo service ssh --full-restart
+
 Connect to your Linux subsystem from Windows using a ssh client like PuTTY.
 
 In some cases you have to modify Windows Firewall settings and add a new Rule for allowing incoming connections on Port 22.
