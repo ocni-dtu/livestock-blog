@@ -91,7 +91,7 @@ Set the following in sshd_config:
 
 > sudo service ssh --full-restart
 
-Connect to your Linux subsystem from Windows using a ssh client like PuTTY.
+Connect to your Linux subsystem from Windows using a ssh client like [PuTTY](https://putty.org/).
 
 In some cases you have to modify Windows Firewall settings and add a new Rule for allowing incoming connections on Port 22.
 
