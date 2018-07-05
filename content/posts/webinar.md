@@ -1,11 +1,11 @@
 Date: 2018-07-01
 Modified: 2018-07-01
-Status: draft
+Status: published
 Authors: Christian Kongsgaard
 Tags: python, grasshopper, webinar, tutorial, livestock template method,
 Title: Webinar: Grasshopper Components and the Livestock Template Method
 HeaderImage: /images/webinar.png
-Summary: 
+Summary: Last week I did a webinar with TGIC on the Livestock Template Method. The recording is now available.
 
 Last week I did a webinar with [Thank God It's Computational](https://www.tgic.io/) 
 on the Livestock Template Method.
