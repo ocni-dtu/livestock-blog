@@ -1,5 +1,5 @@
 Date: 2018-07-01
-Modified: 2018-07-01
+Modified: 2018-07-07
 Status: published
 Authors: Christian Kongsgaard
 Tags: python, grasshopper, webinar, tutorial, livestock template method,
@@ -21,8 +21,8 @@ as a shell. In that way you can keep your code in one editor, making it easier t
 Lastly I showed how to modify the UTCI component so you can make the computation on a remote machine, using the
 [SSH template]({filename}/posts/ssh.md).  
 
-The webinar can we found at this [link](https://www.bigmarker.com/TGIC/Grasshopper-Components-and-the-Livestock-Template-Method),
- and the recording is available [here](somehere)
+The webinar recording can we found at this [link](https://www.bigmarker.com/TGIC/Grasshopper-Components-and-the-Livestock-Template-Method),
+ and the course material can be downloaded [here]({filename}/data/Webinar Material.zip)
 
 As said in the webinar, if you have any questions about the project or think you have project, 
 where it would be benefitial to implement the Livestock Template Method, don't hesitate to contact me, 
