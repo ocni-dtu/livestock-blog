@@ -3,7 +3,7 @@ Modified: 2018-06-26
 Status: published
 Authors: Christian Kongsgaard
 Tags: python, livestock, install, grasshopper, first component, tutorial
-Title: Install Livestock for Component Tutorials
+Title: Install of Livestock Template Method
 Summary: Guide to install the Livestock Package for the component tutorials.
 
 If you already followed the instructions on the [Install]({filename}/posts/install.md) page. You can skip the top part of this page and go
