@@ -19,9 +19,9 @@ AUTHOR_FEED_RSS = None
 
 # Paths
 STATIC_PATHS = ['images', 'authors', 'data']
-PLUGIN_PATHS = ["plugins"]
-PAGE_PATHS = ['pages']
-ARTICLE_PATHS = ['posts']
+PLUGIN_PATHS = ['plugins', ]
+PAGE_PATHS = ['pages', ]
+ARTICLE_PATHS = ['posts', ]
 THEME = "themes/minimalX"
 
 # Social widget
