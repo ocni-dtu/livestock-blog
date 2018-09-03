@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>UTCI Speed Test - Christian Kongsgaard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
+    <link rel="stylesheet" type="text/css" href="./theme/css/w3.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/jqcloud.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/shariff.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/pygments-highlight-github.css">
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="./theme/js/jqcloud.min.js"></script>
+
+     <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True" />
+
+    <meta name="author" content="Christian Kongsgaard" />
+    <meta name="description" content="In this post I will make a speed test of different ways of implementing the UTCI-equation in a Grasshopper Component and see what can be done to speed it up with the Livestock Template Method." /> 
+    <meta name="keywords" content="livestock, python, grasshopper"> 
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:site_name" content="Christian Kongsgaard">
+    <meta property="og:title" content="UTCI Speed Test - Christian Kongsgaard" />
+    <meta property="og:description" content="In this post I will make a speed test of different ways of implementing the UTCI-equation in a Grasshopper Component and see what can be done to speed it up with the Livestock Template Method." />
+    <meta property="og:image" content="./images/speed_cover.png">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="./utci-speed-test.html" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UTCI Speed Test - Christian Kongsgaard">
+    <meta name="twitter:description" content="In this post I will make a speed test of different ways of implementing the UTCI-equation in a Grasshopper Component and see what can be done to speed it up with the Livestock Template Method.">
+    <meta name="twitter:image" content="./images/speed_cover.png">
+</head>
+<body>
+  <div class="w3-row w3-card w3-white">
+    <header id=banner>
+       <!-- AUTHOR INITIALS-->
+      <a href="." id=logo title="Home">CK</a>
+      <nav id="menu">
+        <ul>
+          <li><a href="./pages/LIVESTOCK.html">LIVESTOCK</a></li>
+          <li><a href="./pages/portfolio.html">PORTFOLIO</a></li>
+          <li><a href="./pages/tutorials.html">TUTORIALS</a></li>
+          <li style="font-weight: bold;"><a href="./category/posts.html">posts</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+<br>
+<article>
+  <header class="w3-container col-main">
+    <h1>UTCI Speed Test</h1>
+    <div class="post-info">
+      <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+        <span>  Posted on fr 11 maj 2018 in <a href="./category/posts.html" style="font-style: italic">posts</a>
+
+        </span>
+      </div>
+      <div id="article-tags">
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/livestock.html" title="  All posts about Livestock
+">#livestock</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/python.html" title="  All posts about Python
+">#python</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/grasshopper.html" title="  All posts about Grasshopper
+">#grasshopper</a>
+        </span>
+      </div>
+    </div>
+  </header>
+  <br>
+  <div class="headerimage-article">
+    <img src="/images/speed_cover.png" style="width: 100%;">
+  </div>
+  <div class="col-main w3-container">
+    <main id="article-content">
+      <p>I'm sure that some of you, who are reading this have experienced that some Grasshopper components takes a long time to
+run. Some of the components you can download are quite computational expensive and therefore take a long time to compute. 
+Even though, Rhino 6 should make it possible to run components on multiple cores, and thereby cutting down the computation 
+time, I thought a small study on other measures to speed up your own components would be in place.</p>
+<p>For this speed test I will use the equation for the <a href="http://www.utci.org/">Universal Thermal Climate Index (UTCI)</a>, 
+which is a 6th degree polynomial with 4 variables, which should be efficient to demonstrate the computation time. 
+<a href="http://www.food4rhino.com/app/ladybug-tools">Ladybug Tools</a> have implemented the equation in one of their components 
+and I have taken that implementation (striped it for some input checks) for this study. 
+I will start by comparing the time it takes to compute the UTCI, when you feed the data into the component, 
+in the three different ways you can in Grasshopper; Item, List and as a Tree. </p>
+<p>If you are interested in testing it yourself, you can download the Grasshopper script I used for 
+it <a href="./data/Time UTCI.gh">here</a>. </p>
+<p>In the second part of this post I will show how fast the UTCI can be computed in CPython, and what can be done to try 
+to reach that speed, when in Grasshopper using the <a href="./how-is-it-working.html">Livestock Template Method</a>.</p>
+<h2>Grasshopper</h2>
+<p><img alt="alt text" src="./images/utci_speed_3.png"></p>
+<p>I used the built-in timer in Grasshopper to test how long time it takes to compute the UTCI, if the component takes the input 
+as Item, List or Tree data. The components, which takes lists and trees are looping through the data inside the component.</p>
+<p>The graph above clearly shows that looping through your data, whether it is a list or a tree is much much faster than 
+implementing the component to take Item inputs. Interesting enough; is the tree input a little bit faster than the pure 
+list. I'm not that familiar with the internal workings of Grasshopper, to have a good explanation for that, but maybe 
+someone can elaborate on it in the comments. I have implemented it so that, while I add another year to the list 
+implementation, I put the new year to another tree-branch in the tree implementation. So in each tree-branch there is 
+only one year worth of data. However it takes 10 seconds to compute 10 years of UTCI (list implementation) or 1 year of 
+UTCI at 10 points (tree implementation). I still find that quite slow. The questions is how do we make that faster?</p>
+<h2>CPython</h2>
+<p>How long would it take to compute 10 years of UTCI in CPython? Would it be faster than than in Grasshopper (which runs
+IronPython)? I have taken the same code from the components and looped through the same 10 years. The results are below
+in the yellow line:</p>
+<p><img alt="alt text" src="./images/utci_speed_1.png"></p>
+<p>We can approximately cut the computation time in half. This is probably not because the difference between CPython and 
+IronPython, but because Grasshopper adds a lot of overhead. The question is of course; can we do better? Since we are in<br>
+CPython and therefore not restricted by the packages available for IronPython, we can use on the most useful (in my opinion) 
+packages on PyPI: <a href="http://www.numpy.org/">NumPy</a>. It brings super fast numerical calculations to CPython. NumPy together 
+with some other scientific packages (SciPy, Matplotlib among others) for CPython was the reason I started exploring 
+the possibility leaving Grasshopper and IronPython.</p>
+<p>I also implemented a version of the UTCI-equation with NumPy and that is the red line above. If you are interested in 
+the implementations take a look 
+<a href="https://github.com/ocni-dtu/ocni-dtu.github.io/blob/dev/content/scripts/utci_implementations.py">here</a>.
+The NumPy implementation does the job of the 10 years in less than 1 second. And we can see that the slope is less steep 
+than the normal CPython implementation, meaning that the difference in computation time will only get larger the more 
+years we compute.
+We can not use NumPy directly in Grasshopper - because IronPython - but we can get around that with the Livestock Template Method. </p>
+<h2>Livestock and Grasshopper</h2>
+<p>I have created a component that writes all the data from Grasshopper, calls the template, which runs the NumPy 
+implementation and loads the results back into Grasshopper. The results are presented below:</p>
+<p><img alt="alt text" src="./images/utci_speed_2.png"></p>
+<p>We are not pure CPython-NumPy fast, since we have to write, call and load file, but we are quite close; ~1.5 seconds for 
+10 years.
+Compared to the list and tree implementation in Grasshopper, the Livestock implementation is ~7 times faster. Again the 
+slope is less steep (because of NumPy) than the two other implementations, meaning the difference in computation time here 
+also will be larger, the more years we compute.</p>
+<h2>Wrap-Up</h2>
+<p>The conclusion of this small study is that if you are going to make computation heavy calculations; you should probably 
+not do it in Grasshopper. 
+There are ways to speed up your calculation in Grasshopper, such as the Livestock Template Method or 
+<a href="http://www.food4rhino.com/browse?searchText=gh+cpython">other methods</a>, but they all are not as fast as the real NumPy. </p>
+<p>If you are interested in learning more about Livestock take a look at the available <a href="./pages/tutorials.html">tutorials</a></p>
+    </main>
+    <br>
+    <footer>
+      <div class="adjust-width">
+        <div id="author-block" class="w3-light-grey w3-border">
+            <img style="width: 35px; height: 56px; margin-left:50px;" src="theme/images/bookmark-red.png" alt="bookmark"></img>
+            <div id="author-info">
+                <a href="./authors.html#christian-kongsgaard"><img style="width: 60px; height: 60px;" src="/authors/christian-kongsgaard.png" onerror="this.src='/theme/images/avatar.png'"></img>
+                </a>
+                <div style="margin-left: 20px; margin-top: 15px;">
+                    <a href="./authors.html#christian-kongsgaard"><span id="author-name" class="w3-hover-text-dark-grey">Christian Kongsgaard</span></a>
+                    <p id="author-story" style="max-width: 500px;">I'm an architectural engineer focused on sustainable parametric design and building performance simulations. I use Python and Grasshopper to simulate outdoor thermal comfort, building energy, and daylight.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <br>
+      
+      <p style="font-size:10pt; font-style: italic;">  Did you like this article? Share it with your friends!
+</p>
+      <div class="shariff" data-services="[&quot;facebook&quot;,&quot;linkedin&quot;,&quot;mail&quot;]" data-title="UTCI Speed Test - Christian Kongsgaard" data-mail-url="mailto:" data-mail-subject="  Interesting post on Christian Kongsgaard
+" data-mail-body="  Hey, I just read this article and really enjoyed it. I'm sure you also like it ;) ./utci-speed-test.html
+" >
+      </div>
+      <br>
+    </footer>
+  </div>
+</article>
+<br>
+  <footer id="contentinfo">
+    <div id="blogroll" class="w3-row">
+        <div class="blogroll-block w3-col l3 m3 s6">
+            <div>
+                <h6>  Categories
+</h6>
+                <ul>
+                    <li class=""><a href="./category/posts.html">posts<a></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                </ul>
+            </div>
+        </div>
+    <div class="blogroll-block w3-col l3 m3 s6">
+      <div>
+        <h6>Top Tags</h6>
+        <ul>
+          <!-- Print the four most popular tags, sorted automatically with the setting TAG_CLOUD_SORTING = 'size' in pelicanconf.py -->
+          <li class=""><a href="./tag/first-component.html"> #first component ()</a></li>
+          <li class=""><a href="./tag/livestock.html"> #livestock ()</a></li>
+          <li class=""><a href="./tag/thermal-comfort.html"> #thermal comfort ()</a></li>
+          <li class=""><a href="./tag/webinar.html"> #webinar ()</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="blogroll-block w3-col l3 m3 s6">
+      <div>
+          <h6><a href="./authors.html">  Authors
+</a></h6>
+          <ul>
+              <!--  -->
+              <li class=""><a href="./authors.html">Christian Kongsgaard</a></li>
+              <!-- <li class=""><a href="./authors.html#christian-kongsgaard">Christian Kongsgaard</a></li> -->
+               <li class="empty"></li>
+              <li class="empty"></li>
+              <li class="empty"></li>
+          </ul>
+      </div>
+    </div>
+      <div class="blogroll-block w3-col l3 m3 s6">
+          <div>
+              <h6>Social Media</h6>
+              <ul>
+                  <li><a class="sc-linkedin" href="https://www.linkedin.com/in/christian-kongsgaard-33825b78/" target="_blank"><span style="text-transform: capitalize;">linkedin</span> <i class="fa fa-linkedin"></i></a></li>
+                  <li><a class="sc-github" href="https://github.com/ocni-dtu" target="_blank"><span style="text-transform: capitalize;">github</span> <i class="fa fa-github"></i></a></li>
+                  <li class="empty"></li>
+                  <li class="empty"></li>
+              </ul>
+          </div>
+      </div>
+    </div>
+    <div id="contact">
+        <ul>
+            <li><a href="./legal.html">  About | Privacy
+</a></li>
+        </ul>
+    </div>
+    <div id="copyright" class="w3-center w3-small w3-text-grey w3-padding-48">
+        <span>Made with ❤️ by FK | Powered by <a href="http://getpelican.com" target="_blank"><u>Pelican</u></a> and <a href="https://github.com/art1fa/minimalX" target="_blank"><u>minimalX</u></a>        </span>
+    </div>
+  </footer>
+<script src="./theme/js/shariff.min.js"></script>
+</body>
+</html>

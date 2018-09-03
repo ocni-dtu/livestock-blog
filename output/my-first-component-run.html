@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>My First Component Run - Christian Kongsgaard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
+    <link rel="stylesheet" type="text/css" href="./theme/css/w3.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/jqcloud.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/shariff.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/pygments-highlight-github.css">
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="./theme/js/jqcloud.min.js"></script>
+
+     <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True" />
+
+    <meta name="author" content="Christian Kongsgaard" />
+    <meta name="description" content="Third part of three tutorials on how to create a simple Grasshopper component using the Livestock Template Method. This final part will guide you through running the component in Grasshopper." /> 
+    <meta name="keywords" content="livestock, tutorial, python, grasshopper, first component"> 
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:site_name" content="Christian Kongsgaard">
+    <meta property="og:title" content="My First Component Run - Christian Kongsgaard" />
+    <meta property="og:description" content="Third part of three tutorials on how to create a simple Grasshopper component using the Livestock Template Method. This final part will guide you through running the component in Grasshopper." />
+    <meta property="og:image" content="./images/first_component_6.png">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="./my-first-component-run.html" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My First Component Run - Christian Kongsgaard">
+    <meta name="twitter:description" content="Third part of three tutorials on how to create a simple Grasshopper component using the Livestock Template Method. This final part will guide you through running the component in Grasshopper.">
+    <meta name="twitter:image" content="./images/first_component_6.png">
+</head>
+<body>
+  <div class="w3-row w3-card w3-white">
+    <header id=banner>
+       <!-- AUTHOR INITIALS-->
+      <a href="." id=logo title="Home">CK</a>
+      <nav id="menu">
+        <ul>
+          <li><a href="./pages/LIVESTOCK.html">LIVESTOCK</a></li>
+          <li><a href="./pages/portfolio.html">PORTFOLIO</a></li>
+          <li><a href="./pages/tutorials.html">TUTORIALS</a></li>
+          <li style="font-weight: bold;"><a href="./category/posts.html">posts</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+<br>
+<article>
+  <header class="w3-container col-main">
+    <h1>My First Component Run</h1>
+    <div class="post-info">
+      <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+        <span>  Posted on ma 30 april 2018 in <a href="./category/posts.html" style="font-style: italic">posts</a>
+
+        </span>
+      </div>
+      <div id="article-tags">
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/livestock.html" title="  All posts about Livestock
+">#livestock</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/tutorial.html" title="  All posts about Tutorial
+">#tutorial</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/python.html" title="  All posts about Python
+">#python</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/grasshopper.html" title="  All posts about Grasshopper
+">#grasshopper</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/first-component.html" title="  All posts about First Component
+">#first component</a>
+        </span>
+      </div>
+    </div>
+  </header>
+  <br>
+  <div class="headerimage-article">
+    <img src="/images/first_component_6.png" style="width: 100%;">
+  </div>
+  <div class="col-main w3-container">
+    <main id="article-content">
+      <p>You have to save and restart Grasshopper before we start testing the our component. We do that to make sure that Rhino has
+loaded the newest versions of the scripts from</p>
+<blockquote>
+<p>%appdata%\McNeel\Rhinoceros\5.0\scripts\livestock3d</p>
+</blockquote>
+<p>When you open "1 - My First Component.gh" it should look something like this:
+<img alt="alt text" src="./images/first_component_5.png"></p>
+<p>You should be missing the panel with "Hallo World!", the slider and the boolean toggle. Add those three things as in the image.
+You can see that our component is red and has an error message. Connect a panel to "out" to see the message.
+The component complains that it can not find PythonExe. PythonExe is the path to python.exe. We specify that path in the 
+component Python Executor. Let us do that now. python.exe should be located in the Anaconda folder. You can usually find it
+in C:\Users\your_username\Anaconda3. Navigate to the "envs" folder and then the livestock_env folder. Here you will find python.exe.
+Copy the path to python.exe into the panel left of the Python Executor component hand connect the panel.
+The panel should contain something like this:</p>
+<blockquote>
+<p>C:\Users\Christian\Anaconda3\envs\livestock_env\python.exe</p>
+</blockquote>
+<p>If Python Executor is yellow, it means that you have put in a non-valid path.
+Our component is still red, though. Disable it and enable it again to make that go away.
+Everything should be fine now, and it is time to set the boolean toggle to True.
+A window should open and close real fast. That means that the CPython function has been ran. In the panel connected to "out"
+you should be able to see the results.
+<img alt="alt text" src="./images/first_component_6.png"></p>
+<p>Congratulations! You have now created your very first Grasshopper component, that uses the Livestock Template Method!
+Being able to run native CPython code is a great advantage and increases the possibilities of what you can do. Just head over 
+to <a href="https://pypi.org/">PyPI</a> or <a href="https://github.com/">Github</a> to find a cool library you would like to use! </p>
+<p>Before we completely wrap up. Let us take a look on what happened, when the component ran:</p>
+<ol>
+<li>The Grasshopper component writes the data_file.txt</li>
+<li>Then the template file: my_first_template.py</li>
+<li>It then spawns a subprocess, calling python.exe to execute my_first_template.py</li>
+<li>When executed my_first_template.py calls my_function() from the livestock3d.py file</li>
+<li>my_function() reads the data_file.txt and creates the result.txt</li>
+<li>The Grasshopper component reads result.txt and prints out the lines</li>
+</ol>
+<p>We can go to:</p>
+<blockquote>
+<p>C:\livestock3d\data</p>
+</blockquote>
+<p>and see that all the files are still there:</p>
+<ul>
+<li>data_file.txt</li>
+<li>my_first_template.py</li>
+<li>results.txt</li>
+</ul>
+<p>If you want to know more take a look at the post <a href="./how-is-it-working.html">How is it working?</a>, continue with
+ a our second <a href="./graph-plotter-component.html">tutorial</a> or even better: Make your own component.</p>
+    </main>
+    <br>
+    <footer>
+      <div class="adjust-width">
+        <div id="author-block" class="w3-light-grey w3-border">
+            <img style="width: 35px; height: 56px; margin-left:50px;" src="theme/images/bookmark-red.png" alt="bookmark"></img>
+            <div id="author-info">
+                <a href="./authors.html#christian-kongsgaard"><img style="width: 60px; height: 60px;" src="/authors/christian-kongsgaard.png" onerror="this.src='/theme/images/avatar.png'"></img>
+                </a>
+                <div style="margin-left: 20px; margin-top: 15px;">
+                    <a href="./authors.html#christian-kongsgaard"><span id="author-name" class="w3-hover-text-dark-grey">Christian Kongsgaard</span></a>
+                    <p id="author-story" style="max-width: 500px;">I'm an architectural engineer focused on sustainable parametric design and building performance simulations. I use Python and Grasshopper to simulate outdoor thermal comfort, building energy, and daylight.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <br>
+      
+      <p style="font-size:10pt; font-style: italic;">  Did you like this article? Share it with your friends!
+</p>
+      <div class="shariff" data-services="[&quot;facebook&quot;,&quot;linkedin&quot;,&quot;mail&quot;]" data-title="My First Component Run - Christian Kongsgaard" data-mail-url="mailto:" data-mail-subject="  Interesting post on Christian Kongsgaard
+" data-mail-body="  Hey, I just read this article and really enjoyed it. I'm sure you also like it ;) ./my-first-component-run.html
+" >
+      </div>
+      <br>
+    </footer>
+  </div>
+</article>
+<br>
+  <footer id="contentinfo">
+    <div id="blogroll" class="w3-row">
+        <div class="blogroll-block w3-col l3 m3 s6">
+            <div>
+                <h6>  Categories
+</h6>
+                <ul>
+                    <li class=""><a href="./category/posts.html">posts<a></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                </ul>
+            </div>
+        </div>
+    <div class="blogroll-block w3-col l3 m3 s6">
+      <div>
+        <h6>Top Tags</h6>
+        <ul>
+          <!-- Print the four most popular tags, sorted automatically with the setting TAG_CLOUD_SORTING = 'size' in pelicanconf.py -->
+          <li class=""><a href="./tag/first-component.html"> #first component ()</a></li>
+          <li class=""><a href="./tag/livestock.html"> #livestock ()</a></li>
+          <li class=""><a href="./tag/thermal-comfort.html"> #thermal comfort ()</a></li>
+          <li class=""><a href="./tag/webinar.html"> #webinar ()</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="blogroll-block w3-col l3 m3 s6">
+      <div>
+          <h6><a href="./authors.html">  Authors
+</a></h6>
+          <ul>
+              <!--  -->
+              <li class=""><a href="./authors.html">Christian Kongsgaard</a></li>
+              <!-- <li class=""><a href="./authors.html#christian-kongsgaard">Christian Kongsgaard</a></li> -->
+               <li class="empty"></li>
+              <li class="empty"></li>
+              <li class="empty"></li>
+          </ul>
+      </div>
+    </div>
+      <div class="blogroll-block w3-col l3 m3 s6">
+          <div>
+              <h6>Social Media</h6>
+              <ul>
+                  <li><a class="sc-linkedin" href="https://www.linkedin.com/in/christian-kongsgaard-33825b78/" target="_blank"><span style="text-transform: capitalize;">linkedin</span> <i class="fa fa-linkedin"></i></a></li>
+                  <li><a class="sc-github" href="https://github.com/ocni-dtu" target="_blank"><span style="text-transform: capitalize;">github</span> <i class="fa fa-github"></i></a></li>
+                  <li class="empty"></li>
+                  <li class="empty"></li>
+              </ul>
+          </div>
+      </div>
+    </div>
+    <div id="contact">
+        <ul>
+            <li><a href="./legal.html">  About | Privacy
+</a></li>
+        </ul>
+    </div>
+    <div id="copyright" class="w3-center w3-small w3-text-grey w3-padding-48">
+        <span>Made with ❤️ by FK | Powered by <a href="http://getpelican.com" target="_blank"><u>Pelican</u></a> and <a href="https://github.com/art1fa/minimalX" target="_blank"><u>minimalX</u></a>        </span>
+    </div>
+  </footer>
+<script src="./theme/js/shariff.min.js"></script>
+</body>
+</html>

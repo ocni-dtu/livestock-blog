@@ -5,7 +5,7 @@ Status: published
 Slug: LIVESTOCK
 Authors: Christian Kongsgaard
 
-# Livestock
+# LIVESTOCK
 Livestock is a package for Grasshopper providing components for modelling water movement and hydrothermal effects 
 around buildings to enable and evaluate sustainable solutions, where those effects are incorporated.
 
@@ -37,8 +37,6 @@ Livestock consists of a series of Grasshopper Python Script components and a und
 ### Site Run-Off computed with Livestock
 ![alt text]({filename}/images/Livestock_CMF_Kinematic_wave_PZOO.gif)
 
-### Water running down a helix shaped slope
-![alt text]({filename}/images/Livestock_CMF_1m3_Water_on_Helix_perspective_12.gif)
 
 ### Getting Started with Livestock:
 * [Background]({filename}/posts/background.md)
