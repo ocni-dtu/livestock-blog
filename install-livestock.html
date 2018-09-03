@@ -102,19 +102,19 @@ ghPython can be downloaded <a href="http://www.food4rhino.com/app/ghpython">here
 </em> Right-click the file &gt; Properties &gt; make sure there is no "blocked" text
 * Restart Rhino and Grasshopper</p>
 <p>Livestock also explicitly depends on <a href="http://www.ladybug.tools/">Ladybug Tools</a>. 
-They can be download from <a href="http://www.food4rhino.com/app/ladybug-tools">here</a>.</p>
+They can be downloaded from <a href="http://www.food4rhino.com/app/ladybug-tools">here</a>.</p>
 <h3>Download Livestock Grasshopper</h3>
 <p>Now you are ready to get Livestock installed!
-All you need to do is to download this <a href="https://github.com/ocni-dtu/livestock_gh/archive/master.zip">zip</a>
-In the zip there is a folder called grasshopper and in there is another folder called components. 
-Take the files in components and drag them onto the Grasshopper Canvas. (The files will then be put in the right folder.)</p>
-<p>Open explorer. Go to the location: </p>
-<blockquote>
-<p>%appdata%\McNeel\Rhinoceros\5.0\scripts</p>
-</blockquote>
-<p>and create a folder called livestock.
-Put all the files from the subfolder in the zip called python into the livestock folder.</p>
-<p>Go to the C-drive and create a folder called livestock as well.</p>
+All you need to do is to download this <a href="https://github.com/ocni-dtu/livestock_gh/archive/master.zip">zip</a></p>
+<p>Download the latest <a href="https://github.com/livestock3d/livestock/releases">Livestock Release</a></p>
+<ul>
+<li>Create a folder at <code>%appdata%\McNeel\Rhinoceros\5.0\scripts</code> called <code>livestock</code></li>
+<li>Put all the files from the folder "Python Rhino Script" in there.</li>
+<li>Create a folder at <code>%appdata%\Grasshopper\UserObjects</code> called <code>livestock</code></li>
+<li>Put the files from the folder "Grasshopper User Objects" in there.</li>
+<li>Move the folder "Examples" to a location of your choosing. </li>
+<li>On the C-drive create a folder called <code>livestock</code> as well. </li>
+</ul>
 <h3>Anaconda Install</h3>
 <p>Now when all th files for Grasshopper is in place it is time to complete the installation by installing CPython.
 Livestock depend on Anaconda environments to run CPython. So it needs to be installed. If you already have Anaconda 
@@ -122,63 +122,34 @@ installed, you can just skip this part and go straight to setting up the Conda e
 <p>Use this <a href="https://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.exe">link</a> to download and install Miniconda.
 Miniconda is the lightweight version of Anaconda. If you already installed Anaconda it is also fine. 
 It will make no difference to the functionality of Livestock. </p>
+<p>Remember to check the box with: "Add Anaconda to my PATH environment variable, even if it prompts you with a warning. 
+Second check box is optional"</p>
 <h3>Conda Environment</h3>
-<p>When Miniconda/Anaconda is install you are ready to create a conda environment. Open the command or Anaconda promt.
-Type in:</p>
+<p>When Anaconda is installed you are ready to create a conda environment specific to run Livestock. 
+Open the command or Anaconda promt. (with adimin rights and you may need to turn off <a href="https://github.com/conda/conda/issues/6007#issuecomment-350348434">sll verification</a>)</p>
+<p>Type in:</p>
 <blockquote>
-<p>conda create -n livestock_env python=3.6 numpy scipy shapely paramiko</p>
+<p>conda create -n livestock_env python=3.6</p>
 </blockquote>
 <p>Conda then will the install the environment called "livestock_env". Afterwards the environment can be activated:</p>
 <blockquote>
 <p>activate livestock_env</p>
 </blockquote>
-<p>And the CPython package for Livestock can be pip installed:</p>
+<p>Your CPython 3.6 environment is now ready, however to make CPython talk to Grasshopper via the Livestock protocols we 
+need to install the packages: <a href="http://www.numpy.org/">numpy</a>, 
+<a href="https://www.scipy.org/">scipy</a>, <a href="http://www.paramiko.org/">paramiko</a> and 
+<a href="https://github.com/Toblerity/Shapely">shapely</a> you may also install other packages such as 
+<a href="https://matplotlib.org/">matplotlib</a> or many other conda packages <a href="https://anaconda.org/anaconda/repo">Conda packages</a> 
+in this way:</p>
+<blockquote>
+<p>conda install numpy scipy shapely paramiko matplotlib</p>
+</blockquote>
+<p>Your CPython 3.6 environment is almost ready, to take full advantage of the Livestock ecosystem we just need to use 
+<a href="https://pypi.org/project/pip/">pip</a> to install the Livestock CPython dependencies:</p>
 <blockquote>
 <p>pip install livestock</p>
 </blockquote>
-<h3>Livestock Ubuntu</h3>
-<p>To enable high speed computation, Livestock have been made so it can run its computations on remote machines.
-If you have a Ubuntu setup somewhere you can use that to direct your SSH connection at.
-If not you need to install Bash for Windows. It is pretty easy just follow this <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">guide</a>.
-Make sure to open Bash after the installation and update it. You can do that by:</p>
-<blockquote>
-<p>sudo apt-get update</p>
-<p>sudo apt-get upgrade</p>
-</blockquote>
-<p><strong>Configure SSH</strong>
-When Bash is installed, you need to configure the SSH connection to it. Open Bash and do the following:</p>
-<blockquote>
-<p>sudo apt-get remove openssh-server</p>
-<p>sudo apt-get install openssh-server</p>
-<p>sudo nano /etc/ssh/sshd_config </p>
-</blockquote>
-<p>Set the following in sshd_config:</p>
-<ul>
-<li>PermitRootLogin no</li>
-<li>Then add a line beneath it that says: AllowUsers big (or whatever your username is for the linux subsystem)</li>
-<li>PasswordAuthentication yes</li>
-<li>UsePrivilegeSeparation no</li>
-<li>PubkeyAuthentication no</li>
-<li>RSAAuthentication no</li>
-</ul>
-<blockquote>
-<p>sudo service ssh --full-restart</p>
-</blockquote>
-<p>Connect to your Linux subsystem from Windows using a ssh client like <a href="https://putty.org/">PuTTY</a>.</p>
-<p>In some cases you have to modify Windows Firewall settings and add a new Rule for allowing incoming connections on Port 22.</p>
-<p><strong>Install Miniconda</strong></p>
-<p>To install Miniconda on your Ubuntu distribution, Bash or real, do the following:
-Open Bash or your Ubuntu terminal.</p>
-<blockquote>
-<p>wget -c http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh </p>
-<p>chmod +x Miniconda3-latest-Linux-x86_64.sh</p>
-<p>./Miniconda3-latest-Linux-x86_64.sh</p>
-</blockquote>
-<p>Follow the steps above to install the conda environment. The only thing that needs to be changed is the second command.
-On Ubuntu Conda environments are activeted with "source activate", so do:</p>
-<blockquote>
-<p>source activate livestock_env</p>
-</blockquote>
+<p>Just ignore any Cython related warnings.</p>
     </main>
     <br>
     <footer>
@@ -227,10 +198,10 @@ On Ubuntu Conda environments are activeted with "source activate", so do:</p>
         <h6>Top Tags</h6>
         <ul>
           <!-- Print the four most popular tags, sorted automatically with the setting TAG_CLOUD_SORTING = 'size' in pelicanconf.py -->
-          <li class=""><a href="./tag/python.html"> #python ()</a></li>
-          <li class=""><a href="./tag/webinar.html"> #webinar ()</a></li>
           <li class=""><a href="./tag/first-component.html"> #first component ()</a></li>
-          <li class=""><a href="./tag/ladybug-tools.html"> #ladybug tools ()</a></li>
+          <li class=""><a href="./tag/livestock.html"> #livestock ()</a></li>
+          <li class=""><a href="./tag/thermal-comfort.html"> #thermal comfort ()</a></li>
+          <li class=""><a href="./tag/webinar.html"> #webinar ()</a></li>
         </ul>
       </div>
     </div>

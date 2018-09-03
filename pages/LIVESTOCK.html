@@ -44,44 +44,41 @@
     <br>
     <br>
     <main class="col-main w3-container w3-medium">
-      <p>Welcome to the Livestock package documentation!</p>
-<p>Livestock is the name of the pluging for Grasshopper, that has been developed for the thesis of Christian Kongsgaard.</p>
-<p><strong>What can Livestock do?</strong>
-<em> Livestock enables the user to calculate outdoor thermal comfort where the evapotranspiration of vegetation is taken into account.
-</em> Livestock includes a wrapper around the <a href="http://fb09-pasig.umwelt.uni-giessen.de/cmf/">Catchment Modelling Framework (CMF)</a>, 
-which is a CPython library to create and compute hydrological models.
-* With CMF and Livestock it is possible to make hydrological models directly in Grasshopper and therefore study 
-surface run-off, soil infiltration etc. Which can be used in Storm Water Management.  </p>
+      <h1>LIVESTOCK</h1>
+<p>Livestock is a package for Grasshopper providing components for modelling water movement and hydrothermal effects 
+around buildings to enable and evaluate sustainable solutions, where those effects are incorporated.</p>
+<p>We have two focus areas: Surface Water Run-Off and Outdoor Thermal Comfort.
+Livestock provides couplings to the hygrothermal modeling environment CMF as well as mesh capabilities used in Blender.
+We are using CMF - <a href="https://github.com/philippkraft/cmf">Catchment Modelling Framework</a> as our base for hydrological 
+modelling. The hydrologic models can be used to investigate storm water management solutions at a high accuracy or 
+be used as an input to an outdoor thermal comfort model.</p>
+<p>Livestock aims at being a high performance package, by implementing the 
+<a href="https://ocni-dtu.github.io/how-is-it-working.html">Livestock Template Method (LTM)</a> for fast and scalable computations.
+The LTM is a protocol and method to couple various CPython modules to Grasshopper. Livestock provides an easy way to 
+read and write Python code back and forth between IronPython and CPython.</p>
+<p>Livestock consists of a series of Grasshopper Python Script components and a 
+underlying collection of Python scripts and a PyPI package</p>
+<p>Livestock is the name of the plug-in for Grasshopper, that has been developed 
+for the <a href="https://ocni-dtu.github.io/pages/portfolio.html">master thesis</a> of Christian Kongsgaard. 
+Livestock is currently being developed and maintained by Christian Kongsgaard and Kristoffer Negendahl. Livestock is 
+under continuous development to provide validated analysis tools through the vast packages available on PyPI, Conda and 
+elsewhere in the Open-Source world.</p>
 <p>Livestock consists of a series of Grasshopper Python Script components and a underlying collection of Python scripts
  and a PyPI package.</p>
+<h1>Examples</h1>
+<h3>Site Run-Off computed with Livestock</h3>
+<p><img alt="alt text" src="../images/Livestock_CMF_Kinematic_wave_PZOO.gif"></p>
 <h3>Getting Started with Livestock:</h3>
 <ul>
 <li><a href="../background-for-livestock.html">Background</a></li>
 <li><a href="../install-livestock.html">Install Livestock</a></li>
 <li><a href="../pages/tutorials.html">Tutorials</a></li>
 </ul>
-<h3>Documentation for the PyPI Package:</h3>
-<ul>
-<li><a href="https://ocni-dtu.github.io/livestock">Livestock PyPI Documentation</a><ul>
-<li><a href="https://ocni-dtu.github.io/livestock/air.html">Livestock Air</a></li>
-<li><a href="https://ocni-dtu.github.io/livestock/geometry.html">Livestock Geometry</a></li>
-<li><a href="https://ocni-dtu.github.io/livestock/hydrology.html">Livestock Hydrology</a></li>
-<li><a href="https://ocni-dtu.github.io/livestock/ssh.html">Livestock SSH</a></li>
-</ul>
-</li>
-</ul>
-<h3>Documentation for the Grasshopper Components:</h3>
-<ul>
-<li><a href="https://ocni-dtu.github.io/livestock_gh/index.html">Livestock Grasshopper Documentation</a></li>
-<li><a href="https://ocni-dtu.github.io/livestock_gh/components.html">Components</a></li>
-<li><a href="https://ocni-dtu.github.io/livestock_gh/component_classes.html">Component Classes</a></li>
-<li><a href="https://ocni-dtu.github.io/livestock_gh/lib.html">Component Library</a></li>
-</ul>
     </main>
     <br>
     <br>
 		<p>
-		Last updated: ti 01 maj 2018
+		Last updated: sø 02 september 2018
 		</p>
   <footer id="contentinfo">
     <div id="blogroll" class="w3-row">
@@ -102,10 +99,10 @@ surface run-off, soil infiltration etc. Which can be used in Storm Water Managem
         <h6>Top Tags</h6>
         <ul>
           <!-- Print the four most popular tags, sorted automatically with the setting TAG_CLOUD_SORTING = 'size' in pelicanconf.py -->
-          <li class=""><a href="../tag/python.html"> #python ()</a></li>
-          <li class=""><a href="../tag/webinar.html"> #webinar ()</a></li>
           <li class=""><a href="../tag/first-component.html"> #first component ()</a></li>
-          <li class=""><a href="../tag/ladybug-tools.html"> #ladybug tools ()</a></li>
+          <li class=""><a href="../tag/livestock.html"> #livestock ()</a></li>
+          <li class=""><a href="../tag/thermal-comfort.html"> #thermal comfort ()</a></li>
+          <li class=""><a href="../tag/webinar.html"> #webinar ()</a></li>
         </ul>
       </div>
     </div>
