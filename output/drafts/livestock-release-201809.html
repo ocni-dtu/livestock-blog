@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Run-Off Tutorial - Christian Kongsgaard</title>
+<title>Livestock Release 2018.09 - Christian Kongsgaard</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
@@ -24,24 +24,24 @@
     <meta name="HandheldFriendly" content="True" />
 
     <meta name="author" content="Christian Kongsgaard" />
-    <meta name="description" content="In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface run-off case." /> 
-    <meta name="keywords" content="livestock, python, grasshopper, cmf, tutorial"> 
+    <meta name="description" content="Announcement and release notes for Livestock 2018.09" /> 
+    <meta name="keywords" content="livestock, release"> 
 
     <!-- Facebook OpenGraph -->
     <meta property="og:site_name" content="Christian Kongsgaard">
-    <meta property="og:title" content="Run-Off Tutorial - Christian Kongsgaard" />
-    <meta property="og:description" content="In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface run-off case." />
-    <meta property="og:image" content="../images/Run-Off-Version-2.gif">
+    <meta property="og:title" content="Livestock Release 2018.09 - Christian Kongsgaard" />
+    <meta property="og:description" content="Announcement and release notes for Livestock 2018.09" />
+    <meta property="og:image" content="../images/release_2019_09.png">
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="../drafts/run-off-tutorial.html" />
+    <meta property="og:url" content="../drafts/livestock-release-201809.html" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:locale:alternate" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Run-Off Tutorial - Christian Kongsgaard">
-    <meta name="twitter:description" content="In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface run-off case.">
-    <meta name="twitter:image" content="../images/Run-Off-Version-2.gif">
+    <meta name="twitter:title" content="Livestock Release 2018.09 - Christian Kongsgaard">
+    <meta name="twitter:description" content="Announcement and release notes for Livestock 2018.09">
+    <meta name="twitter:image" content="../images/release_2019_09.png">
 </head>
 <body>
   <div class="w3-row w3-card w3-white">
@@ -61,10 +61,10 @@
 <br>
 <article>
   <header class="w3-container col-main">
-    <h1>Run-Off Tutorial</h1>
+    <h1>Livestock Release 2018.09</h1>
     <div class="post-info">
       <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
-        <span>  Posted on sø 03 juni 2018 in <a href="../category/posts.html" style="font-style: italic">posts</a>
+        <span>  Posted on ti 04 september 2018 in <a href="../category/posts.html" style="font-style: italic">posts</a>
 
         </span>
       </div>
@@ -74,71 +74,48 @@
 ">#livestock</a>
         </span>
         <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="../tag/python.html" title="  All posts about Python
-">#python</a>
-        </span>
-        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="../tag/grasshopper.html" title="  All posts about Grasshopper
-">#grasshopper</a>
-        </span>
-        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="../tag/cmf.html" title="  All posts about Cmf
-">#cmf</a>
-        </span>
-        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="../tag/tutorial.html" title="  All posts about Tutorial
-">#tutorial</a>
+          <a href="../tag/release.html" title="  All posts about Release
+">#release</a>
         </span>
       </div>
     </div>
   </header>
   <br>
   <div class="headerimage-article">
-    <img src="/images/Run-Off-Version-2.gif" style="width: 100%;">
+    <img src="/images/release_2019_09.png" style="width: 100%;">
   </div>
   <div class="col-main w3-container">
     <main id="article-content">
-      <p>In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface
-run-off case.</p>
-<p>We will use CMF and Livestock to compute the run-off, so make sure you have it installed. A description can be found 
-<a href="../install-livestock.html">here</a>. You can find the Grasshopper script for the tutorial <a href="../data/Run-off 3D.gh">here</a></p>
-<p><a href="../images/run-off_3d.png"><img alt="alt text" src="../images/run-off_3d_small.png"></a>) </p>
-<h3>0 - Livestock Setup</h3>
-<p>We will start in the top left corner at the group: "0 - Livestock Setup". Here you have to put in the path for your Python
-interpreter and your SSH connection. Find more details on that <a href="../my-first-component.html">here</a></p>
-<h3>1 - Geometry</h3>
-<p>For this tutorial I just made a surface in Rhino that I have imported and converted to a mesh. It should work with any
-other surface. So try to make your own.</p>
-<h3>2 - Ground</h3>
-<p>There are two ground groups. The top group sets the properties for all mesh faces, besides three corner faces, which the 
-bottom group sets up. Today we will make a glass surface model, so we will try to mimic that:</p>
-<ul>
-<li>We will only use a single very thin soil layer</li>
-<li>We will use the standard CMF retention curve, but set the K<sub>sat</sub> value very low, meaning that the water has a hard time 
-penetrating the soil</li>
-<li>The surface properties will be those of sand</li>
-<li>We don't want any evaporation, so we set the ET-Method to 0</li>
-<li>The surface Run-Off Method needs to be 1, so we can see the dynamics of the run-off better. </li>
-<li>The faces indices should be the all besides the three corners.</li>
-</ul>
-<p>This is currently the way to mimic a glass model in CMF. We will not have any evaporation and very little infiltration 
-this way.</p>
-<p>Group 2b is much like the top one, besides we have different face indices (the three corners) and we will put 
-5 m<sup>3</sup> of water on each of them. </p>
-<h3>3 - Weather</h3>
-<p>At the moment we can't simulate with Livestock without inputting a weather, even though it will not effect the simulation 
-since we don't have any evaporation. </p>
-<p>You can use whatever you like - EPW or otherwise. One of the inputs is GlobalRadiation, which doesn't come from the 
-weather file, so we need to simulate it with Honeybee. The setup can be seen in group 3a - Global Radiation. I will
-not go through it here, as it is a pretty standard setup.</p>
-<h3>4 - Solve</h3>
-<p>Everything is collected in the CMF Solve component. We need to give a path to where the simulation files should be saved, 
-together with information on the outputs and solver settings. For outputs we only want the surface water volume and the flux.
-At the moment it is not possible to simulate less than one hour, so we set 1 as AnalysisLength. But we want to simulate 
-what happens every 1 second, which equals to 0.0027 hours.</p>
-<p>No we just need to press the buttons in the Run Me! group.</p>
-<p>Now all you need is to wait until the simulation finishes and then you can visualize the results and maybe make a nice 
-gif as I did.</p>
+      <p>I am really happy to announce the first public release of Livestock. So far Livestock has only existed as a biproduct 
+of my <a href="../pages/portfolio.html">master thesis</a>, but over the summer I have worked hard on streamlining the 
+workflow to make it more user-friendly. That also means that the number of components have gone down compared to what 
+was part of the thesis, in order to focus on improving a subset of components and functionalities. However, the plan 
+is to release all the components from my thesis, but it have to wait for a later release. Livestock is hereby moved 
+from the "alpha-phase" into "beta" as I expect there is still some bugs crawling around. If you encounter any please 
+create an <a href="https://github.com/livestock3d/livestock/issues">Github Issue</a> and I will try to fix it as soon as possible.</p>
+<p><a href="https://www.linkedin.com/in/kristoffernegendahl/">Kristoffer Negendahl</a> has gone from being my thesis supervisor to an 
+more active, but equally valuable, part of the team. He has, besides counselling, been the first tester of Livestock 
+and used it at his day job at <a href="https://big.dk">BIG</a>.</p>
+<h1>Livestock</h1>
+<p>To read more about Livestock, what it can do, its goals and the philosophy behind; Please visit the 
+<a href="../pages/LIVESTOCK.html">Livestock Introduction Page</a></p>
+<h1>Release Notes</h1>
+<h3>Livestock 2018.09</h3>
+<h5>Grasshopper Components</h5>
+<p>The following components have been added to the Livestock Grasshopper package:</p>
+<p>0 | Miscellaneous
+* Livestock Python Executor</p>
+<p>1 | Geometry
+<em> Livestock Save Mesh
+</em> Livestock Load Mesh</p>
+<p>2 | CMF
+<em> Livestock CMF Ground
+</em> Livestock CMF Solve
+<em> Livestock CMF Results
+</em> Livestock CMF Outputs
+* Livestock CMF Solver Settings</p>
+<h1>Tutorials</h1>
+<p><a href="{filename}/posts/hill_slope_run_off.md">Hill Slope Run-Off</a></p>
     </main>
     <br>
     <footer>
@@ -159,8 +136,8 @@ gif as I did.</p>
       
       <p style="font-size:10pt; font-style: italic;">  Did you like this article? Share it with your friends!
 </p>
-      <div class="shariff" data-services="[&quot;facebook&quot;,&quot;linkedin&quot;,&quot;mail&quot;]" data-title="Run-Off Tutorial - Christian Kongsgaard" data-mail-url="mailto:" data-mail-subject="  Interesting post on Christian Kongsgaard
-" data-mail-body="  Hey, I just read this article and really enjoyed it. I'm sure you also like it ;) ../drafts/run-off-tutorial.html
+      <div class="shariff" data-services="[&quot;facebook&quot;,&quot;linkedin&quot;,&quot;mail&quot;]" data-title="Livestock Release 2018.09 - Christian Kongsgaard" data-mail-url="mailto:" data-mail-subject="  Interesting post on Christian Kongsgaard
+" data-mail-body="  Hey, I just read this article and really enjoyed it. I'm sure you also like it ;) ../drafts/livestock-release-201809.html
 " >
       </div>
       <br>
@@ -187,10 +164,10 @@ gif as I did.</p>
         <h6>Top Tags</h6>
         <ul>
           <!-- Print the four most popular tags, sorted automatically with the setting TAG_CLOUD_SORTING = 'size' in pelicanconf.py -->
-          <li class=""><a href="../tag/release.html"> #release ()</a></li>
-          <li class=""><a href="../tag/indoor-comfort.html"> #indoor comfort ()</a></li>
-          <li class=""><a href="../tag/my-first-component.html"> #my first component ()</a></li>
           <li class=""><a href="../tag/livestock.html"> #livestock ()</a></li>
+          <li class=""><a href="../tag/python.html"> #python ()</a></li>
+          <li class=""><a href="../tag/indoor-comfort.html"> #indoor comfort ()</a></li>
+          <li class=""><a href="../tag/tutorial.html"> #tutorial ()</a></li>
         </ul>
       </div>
     </div>

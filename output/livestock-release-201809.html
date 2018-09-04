@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Indoor Comfort Map - Christian Kongsgaard</title>
+<title>Livestock Release 2018.09 - Christian Kongsgaard</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
@@ -24,24 +24,24 @@
     <meta name="HandheldFriendly" content="True" />
 
     <meta name="author" content="Christian Kongsgaard" />
-    <meta name="description" content="A Grasshopper script demonstrating how to use Ladybug Tools to create indoor thermal comfort maps." /> 
-    <meta name="keywords" content="grasshopper, ladybug tools, indoor comfort, thermal comfort"> 
+    <meta name="description" content="Announcement and release notes for Livestock 2018.09" /> 
+    <meta name="keywords" content="livestock, release"> 
 
     <!-- Facebook OpenGraph -->
     <meta property="og:site_name" content="Christian Kongsgaard">
-    <meta property="og:title" content="Indoor Comfort Map - Christian Kongsgaard" />
-    <meta property="og:description" content="A Grasshopper script demonstrating how to use Ladybug Tools to create indoor thermal comfort maps." />
-    <meta property="og:image" content="./images/Indoor-Comfort.gif">
+    <meta property="og:title" content="Livestock Release 2018.09 - Christian Kongsgaard" />
+    <meta property="og:description" content="Announcement and release notes for Livestock 2018.09" />
+    <meta property="og:image" content="./images/release_2018_09.png">
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="./indoor-comfort-map.html" />
+    <meta property="og:url" content="./livestock-release-201809.html" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:locale:alternate" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Indoor Comfort Map - Christian Kongsgaard">
-    <meta name="twitter:description" content="A Grasshopper script demonstrating how to use Ladybug Tools to create indoor thermal comfort maps.">
-    <meta name="twitter:image" content="./images/Indoor-Comfort.gif">
+    <meta name="twitter:title" content="Livestock Release 2018.09 - Christian Kongsgaard">
+    <meta name="twitter:description" content="Announcement and release notes for Livestock 2018.09">
+    <meta name="twitter:image" content="./images/release_2018_09.png">
 </head>
 <body>
   <div class="w3-row w3-card w3-white">
@@ -61,56 +61,68 @@
 <br>
 <article>
   <header class="w3-container col-main">
-    <h1>Indoor Comfort Map</h1>
+    <h1>Livestock Release 2018.09</h1>
     <div class="post-info">
       <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
-        <span>  Posted on ma 04 juni 2018 in <a href="./category/posts.html" style="font-style: italic">posts</a>
+        <span>  Posted on ti 04 september 2018 in <a href="./category/posts.html" style="font-style: italic">posts</a>
 
         </span>
       </div>
       <div id="article-tags">
         <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="./tag/grasshopper.html" title="  All posts about Grasshopper
-">#grasshopper</a>
+          <a href="./tag/livestock.html" title="  All posts about Livestock
+">#livestock</a>
         </span>
         <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="./tag/ladybug-tools.html" title="  All posts about Ladybug Tools
-">#ladybug tools</a>
-        </span>
-        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="./tag/indoor-comfort.html" title="  All posts about Indoor Comfort
-">#indoor comfort</a>
-        </span>
-        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="./tag/thermal-comfort.html" title="  All posts about Thermal Comfort
-">#thermal comfort</a>
+          <a href="./tag/release.html" title="  All posts about Release
+">#release</a>
         </span>
       </div>
     </div>
   </header>
   <br>
   <div class="headerimage-article">
-    <img src="/images/Indoor-Comfort.gif" style="width: 100%;">
+    <img src="/images/release_2018_09.png" style="width: 100%;">
   </div>
   <div class="col-main w3-container">
     <main id="article-content">
-      <p>In the middle of May, 2018, I gave presentation on evaluating indoor thermal comfort as part of a workshop organized by 
-the research project Nordic Built STED - Sustainable Transformation and Environmental Design. The workshop was meant to 
-give interested parties, architects and engineers alike, an introduction on how to use Grasshopper to make informed<br>
-and sustainable design choices.  I gave an introduction on how a indoor thermal comfort map can generated and used in 
-Grasshopper using Ladybug Tools. </p>
-<p>The GIF in the beginning is an example of how indoor thermal comfort is affected by the building's geometry.
-The script can be downloaded <a href="./data/Indoor Comfort Map.gh">here</a> </p>
-<p><a href="./images/script_indoor_comfort.png"><img alt="alt text" src="./images/script_indoor_comfort_small.png"></a>) </p>
-<p>The script contains a simple energy model setup (group 0 - 5, in the script), followed by the comfort map components.
-The building is a shoebox model, with a variable overhang, that can be adjusted with a slider from 0 to 2 meters. 
-Group 7 - Thermal Comfort Map (in the script), sets up and computes the comfort map. In this script i use PMV as the 
-comfort metric. </p>
-<p>Normally you would compute the average comfort of the room for an entire year. I think it is interesting to see, when 
-you uncomfortable periods - PMV below -0.5 (too cold) or above 0.5 (to warm) - where the uncomfortable zones are located 
-within your room. This enables you to use much more informed and precise measurements to correct it.    </p>
-<p>In the end I just wanted to thank the workshop participants for a great day and some good questions. And also a big thanks 
-to the other workshop teachers for a good event. </p>
+      <p>I am really happy to announce the first public release of Livestock. So far Livestock has only existed as a biproduct 
+of my <a href="./pages/portfolio.html">master thesis</a>, but over the summer I have worked hard on streamlining the 
+workflow to make it more user-friendly. That also means that the number of components have gone down compared to what 
+was part of the thesis, in order to focus on improving a subset of components and functionalities. However, the plan 
+is to release all the components from my thesis, but it have to wait for a later release. Livestock is hereby moved 
+from the "alpha-phase" into "beta" as I expect there is still some bugs crawling around. If you encounter any please 
+create an <a href="https://github.com/livestock3d/livestock/issues">Github Issue</a> and I will try to fix it as soon as possible.</p>
+<p><a href="https://www.linkedin.com/in/kristoffernegendahl/">Kristoffer Negendahl</a> has gone from being my thesis supervisor to an 
+more active, but equally valuable, part of the team. He has, besides counselling, been the first tester of Livestock 
+and used it at his day job at <a href="https://big.dk">BIG</a>.</p>
+<h1>Livestock</h1>
+<p>To read more about Livestock, what it can do, its goals and the philosophy behind; Please visit the 
+<a href="./pages/LIVESTOCK.html">Livestock Introduction Page</a></p>
+<h1>Livestock 2018.09 Release Notes</h1>
+<p>Download the <a href="https://github.com/livestock3d/livestock/releases">Livestock 2018.09 Release</a> from Github and follow the 
+<a href="./install-livestock.html">Installation Instructions</a></p>
+<h2>Grasshopper Components</h2>
+<p>The following components have been added to the Livestock Grasshopper package:</p>
+<p>0 | Miscellaneous</p>
+<ul>
+<li>Livestock Python Executor</li>
+</ul>
+<p>1 | Geometry</p>
+<ul>
+<li>Livestock Save Mesh</li>
+<li>Livestock Load Mesh</li>
+</ul>
+<p>2 | CMF</p>
+<ul>
+<li>Livestock CMF Ground</li>
+<li>Livestock CMF Solve</li>
+<li>Livestock CMF Results</li>
+<li>Livestock CMF Outputs</li>
+<li>Livestock CMF Solver Settings</li>
+</ul>
+<h1>Tutorials</h1>
+<p><a href="{filename}/posts/hill_slope_run_off.md">Hill Slope Run-Off</a></p>
     </main>
     <br>
     <footer>
@@ -131,8 +143,8 @@ to the other workshop teachers for a good event. </p>
       
       <p style="font-size:10pt; font-style: italic;">  Did you like this article? Share it with your friends!
 </p>
-      <div class="shariff" data-services="[&quot;facebook&quot;,&quot;linkedin&quot;,&quot;mail&quot;]" data-title="Indoor Comfort Map - Christian Kongsgaard" data-mail-url="mailto:" data-mail-subject="  Interesting post on Christian Kongsgaard
-" data-mail-body="  Hey, I just read this article and really enjoyed it. I'm sure you also like it ;) ./indoor-comfort-map.html
+      <div class="shariff" data-services="[&quot;facebook&quot;,&quot;linkedin&quot;,&quot;mail&quot;]" data-title="Livestock Release 2018.09 - Christian Kongsgaard" data-mail-url="mailto:" data-mail-subject="  Interesting post on Christian Kongsgaard
+" data-mail-body="  Hey, I just read this article and really enjoyed it. I'm sure you also like it ;) ./livestock-release-201809.html
 " >
       </div>
       <br>
