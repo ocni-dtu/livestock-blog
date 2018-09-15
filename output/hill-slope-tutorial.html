@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Hill Slope Tutorial - Christian Kongsgaard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
+    <link rel="stylesheet" type="text/css" href="./theme/css/w3.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/jqcloud.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/shariff.min.css">
+    <link rel="stylesheet" type="text/css" href="./theme/css/pygments-highlight-github.css">
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="./theme/js/jqcloud.min.js"></script>
+
+     <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True" />
+
+    <meta name="author" content="Christian Kongsgaard" />
+    <meta name="description" content="In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface run-off case." /> 
+    <meta name="keywords" content="tutorial, livestock, grasshopper, run-off"> 
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:site_name" content="Christian Kongsgaard">
+    <meta property="og:title" content="Hill Slope Tutorial - Christian Kongsgaard" />
+    <meta property="og:description" content="In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface run-off case." />
+    <meta property="og:image" content="./images/tutorial_hill_slope/Hill-Slope-Seconds.gif">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="./hill-slope-tutorial.html" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hill Slope Tutorial - Christian Kongsgaard">
+    <meta name="twitter:description" content="In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface run-off case.">
+    <meta name="twitter:image" content="./images/tutorial_hill_slope/Hill-Slope-Seconds.gif">
+</head>
+<body>
+  <div class="w3-row w3-card w3-white">
+    <header id=banner>
+       <!-- AUTHOR INITIALS-->
+      <a href="." id=logo title="Home">CK</a>
+      <nav id="menu">
+        <ul>
+          <li><a href="./pages/LIVESTOCK.html">LIVESTOCK</a></li>
+          <li><a href="./pages/portfolio.html">PORTFOLIO</a></li>
+          <li><a href="./pages/tutorials.html">TUTORIALS</a></li>
+          <li style="font-weight: bold;"><a href="./category/posts.html">posts</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+<br>
+<article>
+  <header class="w3-container col-main">
+    <h1>Hill Slope Tutorial</h1>
+    <div class="post-info">
+      <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+        <span>  Posted on ma 17 september 2018 in <a href="./category/posts.html" style="font-style: italic">posts</a>
+
+        </span>
+      </div>
+      <div id="article-tags">
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/tutorial.html" title="  All posts about Tutorial
+">#tutorial</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/livestock.html" title="  All posts about Livestock
+">#livestock</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/grasshopper.html" title="  All posts about Grasshopper
+">#grasshopper</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="./tag/run-off.html" title="  All posts about Run-Off
+">#run-off</a>
+        </span>
+      </div>
+    </div>
+  </header>
+  <br>
+  <div class="headerimage-article">
+    <img src="/images/tutorial_hill_slope/Hill-Slope-Seconds.gif" style="width: 100%;">
+  </div>
+  <div class="col-main w3-container">
+    <main id="article-content">
+      <p>In this tutorial we will walk through making a Grasshopper script for simulating a simple glass surface
+run-off case.</p>
+<p>We will use CMF and Livestock to compute the run-off, so make sure you have it installed. A description can be found 
+<a href="./install-livestock.html">here</a>. You can find the Grasshopper script for the tutorial <a href="https://github.com/livestock3d/livestock_gh/raw/master/grasshopper/examples/Hill%20Slope%20Run-Off.gh">here</a>
+or in the Examples folder that comes with the Livestock download.</p>
+<h2>0. Livestock Setup</h2>
+<p><img alt="alt text" src="./images/tutorial_hill_slope/0_livestock_setup.png"></p>
+<p>We will start in the top left corner at the group: "0. Livestock Setup". Here you have to put in the path for your Python
+interpreter. If you are unaware, where it is located and have installed Miniconda as per the 
+<a href="./install-livestock.html">installation instructions</a>, then you should be able to open your command prompt and write:</p>
+<blockquote>
+<p>conda info</p>
+</blockquote>
+<p>Information about your Miniconda installation will appear and under <code>envs directories</code> you should be able to find the 
+path for your Conda environments. You should simply copy that and append <code>\livestock_env\python.exe</code> to the end.</p>
+<p>There is also a panel with the case folder. By default it is set to <code>C:\livestock\examples</code> you can change it to 
+whatever you like or leave as it is. Just make sure the folder exists before proceeding.</p>
+<h2>1. Geometry</h2>
+<p><img alt="alt text" src="./images/tutorial_hill_slope/1_geometry.png">
+The geometry for this tutorial is create from a simple function, which is turned into, first a surface and then a mesh.
+You are encourage to change the <code>Slope Function</code> to see how the different slope creates different behaviours.  </p>
+<h3>1b. Sort Faces</h3>
+<p>This groups sorts the top face from the rest as a preparation for the Ground components.</p>
+<h2>2. Ground</h2>
+<p>There are two ground groups: 2a and 2b</p>
+<p><img alt="alt text" src="./images/tutorial_hill_slope/2_ground.png"></p>
+<h3>2a.</h3>
+<p>The group 2a sets the ground settings for the top face of the mesh. The inputs to the <code>CMF Ground</code> component is:</p>
+<ul>
+<li><code>MeshFaces</code>: takes the faces that we sorted in 1b </li>
+<li><code>Layers</code> (the soil layers), which in this case is <code>0.1</code> because we only want 1 layer with the thickness of 0.1 to model the 
+mesh slope as a glass model. </li>
+<li><code>GroundType</code> is set to <code>2</code> to mimic non-permeable pavement. </li>
+<li><code>SurfaceWater</code> is set to <code>9</code> m<sup>3</sup></li>
+<li><code>ETMethod</code> is set to <code>0</code>, because we don't want any evapotranspiration.</li>
+<li><code>SurfaceRunOffMethod</code> is set to <code>0</code>, which is Kinematic Surface Run-Off.</li>
+</ul>
+<h3>2b.</h3>
+<p>Group 2b is much like 2a, besides we have different mesh faces and there is no surface water to begin with.</p>
+<h3>2c.</h3>
+<p>Press the boolean toggle to write the meshes to the hard drive.</p>
+<h2>3. Solve</h2>
+<p><img alt="alt text" src="./images/tutorial_hill_slope/3_solve.png"></p>
+<p>The outputs from CMF Ground is collected in the CMF Solve component. We give it the <code>Case Path</code>, which where specified 
+in the beginning and a <code>CaseName</code>. You don't need to give the Solve component anymore information. It will use the 
+default settings to solve the case. Press the boolean to write and run the component. 
+A window will pop up printing some information about the progress of the simulation. When it closes the simulation is 
+over. Click the boolean toggle back to <code>False</code>.</p>
+<h2>5. Load Results</h2>
+<p><img alt="alt text" src="./images/tutorial_hill_slope/5_load_results.png"></p>
+<p>You can now go and visualize the results. You need to click the boolean toggle to run the <code>CMF Results</code> component.
+The red time slider lets you step through the time steps of the simulation.</p>
+<p><img alt="alt text" src="./images/tutorial_hill_slope/time_step_0_1.png"></p>
+<p>When visualizing the results you will observe two things:
+In time step <code>0</code> all the the water is on the top. In time step <code>1</code> all the water is in the bottom. So is there 
+something wrong with the simulation? No, it is all correctly computed. The time steps with the default solver settings 
+are set to 1 hour. As it takes far less than an hour for the water to run down the slope, you will only see the start 
+conditions in time step <code>0</code> and the end conditions in time step <code>1</code>. 
+By using the Kinematic surface run-off we are always 'moving' the water to a mesh face with lower z-coordinate. Which 
+means that all the water ends up in the bottom most mesh face, in this case.  </p>
+<p>Using the diffusive surface run-off we can calculate the pool, which actually forms at the bottom of the slope. We will 
+do that in 4. The con of using the diffusive surface run-off is that it is much more computation heavy than the kinematic.
+You will probably not notice a difference in this small case, but if you try it on a large mesh you will experience a 
+big difference.</p>
+<h2>4. Solve Seconds</h2>
+<p><img alt="alt text" src="./images/tutorial_hill_slope/4_solve_seconds.png"></p>
+<p>We have connected the <code>CMF Ground</code> the same way as in 3. In addition to that we have also inputted information from 
+<code>CMF Solver Settings</code>. Here it is possible to set the size of the time steps and the analysis length. I have chosen the 
+<code>AnalysisLength</code> to be 6 seconds and the <code>TimeStep</code> to be 1 second.
+Before you go and press the boolean toggle to write and run the solver, go to 4b. and set the <code>SurfaceRunOffMethod</code> to 
+<code>1</code> - Diffusive. 
+Run the case.  </p>
+<h2>5. Load Results (again)</h2>
+<p>Change the blue item selector to <code>CMF_Slope_v1</code> to get the diffusive case. Now it should be possible to see that the 
+water runs down the slope and forms a pool at the bottom.</p>
+<p><img alt="alt text" src="./images/tutorial_hill_slope/Hill-Slope-Seconds.gif"></p>
+    </main>
+    <br>
+    <footer>
+      <div class="adjust-width">
+        <div id="author-block" class="w3-light-grey w3-border">
+            <img style="width: 35px; height: 56px; margin-left:50px;" src="theme/images/bookmark-red.png" alt="bookmark"></img>
+            <div id="author-info">
+                <a href="./authors.html#christian-kongsgaard"><img style="width: 60px; height: 60px;" src="/authors/christian-kongsgaard.png" onerror="this.src='/theme/images/avatar.png'"></img>
+                </a>
+                <div style="margin-left: 20px; margin-top: 15px;">
+                    <a href="./authors.html#christian-kongsgaard"><span id="author-name" class="w3-hover-text-dark-grey">Christian Kongsgaard</span></a>
+                    <p id="author-story" style="max-width: 500px;">I'm an architectural engineer focused on sustainable parametric design and building performance simulations. I use Python and Grasshopper to simulate outdoor thermal comfort, building energy, and daylight.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <br>
+      
+      <p style="font-size:10pt; font-style: italic;">  Did you like this article? Share it with your friends!
+</p>
+      <div class="shariff" data-services="[&quot;facebook&quot;,&quot;linkedin&quot;,&quot;mail&quot;]" data-title="Hill Slope Tutorial - Christian Kongsgaard" data-mail-url="mailto:" data-mail-subject="  Interesting post on Christian Kongsgaard
+" data-mail-body="  Hey, I just read this article and really enjoyed it. I'm sure you also like it ;) ./hill-slope-tutorial.html
+" >
+      </div>
+      <br>
+    </footer>
+  </div>
+</article>
+<br>
+  <footer id="contentinfo">
+    <div id="blogroll" class="w3-row">
+        <div class="blogroll-block w3-col l3 m3 s6">
+            <div>
+                <h6>  Categories
+</h6>
+                <ul>
+                    <li class=""><a href="./category/posts.html">posts<a></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                </ul>
+            </div>
+        </div>
+    <div class="blogroll-block w3-col l3 m3 s6">
+      <div>
+        <h6>Top Tags</h6>
+        <ul>
+          <!-- Print the four most popular tags, sorted automatically with the setting TAG_CLOUD_SORTING = 'size' in pelicanconf.py -->
+          <li class=""><a href="./tag/ladybug-tools.html"> #ladybug tools ()</a></li>
+          <li class=""><a href="./tag/indoor-comfort.html"> #indoor comfort ()</a></li>
+          <li class=""><a href="./tag/my-first-component.html"> #my first component ()</a></li>
+          <li class=""><a href="./tag/run-off.html"> #run-off ()</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="blogroll-block w3-col l3 m3 s6">
+      <div>
+          <h6><a href="./authors.html">  Authors
+</a></h6>
+          <ul>
+              <!--  -->
+              <li class=""><a href="./authors.html">Christian Kongsgaard</a></li>
+              <!-- <li class=""><a href="./authors.html#christian-kongsgaard">Christian Kongsgaard</a></li> -->
+               <li class="empty"></li>
+              <li class="empty"></li>
+              <li class="empty"></li>
+          </ul>
+      </div>
+    </div>
+      <div class="blogroll-block w3-col l3 m3 s6">
+          <div>
+              <h6>Social Media</h6>
+              <ul>
+                  <li><a class="sc-linkedin" href="https://www.linkedin.com/in/christian-kongsgaard-33825b78/" target="_blank"><span style="text-transform: capitalize;">linkedin</span> <i class="fa fa-linkedin"></i></a></li>
+                  <li><a class="sc-github" href="https://github.com/ocni-dtu" target="_blank"><span style="text-transform: capitalize;">github</span> <i class="fa fa-github"></i></a></li>
+                  <li class="empty"></li>
+                  <li class="empty"></li>
+              </ul>
+          </div>
+      </div>
+    </div>
+    <div id="contact">
+        <ul>
+            <li><a href="./legal.html">  About | Privacy
+</a></li>
+        </ul>
+    </div>
+    <div id="copyright" class="w3-center w3-small w3-text-grey w3-padding-48">
+        <span>Made with ❤️ by FK | Powered by <a href="http://getpelican.com" target="_blank"><u>Pelican</u></a> and <a href="https://github.com/art1fa/minimalX" target="_blank"><u>minimalX</u></a>        </span>
+    </div>
+  </footer>
+<script src="./theme/js/shariff.min.js"></script>
+</body>
+</html>
