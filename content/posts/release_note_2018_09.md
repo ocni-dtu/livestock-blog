@@ -1,5 +1,5 @@
-Date: 2018-09-04
-Modified: 2018-09-04
+Date: 2018-09-17
+Modified: 2018-09-17
 Status: published
 Authors: Christian Kongsgaard
 Tags: livestock, release
@@ -22,6 +22,20 @@ and used it at his day job at [BIG](https://big.dk).
 # Livestock
 To read more about Livestock, what it can do, its goals and the philosophy behind; Please visit the 
 [Livestock Introduction Page]({filename}/pages/livestock.md)
+
+# Dependencies
+Livestock depend on several other open source libraries and without them it would not have been possible to create Livestock.
+So I would like to thank all of their maintainers and contributors for sharing their work with the world.
+A special thanks to Philipp Kraft, who created [CMF](https://github.com/philippkraft/cmf) with him and his project 
+Livestock would not have existed.
+
+### Dependency List
+* [CMF](https://github.com/philippkraft/cmf)
+* [NumPy](https://github.com/numpy/numpy)
+* [SciPy](https://github.com/scipy/scipy)
+* [Progressbar](https://github.com/WoLpH/python-progressbar)
+* [Shapely](https://github.com/simplegeo/shapely)
+* [PyShp](https://github.com/GeospatialPython/pyshp)
  
 # Livestock 2018.09 Release Notes
 Download the [Livestock 2018.09 Release](https://github.com/livestock3d/livestock/releases) from Github and follow the 
