@@ -28,7 +28,7 @@ THEME = "themes/minimalX"
 SOCIAL = (('linkedin', 'https://www.linkedin.com/in/christian-kongsgaard-33825b78/'),
           ('github', 'https://github.com/ocni-dtu'),)
 
-SHARE_BUTTONS = ('facebook', 'linkedin', 'mail')
+SHARE_BUTTONS = ('linkedin', 'mail')
 
 DEFAULT_PAGINATION = 8
 SUMMARY_MAX_LENGTH = 70
@@ -42,11 +42,18 @@ PLUGINS = ["tag_cloud", ]
 RELATIVE_URLS = True
 
 # Author Information
-AUTHOR_INFO_SHORT_FABIAN_KEITEL = "I'm an architectural engineer focused on sustainable parametric design and building performance simulations. I use Python and Grasshopper to simulate outdoor thermal comfort, building energy, and daylight."
-AUTHOR_INFO_FABIAN_KEITEL = "I'm am an architectural engineer focused on sustainable parametric design and " \
-                                   "building performance simulations. I have an Master in Architectural Engineering " \
-                                   "from the Technical University of Denmark, where I graduted in 2018.\nI am interested " \
-                                   "in how to use Python and Grasshopper in combination to create work flows for " \
-                                   "sustainable parametric designs.\n All my projects are open source and are available " \
-                                   "on Github (follow the icon below). For a full resumé go to my LinkedIn profile (also " \
-                                   "through the icon below)."
+AUTHOR_INFO_SHORT_FABIAN_KEITEL = "I am an architectural engineer focused on computational environmental design and " \
+                                  "building performance simulations.\nI aim to give more people access to complex " \
+                                  "environmental information to promote innovative, evidence based, holistic and " \
+                                  "sustainable building designs."
+
+AUTHOR_INFO_FABIAN_KEITEL = "I am an architectural engineer focused on computational environmental design and " \
+                            "building performance simulations.\nI founded Kongsgaard Engineering in order to do " \
+                            "consulting and developing my software library called Livestock. My key goal is always " \
+                            "to automate analyses workflows, enabling faster and easier availability to analysis " \
+                            "results.\nI aim to give more people access to complex environmental information to " \
+                            "promote innovative, evidence based, holistic and sustainable building designs.\n" \
+                            "My toolbox consists of engineering knowledge; visual and proper programming mixed " \
+                            "with architectural and design skills.\n " \
+                            "All my projects are open source and are available on Github (follow the icon below).\n" \
+                            "For a full resumé go to my LinkedIn profile (also through the icon below)."

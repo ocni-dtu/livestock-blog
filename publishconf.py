@@ -9,7 +9,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'https://ocni-dtu.github.io'
+SITEURL = 'https://kongsgaard.eu'
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
