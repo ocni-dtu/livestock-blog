@@ -7,9 +7,6 @@ __license__ = 'MIT'
 # Modules
 import numpy as np
 import math
-from pyepw.epw import EPW
-import time
-import matplotlib.pyplot as plt
 
 # -------------------------------------------------------------------------------------------------------------------- #
 # Functions
@@ -614,9 +611,6 @@ def utci_numpy(temperature_air, temperature_mrt, wind_speed, relative_humidity):
                       0.00148348065) * np.power(vapour_pressure, 6)
 
     return utci_approx
-
-def utci_simple(temperature_air, temperature_mrt, wind_speed, relative_humidity):
-    return None
 
 
 def saturated_vapour_pressure(temperature: float) -> float:
