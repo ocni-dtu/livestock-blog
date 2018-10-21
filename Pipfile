@@ -7,6 +7,9 @@ name = "pypi"
 pelican = "*"
 ghp-import = "*"
 Markdown = "*"
+numpy = "*"
+matplotlib = "==2.2.3"
+future = "*"
 
 [dev-packages]
 
