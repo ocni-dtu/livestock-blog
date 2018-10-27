@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Install Livestock - Christian Kongsgaard</title>
+<title>UTCI Parameters - Christian Kongsgaard</title>
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
@@ -24,23 +24,23 @@
     <meta name="HandheldFriendly" content="True" />
 
     <meta name="author" content="Christian Kongsgaard" />
-    <meta name="description" content="Guide to install the Livestock Package." /> 
-    <meta name="keywords" content="python, livestock, install, grasshopper"> 
+    <meta name="description" content="Ever wondered, which parameter in the UTCI calculation is the most important?" /> 
+    <meta name="keywords" content="python, livestock, comfort, utci"> 
 
     <!-- Facebook OpenGraph -->
     <meta property="og:site_name" content="Christian Kongsgaard">
-    <meta property="og:title" content="Install Livestock - Christian Kongsgaard" />
-    <meta property="og:description" content="Guide to install the Livestock Package." />
+    <meta property="og:title" content="UTCI Parameters - Christian Kongsgaard" />
+    <meta property="og:description" content="Ever wondered, which parameter in the UTCI calculation is the most important?" />
     <meta property="og:image" content=".">
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="./install-livestock.html" />
+    <meta property="og:url" content="./utci-parameters.html" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:locale:alternate" content="en_US" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Install Livestock - Christian Kongsgaard">
-    <meta name="twitter:description" content="Guide to install the Livestock Package.">
+    <meta name="twitter:title" content="UTCI Parameters - Christian Kongsgaard">
+    <meta name="twitter:description" content="Ever wondered, which parameter in the UTCI calculation is the most important?">
     <meta name="twitter:image" content=".">
 </head>
 <body>
@@ -61,10 +61,10 @@
 <br>
 <article>
   <header class="w3-container col-main">
-    <h1>Install Livestock</h1>
+    <h1>UTCI Parameters</h1>
     <div class="post-info">
       <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
-        <span>  Posted on ma 30 april 2018 in <a href="./category/posts.html" style="font-style: italic">posts</a>
+        <span>  Posted on sø 21 oktober 2018 in <a href="./category/posts.html" style="font-style: italic">posts</a>
 
         </span>
       </div>
@@ -78,12 +78,12 @@
 ">#livestock</a>
         </span>
         <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="./tag/install.html" title="  All posts about Install
-">#install</a>
+          <a href="./tag/comfort.html" title="  All posts about Comfort
+">#comfort</a>
         </span>
         <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="./tag/grasshopper.html" title="  All posts about Grasshopper
-">#grasshopper</a>
+          <a href="./tag/utci.html" title="  All posts about Utci
+">#utci</a>
         </span>
       </div>
     </div>
@@ -91,65 +91,22 @@
   <br>
   <div class="col-main w3-container">
     <main id="article-content">
-      <p>Livestock is a plugin to <a href="http://www.grasshopper3d.com/">Grasshopper</a> for <a href="https://www.rhino3d.com/">Rhino</a>. 
-It is therefore an requirement that those two programs are installed for it to work. If they are install it 
-should be pretty straight forward to install the rest.</p>
-<h3>Grasshopper Dependencies</h3>
-<p>Livestock depends on ghPython, which is what makes it possible to create Python components in Grasshopper.
-ghPython can be downloaded <a href="http://www.food4rhino.com/app/ghpython">here</a></p>
-<p><strong>To Install</strong>:
-<em> In Grasshopper, choose File &gt; Special Folders &gt; Components folder. Save the gha file there.
-</em> Right-click the file &gt; Properties &gt; make sure there is no "blocked" text
-* Restart Rhino and Grasshopper</p>
-<p>Livestock also explicitly depends on <a href="http://www.ladybug.tools/">Ladybug Tools</a>. 
-They can be downloaded from <a href="http://www.food4rhino.com/app/ladybug-tools">here</a>.</p>
-<h3>Download Livestock Grasshopper</h3>
-<p>Now you are ready to get Livestock installed!
-All you need to do is to download this <a href="https://github.com/ocni-dtu/livestock_gh/archive/master.zip">zip</a></p>
-<p>Download the latest <a href="https://github.com/livestock3d/livestock/releases">Livestock Release</a></p>
-<ul>
-<li>Create a folder at <code>%appdata%\McNeel\Rhinoceros\5.0\scripts</code> called <code>livestock</code></li>
-<li>Put all the files from the folder "Python Rhino Script" in there.</li>
-<li>Create a folder at <code>%appdata%\Grasshopper\UserObjects</code> called <code>livestock</code></li>
-<li>Put the files from the folder "Grasshopper User Objects" in there.</li>
-<li>Move the folder "Examples" to a location of your choosing. </li>
-<li>On the C-drive create a folder called <code>livestock</code> as well. </li>
-</ul>
-<h3>Anaconda Install</h3>
-<p>Now when all th files for Grasshopper is in place it is time to complete the installation by installing CPython.
-Livestock depend on Anaconda environments to run CPython. So it needs to be installed. If you already have Anaconda 
-installed, you can just skip this part and go straight to setting up the Conda environment.  </p>
-<p>Use this <a href="https://repo.continuum.io/miniconda/Miniconda3-latest-Windows-x86_64.exe">link</a> to download and install Miniconda.
-Miniconda is the lightweight version of Anaconda. If you already installed Anaconda it is also fine. 
-It will make no difference to the functionality of Livestock. </p>
-<p>Remember to check the box with: "Add Anaconda to my PATH environment variable, even if it prompts you with a warning. 
-Second check box is optional"</p>
-<h3>Conda Environment</h3>
-<p>When Anaconda is installed you are ready to create a conda environment specific to run Livestock. 
-Open the command or Anaconda promt. (with adimin rights and you may need to turn off <a href="https://github.com/conda/conda/issues/6007#issuecomment-350348434">sll verification</a>)</p>
-<p>Type in:</p>
-<blockquote>
-<p>conda create -n livestock_env python=3.6</p>
-</blockquote>
-<p>Conda then will the install the environment called "livestock_env". Afterwards the environment can be activated:</p>
-<blockquote>
-<p>activate livestock_env</p>
-</blockquote>
-<p>Your CPython 3.6 environment is now ready, however to make CPython talk to Grasshopper via the Livestock protocols we 
-need to install the packages: <a href="http://www.numpy.org/">numpy</a>, 
-<a href="https://www.scipy.org/">scipy</a>, <a href="http://www.paramiko.org/">paramiko</a> and 
-<a href="https://github.com/Toblerity/Shapely">shapely</a> you may also install other packages such as 
-<a href="https://matplotlib.org/">matplotlib</a> or many other conda packages <a href="https://anaconda.org/anaconda/repo">Conda packages</a> 
-in this way:</p>
-<blockquote>
-<p>conda install numpy scipy shapely paramiko matplotlib</p>
-</blockquote>
-<p>Your CPython 3.6 environment is almost ready, to take full advantage of the Livestock ecosystem we just need to use 
-<a href="https://pypi.org/project/pip/">pip</a> to install the Livestock CPython dependencies:</p>
-<blockquote>
-<p>pip install livestock</p>
-</blockquote>
-<p>Just ignore any Cython related warnings.</p>
+      <p>The Universal Thermal Climate Index (UTCI) is a widely used outdoor comfort metric. It is currently released as a
+6th order polynomial formula with four inputs: Mean Radiant Temperature, Air Temperature, Wind Speed and Relative 
+Humidity. </p>
+<p>I often hear that different measures are needed for achieving outdoor comfort in different climates. These claims
+often only backed up by experience and I therefore figured that a parameter study of UTCI would be in place to bring 
+some clarity.</p>
+<p>The UTCI regression model is based on the advanced multi-node thermoregulation model 'Fiala', which tries to solve the 
+human energy balance. The raw model is rather complex and time consuming to compute and therefore the authors of UTCI 
+chose to fit a polynomial to approximate the original model. The polynomial takes four inputs; mean radiant temperature, 
+air temperature, wind speed and relative humidity.</p>
+<h2>Relative Humidity</h2>
+<p><img alt="alt text" src="./images/utci_parameters/utci_relhum.png"></p>
+<h2>Wind Speed</h2>
+<p><img alt="alt text" src="./images/utci_parameters/utci_wind.png"></p>
+<h2>Mean Radiant Temperature</h2>
+<p><img alt="alt text" src="./images/utci_parameters/utci_mrt.png"></p>
     </main>
     <br>
     <footer>
@@ -171,8 +128,8 @@ I aim to give more people access to complex environmental information to promote
       
       <p style="font-size:10pt; font-style: italic;">  Did you like this article? Share it with your friends!
 </p>
-      <div class="shariff" data-services="[&quot;linkedin&quot;,&quot;mail&quot;]" data-title="Install Livestock - Christian Kongsgaard" data-mail-url="mailto:" data-mail-subject="  Interesting post on Christian Kongsgaard
-" data-mail-body="  Hey, I just read this article and really enjoyed it. I'm sure you also like it ;) ./install-livestock.html
+      <div class="shariff" data-services="[&quot;linkedin&quot;,&quot;mail&quot;]" data-title="UTCI Parameters - Christian Kongsgaard" data-mail-url="mailto:" data-mail-subject="  Interesting post on Christian Kongsgaard
+" data-mail-body="  Hey, I just read this article and really enjoyed it. I'm sure you also like it ;) ./utci-parameters.html
 " >
       </div>
       <br>

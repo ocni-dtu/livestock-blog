@@ -19,3 +19,14 @@ human energy balance. The raw model is rather complex and time consuming to comp
 chose to fit a polynomial to approximate the original model. The polynomial takes four inputs; mean radiant temperature, 
 air temperature, wind speed and relative humidity.
 
+## Relative Humidity
+
+![alt text]({filename}/images/utci_parameters/utci_relhum.png)
+
+## Wind Speed
+
+![alt text]({filename}/images/utci_parameters/utci_wind.png)
+
+## Mean Radiant Temperature
+
+![alt text]({filename}/images/utci_parameters/utci_mrt.png)
