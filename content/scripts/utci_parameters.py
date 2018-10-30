@@ -29,7 +29,7 @@ def mm2inch(*tuple_):
 
 def change_relhum():
     temp = np.linspace(-30, 40, 200)
-    relhum = np.linspace(10, 90, 200)
+    relhum = np.linspace(10, 100, 200)
     t, rh = np.meshgrid(temp, relhum)
     mrt = t
     wind = np.ones((200, 200)) * 3
@@ -82,7 +82,7 @@ def change_mrt():
     temp = np.linspace(-30, 40, 200)
     wind = np.ones((200, 200)) * 3
     relhum = np.ones((200, 200)) * 50
-    mrt = np.linspace(-30, 70, 200)
+    mrt = np.linspace(-50, 70, 200)
     t, mt = np.meshgrid(temp, mrt)
     utci = ui.utci_numpy(t, mt, wind, relhum)
 
@@ -123,7 +123,7 @@ def relhum_difference(save=False):
     colors = cm.RdBu_r
     fig, ax = plt.subplots(1, 1, figsize=mm2inch(250, 200))
     plot = ax.pcolor(temp, relhum, diff_utci, cmap=colors, vmin=-35, vmax=35)
-    levels = [-2, -1, 0, 1, 2, 5, 10, 15, 20]
+    levels = [-2, -1, 0, 1, 2, 5, 10, 15, 20, 30]
     con = ax.contour(temp, relhum, diff_utci, levels, colors='k')
     plt.clabel(con, inline=1, fontsize=10, fmt='%d')
     ax.set_xlabel('Air Temperature [°C]')
