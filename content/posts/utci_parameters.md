@@ -29,9 +29,9 @@ T<sub>MRT</sub> is mean radiant temperature.
 U<sub>wind</sub> is wind speed.
 p<sub>vapour</sub> is water vapour pressure.
 
-The reference condition is defined as an environment with a wind speed (Uwind) of 0.5 m/s at 10m height 
-(approximately 0.3 m/s at 1.1m height), a mean radiant temperature (TMRT) that equals the ambient air temperature (Ta), 
-a vapour pressure (pvapour), which corresponds to a relative humidity of 50%, but having a maximum value of 20hPa. 
+The reference condition is defined as an environment with a wind speed (U<sub>wind</sub>) of 0.5 m/s at 10m height 
+(approximately 0.3 m/s at 1.1m height), a mean radiant temperature (T<sub>MRT</sub>) that equals the ambient air temperature (T<sub>a</sub>), 
+a vapour pressure (p<sub>vapour</sub>), which corresponds to a relative humidity of 50%, but having a maximum value of 20hPa. 
 It is furthermore assumed that persons have a metabolic rate of 2.3 MET corresponding to a walking speed of 1.1 m/s and 
 wearing clothing with a thermal resistance modeled by the UTCI-clothing model (Havenith et al. 2012).
 
