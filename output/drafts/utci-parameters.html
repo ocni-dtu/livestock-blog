@@ -6,16 +6,16 @@
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
-    <link rel="stylesheet" type="text/css" href="./theme/css/w3.css">
-    <link rel="stylesheet" type="text/css" href="./theme/css/style.css">
-    <link rel="stylesheet" type="text/css" href="./theme/css/jqcloud.css">
-    <link rel="stylesheet" type="text/css" href="./theme/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="./theme/css/shariff.min.css">
-    <link rel="stylesheet" type="text/css" href="./theme/css/pygments-highlight-github.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/jqcloud.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/shariff.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments-highlight-github.css">
 
     <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="./theme/js/jqcloud.min.js"></script>
+    <script src="../theme/js/jqcloud.min.js"></script>
 
      <!-- Meta -->
     <meta charset="utf-8" />
@@ -31,9 +31,9 @@
     <meta property="og:site_name" content="Christian Kongsgaard">
     <meta property="og:title" content="UTCI Parameters - Christian Kongsgaard" />
     <meta property="og:description" content="Ever wondered, which parameter in the UTCI calculation is the most important?" />
-    <meta property="og:image" content=".">
+    <meta property="og:image" content="..">
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="./utci-parameters.html" />
+    <meta property="og:url" content="../drafts/utci-parameters.html" />
     <meta property="og:locale" content="de_DE" />
     <meta property="og:locale:alternate" content="en_US" />
 
@@ -41,19 +41,19 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="UTCI Parameters - Christian Kongsgaard">
     <meta name="twitter:description" content="Ever wondered, which parameter in the UTCI calculation is the most important?">
-    <meta name="twitter:image" content=".">
+    <meta name="twitter:image" content="..">
 </head>
 <body>
   <div class="w3-row w3-card w3-white">
     <header id=banner>
        <!-- AUTHOR INITIALS-->
-      <a href="." id=logo title="Home">CK</a>
+      <a href=".." id=logo title="Home">CK</a>
       <nav id="menu">
         <ul>
-          <li><a href="./pages/LIVESTOCK.html">LIVESTOCK</a></li>
-          <li><a href="./pages/portfolio.html">PORTFOLIO</a></li>
-          <li><a href="./pages/tutorials.html">TUTORIALS</a></li>
-          <li style="font-weight: bold;"><a href="./category/posts.html">posts</a></li>
+          <li><a href="../pages/LIVESTOCK.html">LIVESTOCK</a></li>
+          <li><a href="../pages/portfolio.html">PORTFOLIO</a></li>
+          <li><a href="../pages/tutorials.html">TUTORIALS</a></li>
+          <li style="font-weight: bold;"><a href="../category/posts.html">posts</a></li>
         </ul>
       </nav>
     </header>
@@ -64,25 +64,25 @@
     <h1>UTCI Parameters</h1>
     <div class="post-info">
       <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
-        <span>  Posted on sø 21 oktober 2018 in <a href="./category/posts.html" style="font-style: italic">posts</a>
+        <span>  Posted on sø 21 oktober 2018 in <a href="../category/posts.html" style="font-style: italic">posts</a>
 
         </span>
       </div>
       <div id="article-tags">
         <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="./tag/python.html" title="  All posts about Python
+          <a href="../tag/python.html" title="  All posts about Python
 ">#python</a>
         </span>
         <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="./tag/livestock.html" title="  All posts about Livestock
+          <a href="../tag/livestock.html" title="  All posts about Livestock
 ">#livestock</a>
         </span>
         <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="./tag/comfort.html" title="  All posts about Comfort
+          <a href="../tag/comfort.html" title="  All posts about Comfort
 ">#comfort</a>
         </span>
         <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
-          <a href="./tag/utci.html" title="  All posts about Utci
+          <a href="../tag/utci.html" title="  All posts about Utci
 ">#utci</a>
         </span>
       </div>
@@ -102,7 +102,7 @@ some clarity.</p>
 <p>“The UTCI is defined as the air temperature (Ta) of the reference condition causing the same model response as actual 
 conditions.” (Błazejczyk et al. 2013)</p>
 <p>This can be rewritten as:</p>
-<p><img alt="alt text" src="./images/utci_parameters/utci_formula.png"></p>
+<p><img alt="alt text" src="../images/utci_parameters/utci_formula.png"></p>
 <ul>
 <li>T<sub>a</sub> is ambient air temperature.</li>
 <li>T<sub>MRT</sub> is mean radiant temperature.</li>
@@ -121,64 +121,10 @@ contains a total of 187 tissue nodes. The model also includes a model to predict
 central nervous system, e.g. shivering or sweating. 
 The model computes an UTCI temperature, which can be categorized in terms of thermal stress. The assessment scale can 
 be seen in the table below.</p>
-<table>
-<thead>
-<tr>
-<th align="left">UTCI (°C)</th>
-<th align="left">Physiological Stress</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Above +46</td>
-<td align="left">Extreme heat stress</td>
-</tr>
-<tr>
-<td align="left">+38 to +46</td>
-<td align="left">Very strong heat stress</td>
-</tr>
-<tr>
-<td align="left">+32 to +38</td>
-<td align="left">Strong heat stress</td>
-</tr>
-<tr>
-<td align="left">+26 to +32</td>
-<td align="left">Moderate heat stress</td>
-</tr>
-<tr>
-<td align="left">+18 to +26</td>
-<td align="left">Thermal comfort zone</td>
-</tr>
-<tr>
-<td align="left">+9 to +18</td>
-<td align="left">No thermal stress</td>
-</tr>
-<tr>
-<td align="left">0 to +9</td>
-<td align="left">Slight cold stress</td>
-</tr>
-<tr>
-<td align="left">-13 to 0</td>
-<td align="left">Moderate cold stress</td>
-</tr>
-<tr>
-<td align="left">-27 to -13</td>
-<td align="left">Strong cold stress</td>
-</tr>
-<tr>
-<td align="left">-40 to -27</td>
-<td align="left">Very strong cold stress</td>
-</tr>
-<tr>
-<td align="left">Below -40</td>
-<td align="left">Extreme cold stress</td>
-</tr>
-</tbody>
-</table>
-<p><img 150px alt="alt text" src="./images/utci_parameters/Assessment-scale---UTCI.png" width:></p>
+<p><img alt="alt text" src="../images/utci_parameters/Assessment-scale---UTCI.png"></p>
 <p>As the complexity of the UTCI is quite large so is the computational power and time needed to perform the analysis. 
 Therefore (Bröde et al. 2012) proposed methods for approximating the UTCI. 
-They came up with two methods: a look-up table of pre-calculated UTCI values and a 6th order regression function. 
+They came up with two methods: a look-up table of pre-calculated UTCI values and a 6<sup>th</sup> order regression function. 
 They state that the computing speed (number of calculations per second) of the three methods are as following:</p>
 <ul>
 <li>Actual UTCI model: 1/s </li>
@@ -186,7 +132,8 @@ They state that the computing speed (number of calculations per second) of the t
 <li>Regression function: &gt; 100,000/s</li>
 </ul>
 <p>With the higher number of computation per second comes with a cost of lower accuracy for the regression function. 
-On the other hand, the 4th dimensional (Ta, TMRT, Uwind, pvapour) look-up table with 100 steps in each dimension, 
+On the other hand, the 4<sup>th</sup> dimensional (T<sub>a</sub>, T<sub>MRT</sub>, U<sub>wind</sub>, p<sub>vapour</sub>) 
+look-up table with 100 steps in each dimension, 
 would require 200Mb of storage space. Because of the higher number of calculations per second the regression function 
 is most commonly used. The regression function is only valid within the following bounds:</p>
 <ul>
@@ -205,12 +152,12 @@ The base case is: 50% relative humidity, a wind speed at 10m of 3m/s and MRT is 
 <ul>
 <li><strong>Relative Humidity</strong>: 10% to 90%</li>
 <li><strong>Wind Speed</strong>: 0.5m/s to 17m/s</li>
-<li><strong>Mean Radiant Temperature</strong>: 50°C below and 70°C above air temperature</li>
+<li><strong>Mean Radiant Temperature</strong>: -50°C to 70°C</li>
 </ul>
 <p>If you wish to play with this yourself, then I have made it into a Jupyter Notebook. 
-You can download it <a href="./scripts/UTCI Parameter Variations.ipynb">here</a></p>
+You can download it <a href="../scripts/UTCI Parameter Variations.ipynb">here</a></p>
 <h2>Relative Humidity</h2>
-<p><img alt="alt text" src="./images/utci_parameters/utci_relhum.png"></p>
+<p><img alt="alt text" src="../images/utci_parameters/utci_relhum.png"></p>
 <p>For most air temperature ranges it seems that a deviation from the center of 50% relative humidity doesn't cause an 
 effect on the resulting UTCI. It is only at an air temperature of more than 35°C that a significant UTCI can be seen.
 However, when the temperature and the relative humidity starts to raise above 35°C and 75% the response in UTCI becomes 
@@ -220,19 +167,19 @@ Decreasing the relative humidity can, however only result in a decrease of UTCI 
 <p>In short; one should only care about relative humidity in hot climates. No significant changes in UTCI can be observed 
 if the relative humidity is kept below 65%.</p>
 <h2>Wind Speed</h2>
-<p><img alt="alt text" src="./images/utci_parameters/utci_wind.png"></p>
-<p>As expected the influence of the wind is mostly decreases the experienced UTCI. If the wind speed is keept under 3m/s 
+<p><img alt="alt text" src="../images/utci_parameters/utci_wind.png"></p>
+<p>As expected the influence of the wind is mostly decreases the experienced UTCI. If the wind speed is kept under 3m/s 
 the UTCI is increasing. The size of that increment is, however depended on the the air temperature. At low 
 temperatures you will have an increase of up to 10°C UTCI, whereas if you are above 15°C in air temperature, you can't 
 even gain 5°C UTCI. The same pattern is visible at higher wind speeds. At low air temperatures high wind speeds are 
 very effective in decreasing the UTCI. The higher air temperatures you get, the less efficient the wind speed is.</p>
-<p>There is a weird phenonomon happening in the upper right corner of the graph. It seems that if you have an air<br>
+<p>There is a weird phenomenon happening in the upper right corner of the graph. It seems that if you have an air<br>
 temperature above 35°C and increases the wind speed to above 7m/s, you will start to increase the UTCI instead of 
 decreasing it as it happens at slightly lower air temperatures.</p>
 <p>In short; if wind speeds are kept low at cold air temperatures, they can help increasing the UTCI (around 5°C UTCI). 
 At higher air temperatures an increase in wind speed can be used to lower the UTCI (around 5°C UTCI).</p>
 <h2>Mean Radiant Temperature</h2>
-<p><img alt="alt text" src="./images/utci_parameters/utci_mrt.png"></p>
+<p><img alt="alt text" src="../images/utci_parameters/utci_mrt.png"></p>
 <p><strong>Bibliography</strong></p>
 <p>Błazejczyk, Krzysztof, Gerd Jendritzky, Peter Bröde, Dusan Fiala, George Havenith, Yoram Epstein, Agnieszka Psikuta, 
 and Bernhard Kampmann. 
@@ -262,10 +209,10 @@ and Bernhard Kampmann.
         <div id="author-block" class="w3-light-grey w3-border">
             <img style="width: 35px; height: 56px; margin-left:50px;" src="theme/images/bookmark-red.png" alt="bookmark"></img>
             <div id="author-info">
-                <a href="./authors.html#christian-kongsgaard"><img style="width: 60px; height: 60px;" src="/authors/christian-kongsgaard.png" onerror="this.src='/theme/images/avatar.png'"></img>
+                <a href="../authors.html#christian-kongsgaard"><img style="width: 60px; height: 60px;" src="/authors/christian-kongsgaard.png" onerror="this.src='/theme/images/avatar.png'"></img>
                 </a>
                 <div style="margin-left: 20px; margin-top: 15px;">
-                    <a href="./authors.html#christian-kongsgaard"><span id="author-name" class="w3-hover-text-dark-grey">Christian Kongsgaard</span></a>
+                    <a href="../authors.html#christian-kongsgaard"><span id="author-name" class="w3-hover-text-dark-grey">Christian Kongsgaard</span></a>
                     <p id="author-story" style="max-width: 500px;">I am an architectural engineer focused on computational environmental design and building performance simulations.
 I aim to give more people access to complex environmental information to promote innovative, evidence based, holistic and sustainable building designs.</p>
                 </div>
@@ -277,7 +224,7 @@ I aim to give more people access to complex environmental information to promote
       <p style="font-size:10pt; font-style: italic;">  Did you like this article? Share it with your friends!
 </p>
       <div class="shariff" data-services="[&quot;linkedin&quot;,&quot;mail&quot;]" data-title="UTCI Parameters - Christian Kongsgaard" data-mail-url="mailto:" data-mail-subject="  Interesting post on Christian Kongsgaard
-" data-mail-body="  Hey, I just read this article and really enjoyed it. I'm sure you also like it ;) ./utci-parameters.html
+" data-mail-body="  Hey, I just read this article and really enjoyed it. I'm sure you also like it ;) ../drafts/utci-parameters.html
 " >
       </div>
       <br>
@@ -292,7 +239,7 @@ I aim to give more people access to complex environmental information to promote
                 <h6>  Categories
 </h6>
                 <ul>
-                    <li class=""><a href="./category/posts.html">posts<a></li>
+                    <li class=""><a href="../category/posts.html">posts<a></li>
                     <li class="empty"></li>
                     <li class="empty"></li>
                     <li class="empty"></li>
@@ -304,21 +251,21 @@ I aim to give more people access to complex environmental information to promote
         <h6>Top Tags</h6>
         <ul>
           <!-- Print the four most popular tags, sorted automatically with the setting TAG_CLOUD_SORTING = 'size' in pelicanconf.py -->
-          <li class=""><a href="./tag/ssh.html"> #ssh ()</a></li>
-          <li class=""><a href="./tag/tutorial.html"> #tutorial ()</a></li>
-          <li class=""><a href="./tag/utci.html"> #utci ()</a></li>
-          <li class=""><a href="./tag/install.html"> #install ()</a></li>
+          <li class=""><a href="../tag/release.html"> #release ()</a></li>
+          <li class=""><a href="../tag/first-component.html"> #first component ()</a></li>
+          <li class=""><a href="../tag/python.html"> #python ()</a></li>
+          <li class=""><a href="../tag/run-off.html"> #run-off ()</a></li>
         </ul>
       </div>
     </div>
     <div class="blogroll-block w3-col l3 m3 s6">
       <div>
-          <h6><a href="./authors.html">  Authors
+          <h6><a href="../authors.html">  Authors
 </a></h6>
           <ul>
               <!--  -->
-              <li class=""><a href="./authors.html">Christian Kongsgaard</a></li>
-              <!-- <li class=""><a href="./authors.html#christian-kongsgaard">Christian Kongsgaard</a></li> -->
+              <li class=""><a href="../authors.html">Christian Kongsgaard</a></li>
+              <!-- <li class=""><a href="../authors.html#christian-kongsgaard">Christian Kongsgaard</a></li> -->
                <li class="empty"></li>
               <li class="empty"></li>
               <li class="empty"></li>
@@ -339,7 +286,7 @@ I aim to give more people access to complex environmental information to promote
     </div>
     <div id="contact">
         <ul>
-            <li><a href="./legal.html">  About | Privacy
+            <li><a href="../legal.html">  About | Privacy
 </a></li>
         </ul>
     </div>
@@ -347,6 +294,6 @@ I aim to give more people access to complex environmental information to promote
         <span>Made with ❤️ by FK | Powered by <a href="http://getpelican.com" target="_blank"><u>Pelican</u></a> and <a href="https://github.com/art1fa/minimalX" target="_blank"><u>minimalX</u></a>        </span>
     </div>
   </footer>
-<script src="./theme/js/shariff.min.js"></script>
+<script src="../theme/js/shariff.min.js"></script>
 </body>
 </html>

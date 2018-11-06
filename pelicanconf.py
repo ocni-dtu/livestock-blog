@@ -18,7 +18,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Paths
-STATIC_PATHS = ['images', 'authors', 'data']
+STATIC_PATHS = ['images', 'authors', 'data', 'scripts']
 PLUGIN_PATHS = ['plugins', ]
 PAGE_PATHS = ['pages', ]
 ARTICLE_PATHS = ['posts', ]
