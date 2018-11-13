@@ -1,9 +1,10 @@
 Date: 2018-10-21
-Modified: 2018-10-21
+Modified: 2018-11-13
 Status: draft
 Authors: Christian Kongsgaard
 Tags: python, livestock, comfort, utci
-Title: UTCI Parameters
+Title: UTCI Parameter Sensitivity
+HeaderImage: /images/utci_parameters/Front-Picture.png
 Summary: Ever wondered, which parameter in the UTCI calculation is the most important? 
 
 The Universal Thermal Climate Index (UTCI) is a widely used outdoor comfort metric. It is currently released as a
@@ -118,7 +119,18 @@ At higher air temperatures an increase in wind speed can be used to lower the UT
 
 ![alt text]({filename}/images/utci_parameters/utci_mrt.png)
 
+The influence of mean radiant temperature is a bit more streight forward that the other two. If you have a lower mean 
+radiant temperature than air temperature you will have a decrease in UTCI compared to the reference and vice versa.
+The relationship is however not linear. The further the mean radiant temperature and air temperature are the larger the 
+effect on UTCI is.
 
+### Feedback and Comments
+If you have any feedback or comments please let me know! You can comment on my related LinkedIn posts:
+
+* Relative Humidity Chart (Not yet online)
+* Wind Speed Chart (Not yet online)
+* Mean Radiant Temperature Chart (Not yet online)
+* General Blog Post (Not yet online)
 
 **Bibliography**
 
