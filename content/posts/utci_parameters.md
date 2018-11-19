@@ -1,11 +1,11 @@
-Date: 2018-10-21
-Modified: 2018-11-13
-Status: draft
+Date: 2018-11-18
+Modified: 2018-11-18
+Status: published
 Authors: Christian Kongsgaard
 Tags: python, livestock, comfort, utci
 Title: UTCI Parameter Sensitivity
 HeaderImage: /images/utci_parameters/Front-Picture.png
-Summary: Ever wondered, which parameter in the UTCI calculation is the most important? 
+Summary: Ever wondered, which parameter in the UTCI calculation is the most influential? 
 
 The Universal Thermal Climate Index (UTCI) is a widely used outdoor comfort metric. It is currently released as a
 6<sup>th</sup> order polynomial formula with four inputs: *Mean Radiant Temperature, Air Temperature, Wind Speed and 
@@ -18,8 +18,8 @@ some clarity.
 # Universal Thermal Climate Index Model
 Before going into the parameter investigation let me just, for clarity, describe basis for the UTCI model.
 
-“The UTCI is defined as the air temperature (Ta) of the reference condition causing the same model response as actual 
-conditions.” (Błazejczyk et al. 2013)
+“The UTCI is defined as the air temperature (T<sub>a</sub>) of the reference condition causing the same model response 
+as actual conditions.” (Błazejczyk et al. 2013)
 
 This can be rewritten as:
 
@@ -37,7 +37,7 @@ but having a maximum value of 20hPa.
 It is furthermore assumed that persons have a metabolic rate of 2.3 MET corresponding to a walking speed of 1.1 m/s and 
 wearing clothing with a thermal resistance modeled by the UTCI-clothing model (Havenith et al. 2012).
 
-The model uses the UTCI-Fiala model (Fiala et al. 2012) as it’s thermoregulation model. It models an average person of 
+The model uses the UTCI-Fiala model (Fiala et al. 2012) as its thermoregulation model. It models an average person of 
 73.4kg and with a surface body area of 1.85m². The body is represented by 12 spherical or cylindrical parts and 
 contains a total of 187 tissue nodes. The model also includes a model to predict thermoregulatory reactions of the 
 central nervous system, e.g. shivering or sweating. 
@@ -119,18 +119,10 @@ At higher air temperatures an increase in wind speed can be used to lower the UT
 
 ![alt text]({filename}/images/utci_parameters/utci_mrt.png)
 
-The influence of mean radiant temperature is a bit more streight forward that the other two. If you have a lower mean 
+The influence of mean radiant temperature is a bit more straight forward that the other two. If you have a lower mean 
 radiant temperature than air temperature you will have a decrease in UTCI compared to the reference and vice versa.
 The relationship is however not linear. The further the mean radiant temperature and air temperature are the larger the 
 effect on UTCI is.
-
-### Feedback and Comments
-If you have any feedback or comments please let me know! You can comment on my related LinkedIn posts:
-
-* Relative Humidity Chart (Not yet online)
-* Wind Speed Chart (Not yet online)
-* Mean Radiant Temperature Chart (Not yet online)
-* General Blog Post (Not yet online)
 
 **Bibliography**
 

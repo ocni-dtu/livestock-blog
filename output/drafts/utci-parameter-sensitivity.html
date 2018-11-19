@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>UTCI Parameter Sensitivity - Christian Kongsgaard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:regular,bold">
+    <link rel="stylesheet" type="text/css" href="../theme/css/w3.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/jqcloud.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/shariff.min.css">
+    <link rel="stylesheet" type="text/css" href="../theme/css/pygments-highlight-github.css">
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="../theme/js/jqcloud.min.js"></script>
+
+     <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="HandheldFriendly" content="True" />
+
+    <meta name="author" content="Christian Kongsgaard" />
+    <meta name="description" content="Ever wondered, which parameter in the UTCI calculation is the most influential?" /> 
+    <meta name="keywords" content="python, livestock, comfort, utci"> 
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:site_name" content="Christian Kongsgaard">
+    <meta property="og:title" content="UTCI Parameter Sensitivity - Christian Kongsgaard" />
+    <meta property="og:description" content="Ever wondered, which parameter in the UTCI calculation is the most influential?" />
+    <meta property="og:image" content="../images/utci_parameters/Front-Picture.png">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="../drafts/utci-parameter-sensitivity.html" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UTCI Parameter Sensitivity - Christian Kongsgaard">
+    <meta name="twitter:description" content="Ever wondered, which parameter in the UTCI calculation is the most influential?">
+    <meta name="twitter:image" content="../images/utci_parameters/Front-Picture.png">
+</head>
+<body>
+  <div class="w3-row w3-card w3-white">
+    <header id=banner>
+       <!-- AUTHOR INITIALS-->
+      <a href=".." id=logo title="Home">CK</a>
+      <nav id="menu">
+        <ul>
+          <li><a href="../pages/LIVESTOCK.html">LIVESTOCK</a></li>
+          <li><a href="../pages/portfolio.html">PORTFOLIO</a></li>
+          <li><a href="../pages/tutorials.html">TUTORIALS</a></li>
+          <li style="font-weight: bold;"><a href="../category/posts.html">posts</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+<br>
+<article>
+  <header class="w3-container col-main">
+    <h1>UTCI Parameter Sensitivity</h1>
+    <div class="post-info">
+      <div class="w3-opacity w3-margin-right w3-margin-bottom" style="flex-grow: 1;">
+        <span>  Posted on sø 18 november 2018 in <a href="../category/posts.html" style="font-style: italic">posts</a>
+
+        </span>
+      </div>
+      <div id="article-tags">
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="../tag/python.html" title="  All posts about Python
+">#python</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="../tag/livestock.html" title="  All posts about Livestock
+">#livestock</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="../tag/comfort.html" title="  All posts about Comfort
+">#comfort</a>
+        </span>
+        <span class="w3-tag w3-light-grey w3-text-red w3-hover-red">
+          <a href="../tag/utci.html" title="  All posts about Utci
+">#utci</a>
+        </span>
+      </div>
+    </div>
+  </header>
+  <br>
+  <div class="headerimage-article">
+    <img src="/images/utci_parameters/Front-Picture.png" style="width: 100%;">
+  </div>
+  <div class="col-main w3-container">
+    <main id="article-content">
+      <p>The Universal Thermal Climate Index (UTCI) is a widely used outdoor comfort metric. It is currently released as a
+6<sup>th</sup> order polynomial formula with four inputs: <em>Mean Radiant Temperature, Air Temperature, Wind Speed and 
+Relative Humidity</em>. </p>
+<p>I often hear that different measures are needed for achieving outdoor comfort in different climates. These claims
+often only backed up by experience and I therefore figured that a parameter study of UTCI would be in place to bring 
+some clarity.</p>
+<h1>Universal Thermal Climate Index Model</h1>
+<p>Before going into the parameter investigation let me just, for clarity, describe basis for the UTCI model.</p>
+<p>“The UTCI is defined as the air temperature (T<sub>a</sub>) of the reference condition causing the same model response 
+as actual conditions.” (Błazejczyk et al. 2013)</p>
+<p>This can be rewritten as:</p>
+<p><img alt="alt text" src="../images/utci_parameters/utci_formula.png"></p>
+<ul>
+<li>T<sub>a</sub> is ambient air temperature.</li>
+<li>T<sub>MRT</sub> is mean radiant temperature.</li>
+<li>U<sub>wind</sub> is wind speed.</li>
+<li>p<sub>vapour</sub> is water vapour pressure.</li>
+</ul>
+<p>The reference condition is defined as an environment with a wind speed (U<sub>wind</sub>) of 0.5 m/s at 10m height 
+(approximately 0.3 m/s at 1.1m height), a mean radiant temperature (T<sub>MRT</sub>) that equals the ambient air 
+temperature (T<sub>a</sub>), a vapour pressure (p<sub>vapour</sub>), which corresponds to a relative humidity of 50%, 
+but having a maximum value of 20hPa. 
+It is furthermore assumed that persons have a metabolic rate of 2.3 MET corresponding to a walking speed of 1.1 m/s and 
+wearing clothing with a thermal resistance modeled by the UTCI-clothing model (Havenith et al. 2012).</p>
+<p>The model uses the UTCI-Fiala model (Fiala et al. 2012) as its thermoregulation model. It models an average person of 
+73.4kg and with a surface body area of 1.85m². The body is represented by 12 spherical or cylindrical parts and 
+contains a total of 187 tissue nodes. The model also includes a model to predict thermoregulatory reactions of the 
+central nervous system, e.g. shivering or sweating. 
+The model computes an UTCI temperature, which can be categorized in terms of thermal stress. The assessment scale can 
+be seen in the table below.</p>
+<p><img alt="alt text" src="../images/utci_parameters/Assessment-scale---UTCI.png"></p>
+<p>As the complexity of the UTCI is quite large so is the computational power and time needed to perform the analysis. 
+Therefore (Bröde et al. 2012) proposed methods for approximating the UTCI. 
+They came up with two methods: a look-up table of pre-calculated UTCI values and a 6<sup>th</sup> order regression function. 
+They state that the computing speed (number of calculations per second) of the three methods are as following:</p>
+<ul>
+<li>Actual UTCI model: 1/s </li>
+<li>Look-up table: 100/s</li>
+<li>Regression function: &gt; 100,000/s</li>
+</ul>
+<p>With the higher number of computation per second comes with a cost of lower accuracy for the regression function. 
+On the other hand, the 4<sup>th</sup> dimensional (T<sub>a</sub>, T<sub>MRT</sub>, U<sub>wind</sub>, p<sub>vapour</sub>) 
+look-up table with 100 steps in each dimension, 
+would require 200Mb of storage space. Because of the higher number of calculations per second the regression function 
+is most commonly used. The regression function is only valid within the following bounds:</p>
+<ul>
+<li><strong>Ambient Air Temperature</strong>: -50 to +50°C</li>
+<li><strong>Mean Radiant Temperature</strong>: 50°C below and 70°C above air temperature</li>
+<li><strong>Wind Speeds at 10m height</strong>: 0.5 to 17m/s</li>
+<li><strong>Vapour Pressure</strong>: 0hPa to 45hPa</li>
+</ul>
+<p>This limits UTCI in some extreme cases, but the model covers the most common scenarios.   </p>
+<h1>Parameter Variation</h1>
+<p>The parameter study is done by varying MRT, wind speed and relative humidity, plot them against different air 
+temperatures and comparing them to a base case.
+For all three charts, the air temperature was in the range of: -30°C to 40°C.
+The base case is: 50% relative humidity, a wind speed at 10m of 3m/s and MRT is equal to air temperature.</p>
+<p>Relative humidity, wind speed and MRT was computed for the ranges:</p>
+<ul>
+<li><strong>Relative Humidity</strong>: 10% to 90%</li>
+<li><strong>Wind Speed</strong>: 0.5m/s to 17m/s</li>
+<li><strong>Mean Radiant Temperature</strong>: -50°C to 70°C</li>
+</ul>
+<p>If you wish to play with this yourself, then I have made it into a Jupyter Notebook. 
+You can download it <a href="../scripts/UTCI Parameter Variations.ipynb">here</a></p>
+<h2>Relative Humidity</h2>
+<p><img alt="alt text" src="../images/utci_parameters/utci_relhum.png"></p>
+<p>For most air temperature ranges it seems that a deviation from the center of 50% relative humidity doesn't cause an 
+effect on the resulting UTCI. It is only at an air temperature of more than 35°C that a significant UTCI can be seen.
+However, when the temperature and the relative humidity starts to raise above 35°C and 75% the response in UTCI becomes 
+very large, more than 30°C. 
+If the relative humidity is decreased below 50% it is only at positive air temperatures the UTCI is effected. 
+Decreasing the relative humidity can, however only result in a decrease of UTCI of 2°C.</p>
+<p>In short; one should only care about relative humidity in hot climates. No significant changes in UTCI can be observed 
+if the relative humidity is kept below 65%.</p>
+<h2>Wind Speed</h2>
+<p><img alt="alt text" src="../images/utci_parameters/utci_wind.png"></p>
+<p>As expected the influence of the wind is mostly decreases the experienced UTCI. If the wind speed is kept under 3m/s 
+the UTCI is increasing. The size of that increment is, however depended on the the air temperature. At low 
+temperatures you will have an increase of up to 10°C UTCI, whereas if you are above 15°C in air temperature, you can't 
+even gain 5°C UTCI. The same pattern is visible at higher wind speeds. At low air temperatures high wind speeds are 
+very effective in decreasing the UTCI. The higher air temperatures you get, the less efficient the wind speed is.</p>
+<p>There is a weird phenomenon happening in the upper right corner of the graph. It seems that if you have an air<br>
+temperature above 35°C and increases the wind speed to above 7m/s, you will start to increase the UTCI instead of 
+decreasing it as it happens at slightly lower air temperatures.</p>
+<p>In short; if wind speeds are kept low at cold air temperatures, they can help increasing the UTCI (around 5°C UTCI). 
+At higher air temperatures an increase in wind speed can be used to lower the UTCI (around 5°C UTCI).</p>
+<h2>Mean Radiant Temperature</h2>
+<p><img alt="alt text" src="../images/utci_parameters/utci_mrt.png"></p>
+<p>The influence of mean radiant temperature is a bit more straight forward that the other two. If you have a lower mean 
+radiant temperature than air temperature you will have a decrease in UTCI compared to the reference and vice versa.
+The relationship is however not linear. The further the mean radiant temperature and air temperature are the larger the 
+effect on UTCI is.</p>
+<p><strong>Bibliography</strong></p>
+<p>Błazejczyk, Krzysztof, Gerd Jendritzky, Peter Bröde, Dusan Fiala, George Havenith, Yoram Epstein, Agnieszka Psikuta, 
+and Bernhard Kampmann. 
+    2013. 
+    “An Introduction to the Universal Thermal Climate Index (UTCI).” 
+    Geographia Polonica 86 (1): 5–10. https://doi.org/10.7163/GPol.2013.1.</p>
+<p>Bröde, Peter, Dusan Fiala, Krzysztof Blazejczyk, Ingvar Holmér, Gerd Jendritzky, Bernhard Kampmann, Birger Tinz, and George Havenith. 
+    2012. 
+    “Deriving the Operational Procedure for the Universal Thermal Climate Index (UTCI).” 
+    International Journal of Biometeorology 56 (3): 481–94. https://doi.org/10.1007/s00484-011-0454-1.</p>
+<p>Coccolo, Silvia, Jérôme Kämpf, Jean Louis Scartezzini, and David Pearlmutter. 
+    2016. 
+    “Outdoor Human Comfort and Thermal Stress: A Comprehensive Review on Models and Standards.” 
+    Urban Climate 18. Elsevier Inc.: 33–57. https://doi.org/10.1016/j.uclim.2016.08.004.</p>
+<p>Fiala, Dusan, George Havenith, Peter Bröde, Bernhard Kampmann, and Gerd Jendritzky. 
+    2012. 
+    “UTCI-Fiala Multi-Node Model of Human Heat Transfer and Temperature Regulation.” 
+    International Journal of Biometeorology 56 (3): 429–41. https://doi.org/10.1007/s00484-011-0424-7.</p>
+<p>Havenith, George, Dusan Fiala, Krzysztof Blazejczyk, Mark Richards, Peter Bröde, Ingvar Holmér, Hannu Rintamaki, Yael Benshabat, and Gerd Jendritzky. 
+    2012. 
+    “The UTCI-Clothing Model.” 
+    International Journal of Biometeorology 56 (3): 461–70. https://doi.org/10.1007/s00484-011-0451-4.</p>
+    </main>
+    <br>
+    <footer>
+      <div class="adjust-width">
+        <div id="author-block" class="w3-light-grey w3-border">
+            <img style="width: 35px; height: 56px; margin-left:50px;" src="theme/images/bookmark-red.png" alt="bookmark"></img>
+            <div id="author-info">
+                <a href="../authors.html#christian-kongsgaard"><img style="width: 60px; height: 60px;" src="/authors/christian-kongsgaard.png" onerror="this.src='/theme/images/avatar.png'"></img>
+                </a>
+                <div style="margin-left: 20px; margin-top: 15px;">
+                    <a href="../authors.html#christian-kongsgaard"><span id="author-name" class="w3-hover-text-dark-grey">Christian Kongsgaard</span></a>
+                    <p id="author-story" style="max-width: 500px;">I am an architectural engineer focused on computational environmental design and building performance simulations.
+I aim to give more people access to complex environmental information to promote innovative, evidence based, holistic and sustainable building designs.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <br>
+      
+      <p style="font-size:10pt; font-style: italic;">  Did you like this article? Share it with your friends!
+</p>
+      <div class="shariff" data-services="[&quot;linkedin&quot;,&quot;mail&quot;]" data-title="UTCI Parameter Sensitivity - Christian Kongsgaard" data-mail-url="mailto:" data-mail-subject="  Interesting post on Christian Kongsgaard
+" data-mail-body="  Hey, I just read this article and really enjoyed it. I'm sure you also like it ;) ../drafts/utci-parameter-sensitivity.html
+" >
+      </div>
+      <br>
+    </footer>
+  </div>
+</article>
+<br>
+  <footer id="contentinfo">
+    <div id="blogroll" class="w3-row">
+        <div class="blogroll-block w3-col l3 m3 s6">
+            <div>
+                <h6>  Categories
+</h6>
+                <ul>
+                    <li class=""><a href="../category/posts.html">posts<a></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                    <li class="empty"></li>
+                </ul>
+            </div>
+        </div>
+    <div class="blogroll-block w3-col l3 m3 s6">
+      <div>
+        <h6>Top Tags</h6>
+        <ul>
+          <!-- Print the four most popular tags, sorted automatically with the setting TAG_CLOUD_SORTING = 'size' in pelicanconf.py -->
+          <li class=""><a href="../tag/livestock-template-method.html"> #livestock template method ()</a></li>
+          <li class=""><a href="../tag/grasshopper.html"> #grasshopper ()</a></li>
+          <li class=""><a href="../tag/thermal-comfort.html"> #thermal comfort ()</a></li>
+          <li class=""><a href="../tag/ssh.html"> #ssh ()</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="blogroll-block w3-col l3 m3 s6">
+      <div>
+          <h6><a href="../authors.html">  Authors
+</a></h6>
+          <ul>
+              <!--  -->
+              <li class=""><a href="../authors.html">Christian Kongsgaard</a></li>
+              <!-- <li class=""><a href="../authors.html#christian-kongsgaard">Christian Kongsgaard</a></li> -->
+               <li class="empty"></li>
+              <li class="empty"></li>
+              <li class="empty"></li>
+          </ul>
+      </div>
+    </div>
+      <div class="blogroll-block w3-col l3 m3 s6">
+          <div>
+              <h6>Social Media</h6>
+              <ul>
+                  <li><a class="sc-linkedin" href="https://www.linkedin.com/in/christian-kongsgaard-33825b78/" target="_blank"><span style="text-transform: capitalize;">linkedin</span> <i class="fa fa-linkedin"></i></a></li>
+                  <li><a class="sc-github" href="https://github.com/ocni-dtu" target="_blank"><span style="text-transform: capitalize;">github</span> <i class="fa fa-github"></i></a></li>
+                  <li class="empty"></li>
+                  <li class="empty"></li>
+              </ul>
+          </div>
+      </div>
+    </div>
+    <div id="contact">
+        <ul>
+            <li><a href="../legal.html">  About | Privacy
+</a></li>
+        </ul>
+    </div>
+    <div id="copyright" class="w3-center w3-small w3-text-grey w3-padding-48">
+        <span>Made with ❤️ by FK | Powered by <a href="http://getpelican.com" target="_blank"><u>Pelican</u></a> and <a href="https://github.com/art1fa/minimalX" target="_blank"><u>minimalX</u></a>        </span>
+    </div>
+  </footer>
+<script src="../theme/js/shariff.min.js"></script>
+</body>
+</html>

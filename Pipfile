@@ -10,6 +10,7 @@ Markdown = "*"
 numpy = "*"
 matplotlib = "==2.2.3"
 future = "*"
+notebook = "*"
 
 [dev-packages]
 
