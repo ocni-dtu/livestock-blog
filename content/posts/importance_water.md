@@ -1,8 +1,8 @@
 Date: 2018-12-02
-Modified: 2018-12-02
-Status: draft
+Modified: 2018-12-12
+Status: published
 Authors: Christian Kongsgaard
-Tags: livestock, tutorial, python, grasshopper, first component
+Tags: livestock, grasshopper, utci, run-off
 Title: Importance of Water in the Urban Environment
 HeaderImage: /images/importance_water/Front_Page_Presentation.png
 Summary: Write up of the presentation I gave at the RESTORE Malaga Training School in October of 2018.
@@ -16,7 +16,7 @@ in 2014, 73% of the population of Europe lived in cities and 54% of the world’
 number is projected to be 66% (UNDESA, 2014). 
 
 ![alt text]({filename}/images/importance_water/UHI_profile1.png)
-[Source](http://www.metlink.org/other-weather/urban-heat-islands/urban-heat-island-background/)
+[Source](http://www.metlink.org/other-weather/urban-heat-islands/urban-heat-island-background/): MetLink
 
 One of the most important qualities for human activities within the city are if the weather is good or not. 
 The weather can be subdivided into three climate levels: macroclimate, local climate and microclimate. 
@@ -56,13 +56,13 @@ fact connected and can be used to influence each other. The nature of the hydrol
 it possible to evaluate both storm water management and evapotranspiration. 
 
 ![alt text]({filename}/images/importance_water/18532824-oversv.jpg)
-[Source](https://www.bt.dk/danmark/tre-personer-indlagt-efter-lynnedslag-under-halvmarathon)
+[Source](https://www.bt.dk/danmark/tre-personer-indlagt-efter-lynnedslag-under-halvmarathon): BT
 
 Situations such as the 2011 Copenhagen storm water event, which caused parts of the northern part of the city to become 
 flooded shows that there is an urgent need to tackle these problems. 
 
 ![alt text]({filename}/images/importance_water/_19A8868_as_Smart_Object-1V2_low.jpg)
-[Source](https://ghb-landskab.dk/projekter/taasinge-plads)
+[Source](https://ghb-landskab.dk/projekter/taasinge-plads): GHB Landskab
 
 A recent example of a coupling between storm water management and a recreational space is the Taasinge Plads project in 
 Copenhagen made by GHB Landskab. They introduced vegetation to a square in the neighborhood of Østerbro. The green 
@@ -71,10 +71,10 @@ around the square. While it might not have been the top priority of the design t
 comfort of the square by changing the urban fabric and increasing the evapotranspiration of the area.
 
 ![alt text]({filename}/images/importance_water/1665_1.jpg)
-[Source](https://ghb-landskab.dk/projekter/taasinge-plads)
+[Source](https://ghb-landskab.dk/projekter/taasinge-plads): GHB Landskab
 
 ![alt text]({filename}/images/importance_water/TP-mod-Vennemindevaej.jpg)
-[Source](https://ghb-landskab.dk/projekter/taasinge-plads)
+[Source](https://ghb-landskab.dk/projekter/taasinge-plads): GHB Landskab
 
 ## Case Studies
 The run-off capabilities of Livestock was used to calculate a storm water event at the zoo in Philadelphia, USA. In the 
@@ -82,7 +82,8 @@ storm water event it was assumed that during one hour 50mm of rain fell on the s
 run off patterns and the height of the water columns at the locations where water was gathering. 
 
 ![alt text]({filename}/images/importance_water/Livestock_CMF_Kinematic_wave_PZOO.gif)
-[Source](https://big.dk)
+[Source](https://big.dk): BIG
+
 Livestock was used to evaluate the benefit of trees and a water stream in a new neighborhood in Abu Dhabi 
 (Kongsgaard, 2018). Abu Dhabi is located in a hot and dry climate and throughout most of the year the air temperature 
 is above 20°C in Abu Dhabi and it is not unusual to have temperatures above 40°C. It makes it an ideal location for 
