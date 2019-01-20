@@ -1,5 +1,5 @@
 Date: 2018-04-30
-Modified: 2018-04-30
+Modified: 2019-01-20
 Status: published
 Authors: Christian Kongsgaard
 Tags: livestock, tutorial, python, grasshopper, ssh
@@ -47,9 +47,12 @@ conda install paramiko
 ```
 
 ## Grasshopper Script
-Open "3 - SSH Graph Plotter.gh". In it you will find the Python Executor, the plotter component from before, the image viewer
-and a SSH Connection component. 
+Open "3 - SSH Graph Plotter.gh" (Found in the "Grasshopper Scripts" from the 
+[installation instructions]({filename}/posts/install_livestock3d.md)). In it you will find the Python Executor, the plotter 
+component from before, the image viewer and a SSH Connection component.
+ 
 ![alt text](/images/ssh_1.png)
+
 SSH Connection works similar to Python Executor it that it just collects and holds the information
 concerning the SSH connection. You need to give it the IP, port, username and password for the SSH connection to work.
 When you have done that, we can modify the plotter component.
