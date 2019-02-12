@@ -61,20 +61,20 @@ it possible to evaluate both storm water management and evapotranspiration.
 Situations such as the 2011 Copenhagen storm water event, which caused parts of the northern part of the city to become 
 flooded shows that there is an urgent need to tackle these problems. 
 
-![alt text]({filename}/images/importance_water/_19A8868_as_Smart_Object-1V2_low.jpg)
-[Source](https://ghb-landskab.dk/projekter/taasinge-plads): GHB Landskab
+![alt text]({filename}/images/importance_water/1.Credit_GHBLandskabsarkitekter-Steven Achiam.jpg)
+[Source](https://ghb-landskab.dk/projekter/taasinge-plads): GHB Landskabsarkitekter / Steven Achiam
 
 A recent example of a coupling between storm water management and a recreational space is the Taasinge Plads project in 
-Copenhagen made by GHB Landskab. They introduced vegetation to a square in the neighborhood of Østerbro. The green 
+Copenhagen made by GHB Landskabsarkitekter. They introduced vegetation to a square in the neighborhood of Østerbro. The green 
 areas both function as recreational space and as storm water basins, which would prevent flooding of the buildings 
 around the square. While it might not have been the top priority of the design team, they also influenced the thermal 
 comfort of the square by changing the urban fabric and increasing the evapotranspiration of the area.
 
-![alt text]({filename}/images/importance_water/1665_1.jpg)
-[Source](https://ghb-landskab.dk/projekter/taasinge-plads): GHB Landskab
+![alt text]({filename}/images/importance_water/3.Credit_GHBLandskabsarkitekter-Steven Achiam.JPG)
+[Source](https://ghb-landskab.dk/projekter/taasinge-plads): GHB Landskabsarkitekter / Steven Achiam
 
-![alt text]({filename}/images/importance_water/TP-mod-Vennemindevaej.jpg)
-[Source](https://ghb-landskab.dk/projekter/taasinge-plads): GHB Landskab
+![alt text]({filename}/images/importance_water/4.Credit_GHBLandskabsarkitekter-Steven Achiam.JPG)
+[Source](https://ghb-landskab.dk/projekter/taasinge-plads): GHB Landskabsarkitekter / Steven Achiam
 
 ## Case Studies
 The run-off capabilities of Livestock was used to calculate a storm water event at the zoo in Philadelphia, USA. In the 
